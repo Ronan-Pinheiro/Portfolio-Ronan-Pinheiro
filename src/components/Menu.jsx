@@ -1,0 +1,56 @@
+import React from 'react';
+import '../styles/Menu.css';
+
+const Menu = ({ menuOpen, toggleMenu, sections }) => {
+  if (!sections) {
+    console.error('Erro: sections está undefined no Menu');
+    return null;
+  }
+
+  // Função para rolar suavemente até a seção
+  const scrollToSection = (ref) => {
+    ref?.current?.scrollIntoView({ behavior: 'smooth' });
+    toggleMenu(); // Fecha o menu ao clicar
+  };
+
+  const menuItems = [
+    { label: 'Sobre', ref: sections.sobre },
+    { label: 'Habilidades', ref: sections.habilidades },
+    { label: 'Projetos', ref: sections.projetos },
+    { label: 'Experiência', ref: sections.experiencia },
+    { label: 'Formação Acadêmica', ref: sections.formacao },
+    { label: 'Contato', ref: sections.contato },
+  ];
+
+  return (
+    <nav className={`sidebar ${menuOpen ? 'open' : ''}`}>
+      <div className="profile">
+        <img
+          src="/src/Imagens/ImagensFotoRonan.png"
+          alt="Ronan Pinheiro Otávio"
+          className="profile-pic"
+        />
+
+        <h2 className="HabilidadesTitle">
+          <span className="linha"></span> Ronan Pinheiro Otávio{' '}
+        </h2>
+      </div>
+      <ul>
+        {menuItems.map(({ label, ref }) => (
+          <li key={label} onClick={() => scrollToSection(ref)}>
+            {label}
+          </li>
+        ))}
+      </ul>
+      <a
+        className="download-btn"
+        href="/RonanCurrículo13032025.pdf"
+        download="RonanCurrículo13032025.pdf"
+      >
+        <button>Download currículo .PDF</button>
+      </a>
+    </nav>
+  );
+};
+
+export default Menu;

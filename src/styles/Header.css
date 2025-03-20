@@ -1,0 +1,77 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #011820; /* Voltei com a cor de fundo */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+/* Ajuste para centralizar o título corretamente */
+.h1header {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #1A9EC5; /* Texto branco para contraste */
+  margin: 0;
+  cursor: pointer;
+}
+
+/* Ícone do menu hambúrguer */
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-icon div {
+  width: 25px;
+  height: 3px;
+  background-color: #fff; /* Branco para melhor contraste */
+  margin: 4px 0;
+}
+
+/* Ícones do Sol e Lua */
+.icon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out, transform 0.3s;
+  position: absolute;
+  right: 20px;
+}
+
+/* Ajustando a posição do Sol e da Lua */
+.sol-icon {
+  top: 10px;
+}
+
+.lua-icon {
+  top: 10px;
+}
+
+/* Efeito para esconder e mostrar os ícones */
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+body.dark-mode {
+  background-color: #000B0F; /* Cor escura */
+  color: #ffffff; /* Texto claro */
+}
+
+
+
+
