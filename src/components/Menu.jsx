@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/Menu.css';
+import FotoRonan from '../Imagens/ImagensFotoRonan.png';
 
 const Menu = ({ menuOpen, toggleMenu, sections }) => {
   if (!sections) {
@@ -26,7 +27,7 @@ const Menu = ({ menuOpen, toggleMenu, sections }) => {
     <nav className={`sidebar ${menuOpen ? 'open' : ''}`}>
       <div className="profile">
         <img
-          src="/src/Imagens/ImagensFotoRonan.png"
+          src={FotoRonan}
           alt="Ronan Pinheiro Otávio"
           className="profile-pic"
         />
