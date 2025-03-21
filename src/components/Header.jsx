@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Menu from './Menu';
 import '../styles/Header.css';
+import SolIcon from '../Imagens/sol.svg';
+import LuaIcon from '../Imagens/lua.svg';
 
 const Header = ({ sections }) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -51,13 +53,13 @@ const Header = ({ sections }) => {
         {/* Renderiza os ícones de forma condicional */}
         <img
           className={`icon sol-icon ${isDay ? 'visible' : 'hidden'}`}
-          src="/src/Imagens/sol.svg"
+          src={SolIcon}
           alt="Sol"
           onClick={toggleTheme}
         />
         <img
           className={`icon lua-icon ${isDay ? 'hidden' : 'visible'}`}
-          src="/src/Imagens/lua.svg"
+          src={LuaIcon}
           alt="Lua"
           onClick={toggleTheme}
         />

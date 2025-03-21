@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/Sobre.css';
+import FotoRonan from '../Imagens/ImagensFotoRonan.png';
 
 const Sobre = () => {
   return (
@@ -21,11 +22,7 @@ const Sobre = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img
-            src="/src/Imagens/ImagensFotoRonan.png"
-            alt="Ronan Pinheiro"
-            className="foto"
-          />
+          <img src={FotoRonan} alt="Ronan Pinheiro" className="foto" />
         </a>
       </div>
 
