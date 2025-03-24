@@ -10,8 +10,10 @@ const Menu = ({ menuOpen, toggleMenu, sections }) => {
 
   // Função para rolar suavemente até a seção
   const scrollToSection = (ref) => {
-    ref?.current?.scrollIntoView({ behavior: 'smooth' });
-    toggleMenu(); // Fecha o menu ao clicar
+    if (ref?.current) {
+      ref.current.scrollIntoView({ behavior: 'smooth' });
+      toggleMenu(); // Fecha o menu ao clicar
+    }
   };
 
   const menuItems = [
@@ -31,7 +33,6 @@ const Menu = ({ menuOpen, toggleMenu, sections }) => {
           alt="Ronan Pinheiro Otávio"
           className="profile-pic"
         />
-
         <h2 className="HabilidadesTitle">
           <span className="linha"></span> Ronan Pinheiro Otávio{' '}
         </h2>
@@ -45,8 +46,8 @@ const Menu = ({ menuOpen, toggleMenu, sections }) => {
       </ul>
       <a
         className="download-btn"
-        href="/RonanCurrículo13032025.pdf"
-        download="RonanCurrículo13032025.pdf"
+        href="/RonanCurriculo.pdf"
+        download="RonanCurriculo.pdf"
       >
         <button>Download currículo .PDF</button>
       </a>
