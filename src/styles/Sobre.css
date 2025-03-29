@@ -197,7 +197,7 @@ h1 {
 
 
 
-@media (max-width: 500px) {
+@media (max-width: 499px) {
   .sobre-mim {
       margin: 50px auto; /* Mantém centralizado, mas reduz o espaçamento */
       max-width: 90%; /* Usa uma largura menor para telas pequenas */
@@ -234,7 +234,8 @@ h1 {
 
   .linha {
 
-    margin-right: 0px;
+    margin-left: 20px;
+    
 }
 
 }
