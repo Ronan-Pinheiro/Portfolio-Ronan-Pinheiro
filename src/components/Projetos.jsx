@@ -80,7 +80,30 @@ const Projetos = () => {
                 className="ProjetosImagem"
               />
               <div className="ProjetosOverlay">
-                <span className="ProjetosNome">Bebida Fiu Fiu</span>
+                <span className="ProjetosNome">
+                  Bebida Fiu Fiu - Machado de Assis
+                </span>
+                <button className="ProjetosBotao">Ver Projeto</button>
+              </div>
+              <div className="ProjetosDivisor"></div>
+            </div>
+          </li>
+
+          <li
+            onClick={() =>
+              handleClick('https://bebidafiufiu.8thwall.app/shotsti2/')
+            }
+          >
+            <div className="ProjetosItem">
+              <img
+                src={Projeto_bebidafiufiu}
+                alt="JavaScript"
+                className="ProjetosImagem"
+              />
+              <div className="ProjetosOverlay">
+                <span className="ProjetosNome">
+                  Bebida Fiu Fiu - Tiradentes
+                </span>
                 <button className="ProjetosBotao">Ver Projeto</button>
               </div>
               <div className="ProjetosDivisor"></div>

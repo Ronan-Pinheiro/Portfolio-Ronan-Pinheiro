@@ -28,6 +28,7 @@
 .text {
   text-align: left;
   flex-grow: 1; /* Permite que o texto ocupe mais espaço */
+  
 }
 
 
@@ -201,11 +202,12 @@ h1 {
       margin: 50px auto; /* Mantém centralizado, mas reduz o espaçamento */
       max-width: 90%; /* Usa uma largura menor para telas pequenas */
       text-align: center;
+      padding-top: 0px;
   }
 
   h1 {
       font-size: 28px; /* Reduz o tamanho do título para se ajustar melhor */
-      text-align: center; /* Centraliza o título */
+      text-align: left; /* Centraliza o título */
   }
 
   .descricao {
@@ -220,9 +222,19 @@ h1 {
       
   }
 
+  .text{
+    padding-right: 15px;
+  }
+
   .container {
       flex-direction: column; /* Empilha o texto e a imagem */
       gap: 20px; /* Reduz o espaço entre eles */
       align-items: center;
   }
+
+  .linha {
+
+    margin-right: 0px;
+}
+
 }
