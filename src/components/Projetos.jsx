@@ -4,6 +4,7 @@ import AnimaisFantasticos from '../Imagens/Projeto_Animais Fantasticos.png';
 import Projeto_PinguimRun from '../Imagens/Projeto_PinguimRun.png';
 import Projeto_bebidafiufiu from '../Imagens/Projeto_bebidafiufiu.png';
 import Projeto_Projeto_15_minutos from '../Imagens/Projeto_Projeto_15_minutos.png';
+import Projeto_Florest from '../Imagens/Projeto_Florest.png';
 
 const Projetos = () => {
   const handleClick = (url) => {
@@ -30,6 +31,27 @@ const Projetos = () => {
 
       <div className="ProjetosProjetos">
         <ul>
+          <li
+            onClick={() =>
+              handleClick(
+                'https://ronan-pinheiro.github.io/Forest-Retreat---Eco-Experience/',
+              )
+            }
+          >
+            <div className="ProjetosItem">
+              <img
+                src={Projeto_Florest}
+                alt="Animais Fantasticos"
+                className="ProjetosImagem"
+              />
+              <div className="ProjetosOverlay">
+                <span className="ProjetosNome">Forest Retreat</span>
+                <button className="ProjetosBotao">Ver Projeto</button>
+              </div>
+              <div className="ProjetosDivisor"></div>
+            </div>
+          </li>
+
           <li
             onClick={() =>
               handleClick('https://exemplo.com/animais-fantasticos')
