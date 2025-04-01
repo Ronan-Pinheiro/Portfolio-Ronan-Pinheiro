@@ -3,6 +3,7 @@ import '../styles/Projetos.css'; // Importando o arquivo CSS
 import AnimaisFantasticos from '../Imagens/Projeto_Animais Fantasticos.png';
 import Projeto_PinguimRun from '../Imagens/Projeto_PinguimRun.png';
 import Projeto_bebidafiufiu from '../Imagens/Projeto_bebidafiufiu.png';
+import Projeto_bebidafiufiuT from '../Imagens/Projeto_bebidafiufiuT.png';
 import Projeto_Projeto_15_minutos from '../Imagens/Projeto_Projeto_15_minutos.png';
 import Projeto_Florest from '../Imagens/Projeto_Florest.png';
 
@@ -118,7 +119,7 @@ const Projetos = () => {
           >
             <div className="ProjetosItem">
               <img
-                src={Projeto_bebidafiufiu}
+                src={Projeto_bebidafiufiuT}
                 alt="JavaScript"
                 className="ProjetosImagem"
               />
