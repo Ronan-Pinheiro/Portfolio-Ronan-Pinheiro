@@ -73,6 +73,20 @@ body.dark-mode {
   color: #ffffff; /* Texto claro */
 }
 
+/* overlay cobre toda a tela */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;  /* ou rgba(0,0,0,0.3) se quiser leve escurecimento */
+  z-index: 19;
+}
+/* certifique-se que sua sidebar tenha z-index maior, ex: */
+.sidebar {
+  z-index: 20;
+}
 
 
 

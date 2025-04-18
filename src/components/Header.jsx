@@ -65,6 +65,15 @@ const Header = ({ sections }) => {
         />
       </header>
 
+      {/* Overlay para capturar cliques fora do menu e fechar quando aberto */}
+      {menuOpen && (
+        <div
+          className="overlay"
+          onClick={() => setMenuOpen(false)}
+          aria-hidden="true"
+        />
+      )}
+
       <Menu menuOpen={menuOpen} toggleMenu={toggleMenu} sections={sections} />
     </>
   );
