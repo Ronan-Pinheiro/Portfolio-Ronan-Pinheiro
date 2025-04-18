@@ -22,6 +22,7 @@ const Menu = ({ menuOpen, toggleMenu, sections }) => {
     { label: 'Projetos', ref: sections.projetos },
     { label: 'Experiência', ref: sections.experiencia },
     { label: 'Formação Acadêmica', ref: sections.formacao },
+    { label: 'Feiras', ref: sections.feiras },
     { label: 'Contato', ref: sections.contato },
   ];
 
