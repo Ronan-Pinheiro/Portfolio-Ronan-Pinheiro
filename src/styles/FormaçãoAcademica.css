@@ -144,7 +144,7 @@
 
 }
 
-@media (max-width: 790px) {
+@media (max-width: 815px) {
   .LinhaHorizontal {
     width: 500px;
   }
@@ -173,7 +173,7 @@
 }
 .LinhaContainer2 {
   margin-left: 12px;
-  margin-top: 72px;
+  margin-top: 60px;
 }
 
 .CaixaDasFormçoes{
@@ -183,7 +183,7 @@
 }
 
 
-@media (max-width: 450px) {
+@media (max-width: 460px) {
  
   .LinhaHorizontal {
     width: 300px;
@@ -195,7 +195,28 @@
 }
 .LinhaContainer2 {
   margin-left: 10px;  
-  margin-top: 96px;
+  margin-top: 120px;
+}
+
+.CaixaDasFormçoes{
+  margin-left: 20px;
+}
+
+}
+
+@media (max-width: 380px) {
+ 
+  .LinhaHorizontal {
+    width: 300px;
+  }
+
+  .LinhaContainer {
+    margin-left: 10px;
+    margin-top: 126px;  
+}
+.LinhaContainer2 {
+  margin-left: 10px;  
+  margin-top: 120px;
 }
 
 .CaixaDasFormçoes{

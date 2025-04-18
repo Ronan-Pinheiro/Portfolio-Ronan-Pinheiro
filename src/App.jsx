@@ -9,6 +9,7 @@ import Projetos from './components/Projetos';
 import Experiencia from './components/Experiencia';
 import FormaçãoAcademica from './components/FormaçãoAcademica';
 import Contatos from './components/Contatos';
+import Feiras from './components/Feiras';
 
 const App = () => {
   console.log('App carregado'); // Para verificar se o App está sendo chamado
@@ -19,6 +20,7 @@ const App = () => {
     projetos: useRef(null),
     experiencia: useRef(null),
     formacao: useRef(null),
+    feiras: useRef(null),
     contato: useRef(null),
   };
 
@@ -28,7 +30,6 @@ const App = () => {
 
   return (
     <React.StrictMode>
-      {/*  Garantia de que sections está definido antes do Menu */}
       <Menu
         menuOpen={menuOpen}
         toggleMenu={toggleMenu}
@@ -49,9 +50,15 @@ const App = () => {
         <section ref={sectionRefs.experiencia} id="experiencia">
           <Experiencia />
         </section>
+
         <section ref={sectionRefs.formacao} id="formacao">
           <FormaçãoAcademica />
         </section>
+
+        <section ref={sectionRefs.feiras} id="feiras">
+          <Feiras />
+        </section>
+
         <section ref={sectionRefs.contato} id="contato">
           <Contatos />
         </section>

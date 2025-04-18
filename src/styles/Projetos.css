@@ -140,4 +140,7 @@
     padding-left: 35px;
   }
 
+  .ProjetosItem:hover {
+    transform: scale(1.05);
+  }
 }

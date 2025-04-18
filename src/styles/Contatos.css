@@ -67,3 +67,13 @@
 .ContatoItem span {
   font-size: 14px;
 }
+
+@media screen and (max-width: 500px) {
+  .ContatosContainer h1 {
+    text-align: center;
+  }
+
+  .ContatosLista{
+padding-left: 18px;
+  }
+}

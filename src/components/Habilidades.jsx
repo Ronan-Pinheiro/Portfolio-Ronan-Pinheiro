@@ -1,7 +1,6 @@
 import React from 'react';
 import '../styles/Habilidades.css';
 
-// Importe suas imagens aqui
 import IconeCSS from '../Imagens/Icone - CSS.png';
 import IconeFigma from '../Imagens/Icone - Figma.png';
 import IconeHTML from '../Imagens/Icone - HTML.png';
