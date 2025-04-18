@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/feiras.css';
+import '../styles/Feiras.css';
 import IMG001 from '../Imagens/IMG001Feira.jpg';
 import IMG002 from '../Imagens/IMG002Feira.jpg';
 import VideoFeira from '../Imagens/VideoFeira.mp4';
