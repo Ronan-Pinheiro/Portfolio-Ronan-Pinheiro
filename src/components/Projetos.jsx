@@ -55,7 +55,9 @@ const Projetos = () => {
 
           <li
             onClick={() =>
-              handleClick('https://exemplo.com/animais-fantasticos')
+              handleClick(
+                'https://animais-fantasticos-5m0ayw2gg-ronan-pinheiros-projects.vercel.app/',
+              )
             }
           >
             <div className="ProjetosItem">
