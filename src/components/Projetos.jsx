@@ -56,7 +56,7 @@ const Projetos = () => {
           <li
             onClick={() =>
               handleClick(
-                'https://animais-fantasticos-5m0ayw2gg-ronan-pinheiros-projects.vercel.app/',
+                'https://animais-fantasticos-tau.vercel.app/',
               )
             }
           >
