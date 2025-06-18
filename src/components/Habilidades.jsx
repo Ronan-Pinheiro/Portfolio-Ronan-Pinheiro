@@ -9,6 +9,8 @@ import IconeC from '../Imagens/Icone - C.png';
 import IconeReact from '../Imagens/Icone - React.png';
 import IconeUnity from '../Imagens/Icone - unity.png';
 import IconeTailwindCSS from '../Imagens/Icone - Tailwind CSS.png';
+import IconeGit from '../Imagens/Icone - Git.svg';
+import IconeGithub from '../Imagens/Icone - Github.svg';
 
 const Habilidades = () => {
   return (
@@ -56,18 +58,16 @@ const Habilidades = () => {
 
           <li>
             <div className="habilidadeImg">
-              <img src={IconeTailwindCSS} alt="Tailwind CSS" />
-              <span className="habilidadeNome">TailwindCSS</span>
-            </div>
-          </li>
-
-          <li>
-            <div className="habilidadeImg">
               <img src={IconeReact} alt="React" />
               <span className="habilidadeNome">React</span>
             </div>
           </li>
-
+          <li>
+            <div className="habilidadeImg">
+              <img src={IconeTailwindCSS} alt="Tailwind CSS" />
+              <span className="habilidadeNome">TailwindCSS</span>
+            </div>
+          </li>
           <li>
             <div className="habilidadeImg">
               <img src={IconeFigma} alt="Figma" />
@@ -84,6 +84,18 @@ const Habilidades = () => {
             <div className="habilidadeImg">
               <img src={IconeUnity} alt="unity" />
               <span className="habilidadeNome">Unity</span>
+            </div>
+          </li>
+          <li>
+            <div className="habilidadeImg">
+              <img src={IconeGit} alt="unity" />
+              <span className="habilidadeNome">Git</span>
+            </div>
+          </li>
+          <li>
+            <div className="habilidadeImg">
+              <img src={IconeGithub} alt="unity" />
+              <span className="habilidadeNome">GitHub</span>
             </div>
           </li>
 
