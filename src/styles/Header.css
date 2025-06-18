@@ -23,20 +23,39 @@
   cursor: pointer;
   padding-right: 25px;
 }
+ :hover.h1header {
+  color: #fff;
+}
 
 /* Ícone do menu hambúrguer */
 .menu-icon {
   display: flex;
   flex-direction: column;
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 .menu-icon div {
   width: 25px;
   height: 3px;
-  background-color: #fff; /* Branco para melhor contraste */
+  background-color: #fff;
   margin: 4px 0;
+  transition: background-color 0.3s ease;
 }
+
+:hover.menu-icon div {
+  background-color: #C2701B;
+}
+
+.menu-icon.active {
+  transform: rotate(-90deg);
+}
+
+.menu-icon.active div {
+  background-color: #C2701B;
+}
+
+
 
 /* Ícones do Sol e Lua */
 .icon {

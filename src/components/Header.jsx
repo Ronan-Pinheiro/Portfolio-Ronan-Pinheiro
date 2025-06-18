@@ -41,7 +41,10 @@ const Header = ({ sections }) => {
   return (
     <>
       <header className="header">
-        <div className="menu-icon" onClick={toggleMenu}>
+        <div
+          className={`menu-icon ${menuOpen ? 'active' : ''}`}
+          onClick={toggleMenu}
+        >
           <div></div>
           <div></div>
           <div></div>
