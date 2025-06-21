@@ -6,6 +6,7 @@ import Projeto_bebidafiufiu from '../Imagens/Projeto_bebidafiufiu.png';
 import Projeto_bebidafiufiuT from '../Imagens/Projeto_bebidafiufiuT.png';
 import Projeto_Projeto_15_minutos from '../Imagens/Projeto_Projeto_15_minutos.png';
 import Projeto_Florest from '../Imagens/Projeto_Florest.png';
+import Projeto_Dogs from '../Imagens/Projeto_Dogs.png';
 
 const Projetos = () => {
   const handleClick = (url) => {
@@ -35,6 +36,27 @@ const Projetos = () => {
           <li
             onClick={() =>
               handleClick(
+                'https://dogs-33jex8j0t-ronan-pinheiros-projects.vercel.app',
+              )
+            }
+          >
+            <div className="ProjetosItem">
+              <img
+                src={Projeto_Dogs}
+                alt="JavaScript"
+                className="ProjetosImagem"
+              />
+              <div className="ProjetosOverlay">
+                <span className="ProjetosNome">Dogs Social</span>
+                <button className="ProjetosBotao">Ver Projeto</button>
+              </div>
+              <div className="ProjetosDivisor"></div>
+            </div>
+          </li>
+
+          <li
+            onClick={() =>
+              handleClick(
                 'https://ronan-pinheiro.github.io/Forest-Retreat---Eco-Experience/',
               )
             }
@@ -55,9 +77,7 @@ const Projetos = () => {
 
           <li
             onClick={() =>
-              handleClick(
-                'https://animais-fantasticos-tau.vercel.app/',
-              )
+              handleClick('https://animais-fantasticos-tau.vercel.app/')
             }
           >
             <div className="ProjetosItem">
