@@ -134,6 +134,9 @@
   .HabilidadesContainer {
     flex-wrap: wrap; /* Faz os itens quebrarem para a próxima linha */
     margin-left: 20px; /* Reduz a margem para telas menores */
-    
+  }
+
+  .HabilidadesDescricao {
+    padding-left: 0px;
   }
 }

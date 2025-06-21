@@ -155,7 +155,7 @@
   }
 
   .ExperienciaDescricao {
-    padding-left: 35px;
+    padding-left: 0px;
   }
 
   .ExperienciaDados,
@@ -250,5 +250,15 @@
   text-align: center;
   margin-left: 0px;
 }
+}
 
+
+@media (max-width: 540px) {
+  .ExperienciaDados ul li {
+  margin-left: 15px;
+}
+h1 {
+ margin-left: 0px;
+
+}
 }
