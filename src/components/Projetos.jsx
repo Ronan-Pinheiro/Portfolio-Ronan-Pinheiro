@@ -62,7 +62,7 @@ Tecnologias:
   {
     titulo: 'Mini Game - Pinguim Run',
     descricao: `O Pinguim Run nasceu como um projeto pessoal para trazer diversão ao meu portfólio.
-A ideia de um pinguim fugindo de um Yeti em um cenário congelante tornou esse mini game único e envolvente. ❄️🏔️
+A ideia de um pinguim fugindo de um Yeti em um cenário congelante tornou esse mini game único e envolvente. 
 Construído com:
 - React
 - Hook personalizado de game loop
