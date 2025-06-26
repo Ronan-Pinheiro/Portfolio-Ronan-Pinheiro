@@ -94,8 +94,7 @@ Ao acertar, recebia um código que, durante a festa de lançamento, era trocado 
   },
   {
     titulo: 'Carga Indivisível-VR',
-    descricao: `Projeto acadêmico em Realidade Virtual (VR), focado em treinamentos de Normas Regulamentadoras (NR).
-O jogador atua como caminhoneiro, seguindo um checklist de segurança antes de transportar uma carga indivisível.
+    descricao: `Projeto acadêmico em Realidade Virtual (VR), focado em treinamentos de Normas Regulamentadoras (NR). O jogador atua como caminhoneiro, seguindo um checklist de segurança antes de transportar uma carga indivisível.
 As decisões influenciam o desfecho:• Ao ignorar etapas ou escolher o caminho errado (como a ponte), o caminhão colide.• Ao cumprir os procedimentos e seguir a rota correta, há uma animação de final bem-sucedido.`,
     tecnologias: ['Unity', 'C#', 'VR'],
     imagens: [Projeto_cargaIndivisivel],
