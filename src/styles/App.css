@@ -1,0 +1,70 @@
+/* Reset CSS Moderno */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin-top: 80px; /* Ajuste conforme a altura do header */
+   background-color: #E0E0E0
+   ; /* Cor escura */
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Transição suave */
+
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  line-height: 1.5;
+  font-family: sans-serif;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+  border: none;
+  outline: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Barra de rolagem personalizada */
+::-webkit-scrollbar {
+  width: 12px; /* Largura da barra de rolagem */
+}
+
+/* Cor da "trilha" (fundo) da barra de rolagem */
+::-webkit-scrollbar-track {
+  background: #000B0F; /* Fundo da barra de rolagem */
+}
+
+/* Cor da "cabeça" da barra de rolagem */
+::-webkit-scrollbar-thumb {
+  background-color: #C2701B; /* Cor da barra de rolagem */
+  border-radius: 10px; /* Arredondar os cantos */
+  border: 3px solid transparent; /* Espaço ao redor da barra */
+  background-clip: content-box; /* Garante que a cor da barra de rolagem não vaze para o espaço ao redor */
+}
+
+/* Quando a barra de rolagem for ativa (hover) */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a85a14; /* Cor mais escura ao passar o mouse */
+}
+
+

@@ -1,0 +1,140 @@
+.dark-mode .feiras {
+  background-color: #000B0F;
+  color: #D0EAF2;
+  padding: 50px 20px;
+  text-align: center;
+  margin-top: 50px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Transição suave */
+}
+
+.light-mode .feiras {
+  background-color: #E0E0E0;
+  color: #000B0F;
+  padding: 50px 20px;
+  text-align: center;
+  margin-top: 50px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Transição suave */
+}
+
+.feirasTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+
+
+.feirasDescricao {
+  padding: 10px;         
+}
+
+
+.feirasDescricao p {
+  font-size: 18px;
+  line-height: 1.6;        
+  word-wrap: break-word;   
+  text-align: justify;     
+  text-align-last: center; 
+  max-width: 1150px;        
+  margin:  auto;         
+}
+
+.FeirasContainerItens{
+  padding-bottom: 10px;
+}
+
+
+/* sdasd */
+
+/* Novos estilos para os cards */
+.feirasContainer {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+.feirasGrid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.feiraCard {
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  overflow: hidden;
+}
+
+
+
+
+.dark-mode .feiraCard {
+  --card-bg: #1a1a1a;
+}
+
+.light-mode .feiraCard {
+  --card-bg: #ffffff;
+}
+
+.feiraCard:hover {
+  transform: translateY(-5px);
+}
+
+.mediaWrapper {
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  position: relative;
+}
+
+.feiraMedia {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  scale: 1.05;
+}
+
+
+
+.feiraMedia:hover {
+  transform: scale(1.05);
+}
+
+.cardContent {
+  padding: 1.5rem;
+}
+
+
+.feiraNome {
+  font-size: 1.25rem;
+  color: var(--title-color);
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.feiraDescricao {
+  font-size: 0.95rem;
+  color: var(--text-color);
+  line-height: 1.5;
+  margin: 0;
+  
+}
+
+/* Adaptação para temas */
+.dark-mode .feiraNome {
+  --title-color: #D0EAF2;
+}
+
+.light-mode .feiraNome {
+  --title-color: #000B0F;
+}
+
+.dark-mode .feiraDescricao {
+  --text-color: #a0c4d4;
+}
+
+.light-mode .feiraDescricao {
+  --text-color: #4a5568;
+}

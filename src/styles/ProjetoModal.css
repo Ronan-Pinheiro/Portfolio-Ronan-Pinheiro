@@ -1,0 +1,157 @@
+/* Sombra escura atrás do modal */
+.modal-backdrop {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 19;
+}
+
+/* Caixa escura central */
+.modal-container {
+  background: #011820;
+  display: flex;
+  flex-direction: row; /* padrão: lado a lado */
+  width: 90%;
+  max-width: 1000px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  padding: 15px;
+  margin: 20px auto; /* adiciona espaçamento externo e centraliza */
+  /* gap: 20px; espaço entre imagem e texto */
+  
+}
+
+/* Botão X de fechar */
+.modal-close {
+  position: absolute;
+  top: 16px; right: 16px;
+  border: none; background: none;
+  font-size: 24px; cursor: pointer;
+  color: #C2701B;
+}
+
+/* Lado esquerdo: galeria/carrossel */
+.modal-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+.modal-img {
+  width: 100%;
+  height: auto;
+  max-width: 450px;
+  max-height: 325px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin: 0 auto; /* centraliza */
+  display: block;
+}
+
+.modal-video {
+  width: 80%;
+  max-width: 400px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin: 0 auto;
+  display: block;
+  padding: 0%;
+}
+
+/* Lado direito: informações */
+.modal-right {
+  flex: 1;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Título */
+.modal-title {
+  margin: 0 0 12px;
+  font-size: 24px;
+  color: #C2701B !important;
+
+}
+
+/* Descrição */
+.modal-desc {
+  flex-grow: 1;
+  font-size: 16px;
+  line-height: 1.4;
+  margin-bottom: 16px;
+  color: #D0EAF2;
+  height: 90%;
+   white-space: pre-line; /* respeita os \n */
+  text-align: left;      /* garante alinhamento à esquerda */
+}
+
+/* Tags de tecnologia */
+.modal-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.modal-tag {
+  background: #000B0F;
+  color: #D0EAF2;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+/* Botão “Ver Projeto” */
+.modal-btn {
+  display: inline-block;
+  margin-top: 16px;
+  background: #C2701B;
+  color: #D0EAF2;
+  text-decoration: none;
+  padding: 12px;
+  text-align: center;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.modal-btn:hover {
+  background-color: #D0EAF2;
+  color: #011820;
+}
+
+
+/* Quando a largura da tela for menor ou igual a 900px */
+@media (max-width: 900px) {
+  .modal-container {
+    flex-direction: column; /* imagem em cima, conteúdo embaixo */
+    padding: 20px;
+    align-items: center; /* garante centralização do conteúdo inteiro */
+    
+  }
+
+  .modal-left {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+  }
+
+  .modal-img {
+    margin: 0 auto; /* centraliza a imagem horizontalmente */
+    max-width: 90%;
+    height: auto;
+    display: block;
+  }
+
+  .modal-right {
+    text-align: center; /* opcional: centraliza o texto */
+    padding: 20px;
+  }
+}

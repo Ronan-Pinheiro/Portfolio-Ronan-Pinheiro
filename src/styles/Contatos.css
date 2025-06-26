@@ -1,0 +1,79 @@
+.dark-mode .Contatos {
+  background-color: #011820;
+  color: #D0EAF2;
+  margin-top: 30px;
+  padding: 40px 20px;
+  text-align: center;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Transição suave */
+}
+
+.light-mode  .Contatos {
+  background-color: #F2F2F2;
+  color: #011820;
+  margin-top: 30px;
+  padding: 40px 20px;
+  text-align: center;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Transição suave */
+}
+
+
+.ContatosContainer h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.ContatosLista {
+  display: flex;
+  justify-content: space-evenly; /* Distribui os itens igualmente */
+  align-items: center;
+  gap: 80px; /* Espaçamento uniforme entre os itens */
+  flex-wrap: wrap;
+  margin-top: 60px;
+  width: 100%;
+}
+
+.ContatoItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 200px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease;
+}
+
+.ContatoItem:hover {
+  transform: scale(1.1);
+}
+
+.ContatoIcon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 15px;
+  transition: fill 0.3s ease; /* Adiciona transição para a cor */
+}
+
+.ContatoItem:hover .ContatoIcon svg {
+  fill: #C2701B; /* Altera a cor para C2701B ao passar o mouse */
+}
+
+.ContatoItem p {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.ContatoItem span {
+  font-size: 14px;
+}
+
+@media screen and (max-width: 500px) {
+  .ContatosContainer h1 {
+    text-align: center;
+  }
+
+  .ContatosLista{
+padding-left: 18px;
+  }
+}

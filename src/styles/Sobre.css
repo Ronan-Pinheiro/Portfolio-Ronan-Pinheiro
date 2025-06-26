@@ -1,0 +1,242 @@
+/* Estilos padrões para o modo escuro */
+.sobre {
+  background-color: #000B0F; /* Cor de fundo escura */
+  color: #D0EAF2;           /* Cor do texto no modo escuro */
+  padding: 50px 20px;
+  text-align: center;
+  position: relative;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Transição suave */
+}
+
+/* Estilos para o modo claro */
+.light-mode .sobre {
+  background-color: #E0E0E0
+  ; /* Cor de fundo clara */
+  color: #000B0F;            /* Cor do texto no modo claro */
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Transição suave */
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 75%;
+  margin: 0 auto;
+  gap: 50px;
+}
+
+.text {
+  text-align: left;
+  flex-grow: 1; /* Permite que o texto ocupe mais espaço */
+  
+}
+
+
+
+
+h1 {
+  margin-left: 30px;
+  font-size: 60px;
+  font-weight: bold;
+  align-items: center;
+  line-height: 1;
+}
+
+.orange {
+  color: #C2701B;
+  margin: 0 5px; /* Adiciona espaço antes e depois do "e" */
+}
+
+.blue {
+  color: #1B9AC3;
+}
+
+.descricao {
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.linha {
+  width: 32px;
+  height: 9px;
+  background-color: #C2701B;
+  margin-right: 5px;
+}
+
+
+
+
+.foto {
+  width: 350px;
+  height: 350px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-left: auto; /* Empurra a foto mais para a direita */
+  margin-top: 60px;
+  transition: transform 0.3s ease; /* Para o efeito de crescimento */
+  cursor: pointer; /* Para mudar o cursor para a mão */
+}
+
+.foto:hover {
+  transform: scale(1.05); /* Aumenta a imagem levemente */
+}
+
+
+.sobre-mim p {
+  font-size: 18px;
+  padding-top: 15px;
+}
+
+.sobre-mim {
+  padding-top: 80px;
+  margin: 70px auto; /* Centraliza horizontalmente */
+  max-width: 1000px;
+  word-wrap: break-word;
+  text-align: center; /* Centraliza o texto */
+}
+
+
+
+.dark-mode h2 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #D0EAF2;
+}
+
+.light-mode h2 {
+  font-size: 30px;
+  font-weight: bold;
+  color:#1A9EC5;
+}
+
+
+
+
+
+
+.LinhaVerticalMundSobre {
+  width: 10px;
+  height: 200px;
+  background-color: #C2701B;
+  position: absolute;
+  top: 97%;
+  left: 0%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+
+
+@media (max-width: 1050px) and (min-width: 500px) {
+  .sobre-mim {
+      margin: 30px auto;
+      max-width: 85%; /* Mantém um limite para não ficar muito largo */
+      word-wrap: break-word;
+      text-align: center;
+      padding-top: 0px;
+  }
+
+  h1 {
+      font-size: 32px;
+      font-weight: bold;
+      text-align: center; /* Centraliza o título */
+      display: flex;
+      justify-content: center;
+  }
+
+  .foto {
+      width: 300px; /* Ajusta a largura da foto */
+      height: auto; /* Mantém a proporção */
+      border-radius: 10px;
+      margin: 20px auto; /* Centraliza a imagem */
+  }
+
+  .container {
+      display: flex;
+      flex-direction: column; /* Empilha os elementos */
+      align-items: center;
+      gap: 25px; /* Mantém um espaço adequado entre os elementos */
+      margin: 0 auto;
+  }
+}
+
+
+
+
+@media (max-width: 750px) and (min-width: 500px) {
+  h1 {
+      font-size: 32px;
+      font-weight: bold;
+      text-align: center;
+      justify-content: center;
+      flex-direction: column;
+      display: block; /* Substitui flex por block */
+  }
+
+  .descricao {
+      align-items: center;
+      font-size: 22px;
+      font-weight: bold;
+      flex-wrap: wrap;
+      align-content: center;
+      justify-content: center;
+      text-align: center;
+      padding: 10px;
+      display: block; /* Remove flex e mantém como bloco normal */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 499px) {
+  .sobre-mim {
+      margin: 50px auto; /* Mantém centralizado, mas reduz o espaçamento */
+      max-width: 90%; /* Usa uma largura menor para telas pequenas */
+      text-align: center;
+      padding-top: 0px;
+  }
+
+  h1 {
+      font-size: 28px; /* Reduz o tamanho do título para se ajustar melhor */
+      text-align: left; /* Centraliza o título */
+      text-align: center;
+  }
+
+  .descricao {
+      flex-direction: column; /* Empilha os elementos */
+      font-size: 18px; /* Reduz o tamanho do texto */
+  }
+
+  .foto {
+      width: 250px; /* Reduz o tamanho da foto */
+      height: 250px;
+      margin: 20px auto; /* Centraliza a imagem */
+      
+  }
+
+  .text{
+    padding-right: 15px;
+  }
+
+  .container {
+      flex-direction: column; /* Empilha o texto e a imagem */
+      gap: 20px; /* Reduz o espaço entre eles */
+      align-items: center;
+  }
+
+  .linha {
+
+    margin-left: 20px;
+    
+}
+
+}

@@ -1,0 +1,142 @@
+.dark-mode .Habilidades {
+  background-color: #011820;
+  color: #D0EAF2;
+  padding: 50px 20px;
+  text-align: center;
+  position: relative;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Transição suave */
+}
+
+
+.light-mode .Habilidades {
+  background-color:  #F2F2F2;
+  color: #000B0F;
+  padding: 50px 20px;
+  text-align: center;
+  position: relative;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Transição suave */
+}
+
+
+
+
+.HabilidadesContainer {
+  display: flex;
+  margin-left: 80px;
+}
+
+.HabilidadesDescricao {
+  font-size: 18px;
+  padding-top: 15px;
+  max-width: 1150px;
+  text-align: left;
+  padding-left: 35px;
+}
+
+.HabilidadesTitle {
+  display: flex;
+  align-items: center;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.HabilidadesHabilidades ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  padding-top: 30px;
+}
+
+.HabilidadesHabilidades li {
+  margin: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.dark-mode .habilidadeImg {
+  background-color: #000B0F;
+  border-radius: 18px;
+  padding: 20px;
+  width: 140px; /* Aumentei a largura */
+  height: 140px; /* Aumentei a altura */
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* Espaço entre a imagem e o texto */
+  height: 160px;
+  font-weight: bold; /* Deixa o texto mais grosso */
+}
+
+.light-mode .habilidadeImg {
+  background-color: #011820;
+  border-radius: 18px;
+  padding: 20px;
+  width: 140px; /* Aumentei a largura */
+  height: 140px; /* Aumentei a altura */
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* Espaço entre a imagem e o texto */
+  height: 160px;
+  font-weight: bold; /* Deixa o texto mais grosso */
+} 
+
+
+
+
+.habilidadeImg:hover {
+  transform: scale(1.1); /* Aumenta o tamanho da imagem em 10% */
+}
+
+.dark-mode .habilidadeNome {
+  color: #1A9EC5;
+  font-size: 16px;
+  margin-top: 10px; /* Espaço entre a imagem e o texto */
+}
+.light-mode .habilidadeNome {
+  color: #D0EAF2;
+  font-size: 16px;
+  margin-top: 10px; /* Espaço entre a imagem e o texto */
+}
+
+
+.dark-mode .destaque {
+  color: #1A9EC5;
+  font-weight: bold;
+}
+
+.light-mode .destaque {
+  color: #C2701B;
+  font-weight: bold;
+}
+
+
+.destaqueOrange {
+  color: #C2701B;
+  font-weight: bold;
+}
+
+.LinhaVerticalMundHabilidade {
+  width: 10px;
+  height: 200px;
+  background-color: #C2701B;
+  position: absolute;
+  top: 93%;
+  left: 0%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+@media (max-width: 1000px) {
+  .HabilidadesContainer {
+    flex-wrap: wrap; /* Faz os itens quebrarem para a próxima linha */
+    margin-left: 20px; /* Reduz a margem para telas menores */
+  }
+
+  .HabilidadesDescricao {
+    padding-left: 0px;
+  }
+}

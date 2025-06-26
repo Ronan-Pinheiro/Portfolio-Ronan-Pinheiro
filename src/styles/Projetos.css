@@ -1,0 +1,146 @@
+.dark-mode .Projetos {
+  background-color: #011820;
+  color: #D0EAF2;
+  padding: 50px 20px;
+  text-align: center;
+  position: relative;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Transição suave */
+}
+
+.light-mode .Projetos {
+  background-color:   #F2F2F2;
+  color: #000B0F;
+  padding: 50px 20px;
+  text-align: center;
+  position: relative;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Transição suave */
+}
+
+.ProjetosContainer {
+  display: flex;
+  margin-left: 80px;
+}
+
+.ProjetosDescricao {
+  font-size: 18px;
+  padding-top: 15px;
+  max-width: 1250px;
+  text-align: left;
+  padding-left: 100px;
+}
+
+.ProjetosTitle {
+  display: flex;
+  align-items: center;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.ProjetosProjetos ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  padding-top: 30px;
+}
+
+.ProjetosProjetos li {
+  margin: 10px;
+  text-align: center;
+  cursor: pointer;
+  padding-bottom: 66px;
+}
+
+.ProjetosItem {
+  position: relative;
+  overflow: visible; /* Alterado para visible para permitir que o overlay saia do container */
+  border-radius: 18px;
+  transition: transform 0.3s ease;
+  width: 373px;
+}
+
+.ProjetosItem:hover {
+  transform: scale(1.1);
+}
+
+.ProjetosImagem {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: cover; /* ou 'contain' dependendo do efeito desejado */
+}
+
+.ProjetosOverlay {
+  position: absolute;
+  top: 75%;
+  left: 0;
+  right: 0;
+  background-color: #000B0F;
+  color: #D0EAF2;
+  padding: 10px;
+  text-align: center;
+  transition: top 0.3s ease;
+  z-index: -1;
+  border-radius: 0 0 18px 18px;
+  display: grid;
+  grid-template-columns: 1fr auto; /* Nome à esquerda, botão à direita */
+  align-items: center; /* Centraliza verticalmente */
+  width: 100%; /* Garante que o contêiner ocupe toda a largura */
+}
+
+.ProjetosItem:hover .ProjetosOverlay {
+  top: calc(100% + 1px); /* Move o overlay para baixo, saindo da div */
+}
+
+.ProjetosDivisor {
+  height: 2px;
+  background-color: #C2701B;
+  /* margin-top: 10px; */
+}
+
+.ProjetosNome {
+  font-size: 16px;
+  align-items: center; /* Centraliza verticalmente */
+}
+
+.ProjetosBotao {
+  background-color: #C2701B;
+  color: #000;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.ProjetosBotao:hover {
+  background-color: #D0EAF2;
+}
+
+.LinhaVerticalMundProjetos {
+  width: 10px;
+  height: 200px;
+  background-color: #C2701B;
+  position: absolute;
+  top: 97%;
+  left: 0%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+
+@media (max-width: 1000px) {
+  .ProjetosContainer {
+    flex-wrap: wrap; /* Faz os itens quebrarem para a próxima linha */
+    margin-left: 20px; /* Reduz a margem para telas menores */
+  }
+  .ProjetosDescricao {
+
+    padding-left: 0px;
+  }
+
+  .ProjetosItem:hover {
+    transform: scale(1.05);
+  }
+}
