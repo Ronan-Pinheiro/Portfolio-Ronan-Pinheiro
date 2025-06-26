@@ -155,9 +155,24 @@
     padding: 20px;
   }
 .modal-img {
-  max-height: 280px;
+  max-height: 250px;
 }
 
 }
 
 
+@media (max-width: 390px) {
+
+  .modal-img {
+    max-height: 250px;
+}
+.light-mode h2 {
+    font-size: 20px;
+}
+.dark-mode h2 {
+    font-size: 20px;
+}
+.modal-desc {
+    font-size: 15px;
+}
+}
