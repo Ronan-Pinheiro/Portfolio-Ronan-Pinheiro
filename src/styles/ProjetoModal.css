@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 19;
+  z-index: 1000;
 }
 
 /* Caixa escura central */
@@ -21,6 +21,7 @@
   overflow: hidden;
   position: relative;
   padding: 15px;
+
   margin: 20px auto; /* adiciona espaçamento externo e centraliza */
   /* gap: 20px; espaço entre imagem e texto */
   
@@ -131,9 +132,10 @@
 @media (max-width: 900px) {
   .modal-container {
     flex-direction: column; /* imagem em cima, conteúdo embaixo */
-    padding: 20px;
+
     align-items: center; /* garante centralização do conteúdo inteiro */
-    
+    padding-top: 40px;
+    margin-top: 70px;
   }
 
   .modal-left {
@@ -156,6 +158,16 @@
   }
 .modal-img {
   max-height: 250px;
+}
+.modal-desc {
+  flex-grow: 1;
+  font-size: 16px;
+  line-height: 1.6;        /* ligeiramente maior para melhorar a leitura */
+  margin-bottom: 16px;
+  color: #D0EAF2;
+  white-space: pre-line;    /* respeita as quebras de linha */
+  text-align: justify;      /* justifica o texto */
+  text-justify: inter-word; /* espalha o espaçamento entre palavras */
 }
 
 }
