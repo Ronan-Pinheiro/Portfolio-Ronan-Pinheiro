@@ -41,7 +41,7 @@ const Sobre = () => {
           Fiufiu, combinando tecnologia e interatividade. Atualmente, estou
           aprimorando minhas habilidades em React para criar interfaces mais
           dinâmicas e eficientes. Apaixonado por tecnologia, interfaces
-          interativas e experiências imersivas. Cursando Análise e
+          interativas e experiências imersivas. Cursando em Análise e
           Desenvolvimento de Sistemas.
         </p>
       </div>

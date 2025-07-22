@@ -23,7 +23,7 @@ const Habilidades = () => {
         <p className="HabilidadesDescricao">
           Atualmente aprimorando minhas habilidades em{' '}
           <span className="destaque">React </span>e{' '}
-          <span className="destaque">Tailwind CSS</span>, com foco em
+          <span className="destaque">TypeScript</span>, com foco em
           desenvolvimento web e interfaces interativas. Tenho experiência em{' '}
           <span className="destaque"> JavaScript</span>,
           <span className="destaque"> HTML </span>,{' '}
