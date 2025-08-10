@@ -94,7 +94,7 @@ Ao acertar, recebia um código que, durante a festa de lançamento, era trocado 
   //   },
   {
     titulo: 'Carga Indivisível-VR',
-    descricao: `Projeto acadêmico em Realidade Virtual (VR), focado em treinamentos de Normas Regulamentadoras (NR). 
+    descricao: `Projeto desenvolvido em Realidade Virtual (VR), focado em treinamentos de Normas Regulamentadoras (NR). 
     O jogador atua como caminhoneiro, seguindo um checklist de segurança antes de transportar uma carga indivisível. 
     As decisões influenciam o desfecho:
     • Ao ignorar etapas ou escolher o caminho errado (como a ponte), o caminhão colide.
@@ -104,20 +104,20 @@ Ao acertar, recebia um código que, durante a festa de lançamento, era trocado 
     // video: Projeto_video_cargaIndivisivel,
     link: 'https://youtu.be/7iExPA784BE',
   },
-  {
-    titulo: '15 MINUTOS SALVAM VIDAS!',
-    descricao: `Projeto acadêmico desenvolvido durante a faculdade, com foco em campanhas de conscientização sobre o combate ao mosquito da dengue.
+  //   {
+  //     titulo: '15 MINUTOS SALVAM VIDAS!',
+  //     descricao: `Projeto acadêmico desenvolvido durante a faculdade, com foco em campanhas de conscientização sobre o combate ao mosquito da dengue.
 
-Simples, direto e funcional, com:
-- HTML
-- CSS
-- JavaScript
+  // Simples, direto e funcional, com:
+  // - HTML
+  // - CSS
+  // - JavaScript
 
-Aplicação interativa e informativa com layout adaptado para múltiplos dispositivos.`,
-    tecnologias: ['HTML', 'CSS', 'JavaScript'],
-    imagens: [Projeto_Projeto_15_minutos],
-    link: 'https://ronan-pinheiro.github.io/Combata-o-Mosquito.github.io/',
-  },
+  // Aplicação interativa e informativa com layout adaptado para múltiplos dispositivos.`,
+  //     tecnologias: ['HTML', 'CSS', 'JavaScript'],
+  //     imagens: [Projeto_Projeto_15_minutos],
+  //     link: 'https://ronan-pinheiro.github.io/Combata-o-Mosquito.github.io/',
+  //   },
 ];
 
 const Projetos = () => {

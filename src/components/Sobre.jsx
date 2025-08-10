@@ -12,7 +12,7 @@ const Sobre = () => {
             <span className="blue">Ronan Pinheiro</span>
           </h1>
           <p className="descricao">
-            <span className="linha"></span> Desenvolvedor Front-end{' '}
+            <span className="linha"></span> Desenvolvedor Web{' '}
             <span className="orange"> e </span> Games VR/AR
           </p>
         </div>
