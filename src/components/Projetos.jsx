@@ -72,26 +72,26 @@ Construído com:
     imagens: [Projeto_PinguimRun],
     link: 'https://mini-game-pinguim-run.vercel.app/',
   },
-  {
-    titulo: 'Bebida Fiu Fiu - Machado de Assis',
-    descricao: `Projeto em AR criado no estágio na Fábrica de Software do SENAI Fatesg.
-Ao escanear o QR Code na garrafa, o usuário acessa um mini game com Machado de Assis, respondendo perguntas sobre literatura.
-Ao acertar, recebia um código que, durante a festa de lançamento, era trocado por um drink inspirado no autor.
-`,
-    tecnologias: ['8th Wall', 'A-Frame', 'JavaScript', 'WebAR'],
-    imagens: [Projeto_bebidafiufiu],
-    link: 'https://youtube.com/shorts/l3YxFCVc3Sw?si=0mQIegDvRNe6z1Vq',
-  },
   //   {
-  //     titulo: 'Bebida Fiu Fiu - Tiradentes',
+  //     titulo: 'Bebida Fiu Fiu - Machado de Assis',
   //     descricao: `Projeto em AR criado no estágio na Fábrica de Software do SENAI Fatesg.
-  // Ao escanear o QR Code na garrafa, o usuário acessa um mini game com Tiradentes, respondendo perguntas sobre literatura.
+  // Ao escanear o QR Code na garrafa, o usuário acessa um mini game com Machado de Assis, respondendo perguntas sobre literatura.
   // Ao acertar, recebia um código que, durante a festa de lançamento, era trocado por um drink inspirado no autor.
   // `,
   //     tecnologias: ['8th Wall', 'A-Frame', 'JavaScript', 'WebAR'],
-  //     imagens: [Projeto_bebidafiufiuT],
-  //     link: 'https://bebidafiufiu.8thwall.app/shotsti2/',
+  //     imagens: [Projeto_bebidafiufiu],
+  //     link: 'https://youtube.com/shorts/l3YxFCVc3Sw?si=0mQIegDvRNe6z1Vq',
   //   },
+  {
+    titulo: 'Bebida Fiu Fiu - Tiradentes',
+    descricao: `Projeto em AR criado no estágio na Fábrica de Software do SENAI Fatesg.
+  Ao escanear o QR Code na garrafa, o usuário acessa um mini game com Tiradentes, respondendo perguntas sobre literatura.
+  Ao acertar, recebia um código que, durante a festa de lançamento, era trocado por um drink inspirado no autor.
+  `,
+    tecnologias: ['8th Wall', 'A-Frame', 'JavaScript', 'WebAR'],
+    imagens: [Projeto_bebidafiufiuT],
+    link: 'https://webarhub.8thwall.app/shotsti2/',
+  },
   {
     titulo: 'Carga Indivisível-VR',
     descricao: `Projeto desenvolvido em Realidade Virtual (VR), focado em treinamentos de Normas Regulamentadoras (NR). 

@@ -36,6 +36,36 @@ const Experiencia = () => {
       <div className="ExperienciaExperiencia">
         <ul>
           <li>
+            <div className="ExperienciaData">08/2025- Atualmente</div>
+            <div className="ExperienciaDados">
+              <h1>Poli Digital</h1>
+              <ul>
+                <li>
+                  <span className="destaqueOrangeBoll">●</span> Prestação de
+                  suporte Nível 1 para clientes e colaboradores internos,
+                  solucionando dúvidas e problemas relacionados à plataforma.
+                </li>
+                <li>
+                  <span className="destaqueOrangeBoll">●</span> Identificação e
+                  análise de bugs, com escalonamento para a equipe de Nível 2
+                  quando necessário.
+                </li>
+              </ul>
+            </div>
+            <div className="ExperienciaSkills">
+              <h1>Analista de Suporte N1</h1>
+              <ul>
+                {/* Sugestão de skills para a vaga de Suporte N1 */}
+                <li>Atendimento ao Cliente</li>
+                <li>Suporte Técnico</li>
+                <li>Análise de Bugs</li>
+                <li>Jira / Ferramenta de Tickets</li>
+                <li>Comunicação</li>
+              </ul>
+            </div>
+          </li>
+
+          <li>
             <div className="ExperienciaData"> 05/2024 – 01/2025</div>
             <div className="ExperienciaDados">
               <h1>Faculdade SENAI Fatesg</h1>
