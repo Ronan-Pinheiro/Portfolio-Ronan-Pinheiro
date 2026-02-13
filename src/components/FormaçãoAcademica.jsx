@@ -37,7 +37,7 @@ const FormaçãoAcademica = () => {
               Analise de Desenvolvimento de Sistemas - Universidade Cruzeiro do
               Sul
             </h3>
-            <p className="FormaçãoAcademicaData">08/2024 – 06/2025</p>
+            <p className="FormaçãoAcademicaData">08/2023 – 06/2025</p>
             <p className="FormaçãoAcademicaConhecimento">
               Possuo conhecimentos em: Java, JavaScript, HTML5, CSS, React
               Native, React.js, Next.js.
