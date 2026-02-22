@@ -9,6 +9,8 @@ import Projeto_Projeto_15_minutos from '../Imagens/Projeto_Projeto_15_minutos.pn
 import Projeto_Florest from '../Imagens/Projeto_Florest.png';
 import Projeto_Dogs from '../Imagens/Projeto_Dogs.png';
 import Projeto_cargaIndivisivel from '../Imagens/Projeto_CargaIndivisível.png';
+import Projeto_AutomacaoE2E from '../Imagens/Projeto_AutomacaoE2E.mp4';
+import Projeto_cypress_Kabum from '../Imagens/Projeto_cypress_Kabum.png';
 // import Projeto_video_cargaIndivisivel from '../Imagens/VideoCenário2CargaIndivisível001.mp4';
 
 const projetosData = [
@@ -27,6 +29,25 @@ Construído com React, utilizando rotas, autenticação, consumo de API e boas p
     tecnologias: ['React', 'JavaScript', 'CSS', 'HTML', 'API'],
     imagens: [Projeto_Dogs],
     link: 'https://dogs-kohl-one.vercel.app',
+  },
+  {
+    titulo: 'Automação E2E - E-commerce (Cypress)',
+    descricao: `Projeto de automação de testes End-to-End simulando o fluxo real de compra em um e-commerce.
+
+  O teste executa:
+  • Busca de produto
+  • Seleção aleatória de item
+  • Aplicação de filtros
+  • Adição ao carrinho
+  • Validações de URL e elementos da página
+
+  O objetivo foi aplicar boas práticas de automação, criando testes independentes, com asserts robustos e organização de funções auxiliares.`,
+
+    tecnologias: ['Cypress', 'JavaScript', 'Node.js', 'E2E Testing'],
+    imagens: [Projeto_cypress_Kabum],
+    video: Projeto_AutomacaoE2E,
+
+    link: 'https://github.com/Ronan-Pinheiro/cypress-e2e-kabum',
   },
   {
     titulo: 'Forest Retreat',

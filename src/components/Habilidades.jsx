@@ -5,6 +5,7 @@ import IconeCSS from '../Imagens/Icone - CSS.png';
 import IconeFigma from '../Imagens/Icone - Figma.png';
 import IconeHTML from '../Imagens/Icone - HTML.png';
 import IconeJS from '../Imagens/Icone - JS.png';
+import IconeTS from '../Imagens/Icone - TS.png';
 import IconeC from '../Imagens/Icone - C.png';
 import IconeReact from '../Imagens/Icone - React.png';
 import IconeUnity from '../Imagens/Icone - unity.png';
@@ -53,6 +54,12 @@ const Habilidades = () => {
             <div className="habilidadeImg">
               <img src={IconeJS} alt="JavaScript" />
               <span className="habilidadeNome">JavaScript</span>
+            </div>
+          </li>
+          <li>
+            <div className="habilidadeImg">
+              <img src={IconeTS} alt="JavaScript" />
+              <span className="habilidadeNome">TypeScript</span>
             </div>
           </li>
 
