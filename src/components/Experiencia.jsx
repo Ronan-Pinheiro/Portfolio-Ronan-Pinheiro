@@ -36,7 +36,7 @@ const Experiencia = () => {
       <div className="ExperienciaExperiencia">
         <ul>
           <li>
-            <div className="ExperienciaData">08/2025- Atualmente</div>
+            <div className="ExperienciaData">08/2025- 02/2026</div>
             <div className="ExperienciaDados">
               <h1>Poli Digital</h1>
               <ul>

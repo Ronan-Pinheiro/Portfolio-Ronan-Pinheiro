@@ -22,17 +22,17 @@ const Habilidades = () => {
           <span className="linha"></span> Habilidades{' '}
         </p>
         <p className="HabilidadesDescricao">
-          Atualmente aprimorando minhas habilidades em{' '}
-          <span className="destaque">React </span>e{' '}
-          <span className="destaque">TypeScript</span>, com foco em
-          desenvolvimento web e interfaces interativas. Tenho experiência em{' '}
-          <span className="destaque"> JavaScript</span>,
-          <span className="destaque"> HTML </span>,{' '}
-          <span className="destaque"> CSS</span>,
-          <span className="destaque"> C#</span>, além de criar aplicações
-          imersivas em
-          <span className="destaque"> VR</span> e{' '}
-          <span className="destaque"> AR</span>.
+          Atualmente aprofundando meus conhecimentos em{' '}
+          <span className="destaque">Node.js</span> e{' '}
+          <span className="destaque">TypeScript</span>, com foco no
+          desenvolvimento de aplicações web modernas e bem estruturadas. Possuo
+          experiência com <span className="destaque">JavaScript</span>,{' '}
+          <span className="destaque">React</span>,{' '}
+          <span className="destaque">HTML</span> e{' '}
+          <span className="destaque">CSS</span>, aplicando boas práticas de
+          organização e componentização. Também desenvolvo e automatizo testes
+          utilizando <span className="destaque">Cypress</span>, buscando maior
+          confiabilidade e estabilidade nas aplicações.
         </p>
       </div>
       <div className="HabilidadesHabilidades">

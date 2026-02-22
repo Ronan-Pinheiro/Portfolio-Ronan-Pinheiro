@@ -13,7 +13,7 @@ const Sobre = () => {
           </h1>
           <p className="descricao">
             <span className="linha"></span> Desenvolvedor Web{' '}
-            <span className="orange"> e </span> Games VR/AR
+            <span className="orange"> e </span> QA Júnior
           </p>
         </div>
 
@@ -35,13 +35,14 @@ const Sobre = () => {
           <span className="white">Sobre Mim</span>
         </h2>
         <p>
-          Desenvolvedor Front-end e Games VR com experiência em HTML, CSS,
-          JavaScript, React, C# e desenvolvimento de aplicações web e jogos
-          imersivos. Desenvolvi um mini game em AR para a empresa de bebidas
-          Fiufiu, combinando tecnologia e interatividade. Atualmente, estou
-          aprimorando minhas habilidades em React para criar interfaces mais
-          dinâmicas e eficientes. Apaixonado por tecnologia, interfaces
-          interativas e experiências imersivas. Cursando em Análise e
+          Desenvolvedor Web com experiência em HTML, CSS, JavaScript, React, C#,
+          automação de testes E2E com Cypress e desenvolvimento de aplicações
+          web e experiências imersivas. Desenvolvo interfaces modernas,
+          organizadas e bem estruturadas, aplicando boas práticas e validações
+          para garantir maior confiabilidade nas aplicações. Atualmente, estou
+          focando no aprofundamento em Node.js e na evolução das minhas
+          habilidades em testes e qualidade. Apaixonado por tecnologia,
+          interfaces interativas e soluções eficientes. Graduado em Análise e
           Desenvolvimento de Sistemas.
         </p>
       </div>
