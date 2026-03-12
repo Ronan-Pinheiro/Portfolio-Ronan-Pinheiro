@@ -7,6 +7,7 @@ import IconeHTML from '../Imagens/Icone - HTML.png';
 import IconeJS from '../Imagens/Icone - JS.png';
 import IconeTS from '../Imagens/Icone - TS.png';
 import IconeC from '../Imagens/Icone - C.png';
+import IconeSQlite from '../Imagens/Icone - SQLite.png';
 import IconeReact from '../Imagens/Icone - React.png';
 import IconeUnity from '../Imagens/Icone - unity.png';
 import IconeTailwindCSS from '../Imagens/Icone - Tailwind CSS.png';
@@ -85,6 +86,12 @@ const Habilidades = () => {
             <div className="habilidadeImg">
               <img src={IconeC} alt="C#" />
               <span className="habilidadeNome">C#</span>
+            </div>
+          </li>
+          <li>
+            <div className="habilidadeImg">
+              <img src={IconeSQlite} alt="SQlite" />
+              <span className="habilidadeNome">SQlite</span>
             </div>
           </li>
           <li>
