@@ -1,0 +1,103 @@
+@import 'tailwindcss';
+
+@custom-variant light (&:where(.light-mode *));
+@custom-variant dark (&:where(.dark-mode *));
+
+@theme {
+  --color-portfolio-primary: #011820;
+  --color-portfolio-bg: #000b0f;
+  --color-portfolio-accent: #c2701b;
+  --color-portfolio-accent-hover: #a85a14;
+  --color-portfolio-blue: #1b9ac3;
+  --color-portfolio-blue-light: #1a9ec5;
+  --color-portfolio-muted: #d0eaf2;
+  --color-portfolio-yellow: #f4c621;
+  --color-portfolio-surface: #e0e0e0;
+  --color-portfolio-surface-alt: #f2f2f2;
+}
+
+@layer base {
+  * {
+    @apply m-0 box-border p-0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply mt-20 bg-portfolio-surface font-sans leading-normal antialiased transition-colors duration-300;
+    text-rendering: optimizeSpeed;
+  }
+
+  body.dark-mode {
+    @apply bg-portfolio-bg text-white;
+  }
+
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    @apply block max-w-full;
+  }
+
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+    border: none;
+    outline: none;
+  }
+
+  ul,
+  ol {
+    list-style: none;
+  }
+
+  a {
+    @apply text-inherit no-underline;
+  }
+
+  button {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-portfolio-bg;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #c2701b;
+    border-radius: 10px;
+    border: 3px solid transparent;
+    background-clip: content-box;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #a85a14;
+  }
+}
+
+@layer components {
+  .portfolio-linha {
+    @apply mr-[5px] h-[9px] w-8 bg-portfolio-accent;
+  }
+
+  .portfolio-destaque {
+    @apply font-bold text-portfolio-blue-light light:text-portfolio-accent;
+  }
+
+  .portfolio-destaque-orange {
+    @apply font-bold text-portfolio-accent;
+  }
+
+  .portfolio-accent-line {
+    @apply absolute left-0 z-2 h-[200px] w-2.5 -translate-y-1/2 bg-portfolio-accent;
+  }
+}
