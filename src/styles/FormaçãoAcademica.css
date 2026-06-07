@@ -1,0 +1,226 @@
+.dark-mode .FormaçãoAcademica {
+  background-color: #000B0F;
+  color: #D0EAF2;
+  padding: 50px 20px;
+  text-align: center;
+  margin-top: 50px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Transição suave */
+}
+
+.light-mode .FormaçãoAcademica {
+  background-color: #E0E0E0;
+  color: #000B0F;
+  padding: 50px 20px;
+  text-align: center;
+  margin-top: 50px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Transição suave */
+}
+
+
+.FormaçãoAcademicaContainer {
+  display: flex;
+  margin-left: 80px;
+}
+
+.FormaçãoAcademicaDescricao {
+  font-size: 18px;
+  padding-top: 15px;
+  max-width: 1250px;
+  text-align: left;
+  padding-left: 100px;
+  padding-bottom: 40px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+
+
+
+
+.dark-mode .FormaçãoAcademica h3 {
+  font-size: 20px;
+  padding-top: 15px;
+  max-width: 1250px;
+  text-align: left;
+  color: #D0EAF2;
+}
+
+.light-mode .FormaçãoAcademica h3 {
+  font-size: 20px;
+  padding-top: 15px;
+  max-width: 1250px;
+  text-align: left;
+  color: #000B0F;
+}
+
+.dark-mode .FormaçãoAcademicaData {
+  color: #F4C621;
+}
+
+.light-mode  .FormaçãoAcademicaData {
+  color: #C2701B;
+}
+
+.FormaçãoAcademicaConhecimento p {
+  font-size: 18px;
+  padding-top: 15px;
+  max-width: 1250px;
+  text-align: left;
+  color: #D0EAF2;
+}
+
+.FormaçãoAcademicaTitle {
+  display: flex;
+  align-items: center;
+  font-size: 34px;
+  font-weight: bold;
+  text-align: left;
+ 
+}
+
+.CaixaDasFormçoes{
+  margin-left: 35px;
+}
+
+
+
+.LinhaContainer {
+  margin-left: 80px;
+  display: flex;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin-top: 31px;
+  flex-direction: column;
+}
+
+.LinhaContainer2 {
+  margin-left: 80px;
+  display: flex;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin-top: 31px;
+  flex-direction: column;
+} 
+
+.LinhaVertical {
+  width: 10px;
+  height: 100px;
+  background-color: #C2701B;
+}
+
+.LinhaHorizontal {
+  width: 858px;
+  height: 10px;
+  background-color: #C2701B;
+  margin-top: 7px;
+  margin-left: 17px;
+}
+
+
+
+@media (max-width: 1050px) {
+  .FormaçãoAcademicaContainer {
+    
+    margin-left: 20px;
+  }
+  .LinhaHorizontal {
+    width: 700px;
+  }
+  .FormaçãoAcademicaDescricao {
+    padding-left: 35px;
+    padding-bottom: 20px;
+  }
+
+  .LinhaContainer {
+    margin-left: 7px;
+    margin-top: 45px;
+}
+.LinhaContainer2 {
+  margin-left: 7px;
+  margin-top: 45px;
+}
+
+}
+
+@media (max-width: 815px) {
+  .LinhaHorizontal {
+    width: 500px;
+  }
+
+  .LinhaContainer {
+    margin-left: 18px;
+    margin-top: 70px;   
+}
+.LinhaContainer2 {
+  margin-left: 18px;
+  margin-top: 45px;
+}
+
+}
+
+
+@media (max-width: 600px) {
+ 
+  .LinhaHorizontal {
+    width: 400px;
+  }
+
+  .LinhaContainer {
+    margin-left: 15px;
+    margin-top: 80px;   
+}
+.LinhaContainer2 {
+  margin-left: 12px;
+  margin-top: 60px;
+}
+
+.CaixaDasFormçoes{
+  margin-left: 20px;
+}
+
+}
+
+
+@media (max-width: 460px) {
+ 
+  .LinhaHorizontal {
+    width: 300px;
+  }
+
+  .LinhaContainer {
+    margin-left: 10px;
+    margin-top: 126px;  
+}
+.LinhaContainer2 {
+  margin-left: 10px;  
+  margin-top: 120px;
+}
+
+.CaixaDasFormçoes{
+  margin-left: 20px;
+}
+
+}
+
+@media (max-width: 380px) {
+ 
+  .LinhaHorizontal {
+    width: 300px;
+  }
+
+  .LinhaContainer {
+    margin-left: 10px;
+    margin-top: 126px;  
+}
+.LinhaContainer2 {
+  margin-left: 10px;  
+  margin-top: 120px;
+}
+
+.CaixaDasFormçoes{
+  margin-left: 20px;
+}
+
+}

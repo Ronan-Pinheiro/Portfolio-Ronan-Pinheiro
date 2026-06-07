@@ -1,0 +1,264 @@
+.dark-mode  .Experiencia {
+  color: #D0EAF2;
+  padding: 50px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.light-mode   .Experiencia {
+  color: #000B0F;
+  padding: 50px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.ExperienciaContainer {
+  display: flex;
+  margin-left: 80px;
+  margin-bottom: 40px;
+}
+
+.ExperienciaDescricao {
+  font-size: 18px;
+  padding-top: 15px;
+  max-width: 1150px;
+  text-align: left;
+  padding-left: 35px;
+}
+
+.ExperienciaTitle {
+  display: flex;
+  align-items: center;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.ExperienciaExperiencia ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  list-style: none;
+  color: #D0EAF2;
+  flex-direction: row;
+}
+
+.ExperienciaExperiencia li {
+  display: flex;
+  max-width: 1550px;
+  justify-content: flex-start; /* Alinha o conteúdo à esquerda */
+  text-align: left; /* Garante que o texto dentro do li também fique à esquerda */
+}
+
+.ExperienciaData {
+  margin-top: 46px;
+  font-size: 15px;
+  margin-left: 200px;
+}
+
+.dark-mode .ExperienciaData {
+  color: #D0EAF2;
+}
+
+.light-mode .ExperienciaData {
+  color: #000B0F;
+}
+
+
+
+
+
+.ExperienciaDados {
+  background-color: #011820;
+  font-size: 15px;
+  margin-left: 13px;
+  flex: 1;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.ExperienciaDados h1 {
+  font-size: 20px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  color: #D0EAF2;
+  text-align: left;
+  margin-left: 60px;
+}
+
+.ExperienciaDados ul li {
+  font-size: 15px;
+  color: #D0EAF2;
+  margin-left: 46px;
+}
+
+.ExperienciaSkills {
+  background-color: #011820;
+  font-size: 10px;
+  flex: 1;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.ExperienciaSkills h1 {
+  font-size: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #D0EAF2;
+  text-align: left;
+}
+
+.ExperienciaSkills ul li {
+  font-size: 15px;
+  background-color: #F4C621;
+  color: #000B0F;
+  margin: 10px;
+  font-weight: bold;
+}
+
+
+.dark-mode .ExperienciaSkills ul li {
+ 
+  background-color: #F4C621;
+
+}
+
+.light-mode .ExperienciaSkills ul li {
+  
+  background-color: #E0E0E0;
+;
+}
+
+
+
+.destaqueOrangeBoll {
+  color: #C2701B;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+
+.LinhaVerticalExperiencia{
+  width: 10px;
+  height: 200px;
+  background-color: #C2701B;
+  position: absolute;
+  top: 102%;
+  left: 0%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+@media (max-width: 1000px) {
+  .ExperienciaContainer {
+    flex-wrap: wrap;
+    margin-left: 20px;
+  }
+
+  .ExperienciaDescricao {
+    padding-left: 0px;
+  }
+
+  .ExperienciaDados,
+  .ExperienciaSkills {
+    width: 100%;
+    border-radius: 20px;
+    margin: 10px 0;
+  }
+
+  .ExperienciaDados {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+
+  .ExperienciaSkills {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+}
+
+
+
+/* Media query para telas menores que 1000px */
+@media (max-width: 1000px) {
+  .ExperienciaSkills h1 {
+      font-size: 18px; /* Reduz o tamanho da fonte */
+      padding-top: 15px; /* Reduz o padding superior */
+      padding-bottom: 15px; /* Reduz o padding inferior */
+      text-align: center; /* Centraliza o texto */
+      flex-direction: column;
+  }
+
+  .ExperienciaExperiencia li {
+      max-width: 100%; /* Ajusta a largura máxima para telas menores */
+      display: block;
+  }
+
+  .ExperienciaExperiencia ul {
+      flex-direction: column; /* Altera a direção do flex para coluna */
+      align-items: center; /* Centraliza os itens */
+      flex-direction: unset; /* Volta ao padrão do flexbox */
+
+  }
+
+  .ExperienciaData {
+    margin-top: 0px;
+    font-size: 18px; /* Reduz o tamanho da fonte */
+    text-align: center; /* Centraliza o texto */
+    margin-left: 0px;
+  }
+
+  .ExperienciaDados ul li {
+      font-size: 14px; /* Reduz o tamanho da fonte */
+      text-align: center; /* Centraliza o texto */
+      border-bottom-left-radius: 0px;
+      display: flex;
+  }
+  
+
+  .ExperienciaDados, .ExperienciaSkills {
+    width: 100%;
+    border-radius: 20px;
+    margin: 0px 0;
+}
+.ExperienciaDados {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.ExperienciaSkills {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+.ExperienciaSkills ul {
+      
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+
+}
+.ExperienciaSkills ul li {
+  /* width: 80%; Ajusta a largura dos itens */
+  max-width: none;
+}
+
+.ExperienciaDados h1 {
+  font-size: 20px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  color: #D0EAF2;
+  text-align: center;
+  margin-left: 0px;
+}
+}
+
+
+@media (max-width: 540px) {
+  .ExperienciaDados ul li {
+  margin-left: 15px;
+}
+h1 {
+ margin-left: 0px;
+
+}
+}
