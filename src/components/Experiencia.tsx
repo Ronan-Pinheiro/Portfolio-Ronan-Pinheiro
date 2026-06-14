@@ -28,11 +28,11 @@ export default function Experiencia() {
         </p>
       </div>
 
-      <ul className="flex flex-wrap justify-start text-portfolio-muted max-[1000px]:items-center">
+      <ul className="flex flex-col gap-10 text-portfolio-muted max-[1000px]:items-center">
         {experienciaData.map((item) => (
           <li
             key={`${item.empresa}-${item.periodo}`}
-            className="flex max-w-[1550px] justify-start text-left max-[1000px]:block max-[1000px]:max-w-full"
+            className="flex w-full max-w-[1550px] justify-start text-left max-[1000px]:block max-[1000px]:max-w-full"
           >
             <div className="mt-[46px] ml-[200px] text-[15px] text-portfolio-muted light:text-portfolio-bg max-[1000px]:mt-0 max-[1000px]:ml-0 max-[1000px]:text-center max-[1000px]:text-lg">
               {item.periodo}

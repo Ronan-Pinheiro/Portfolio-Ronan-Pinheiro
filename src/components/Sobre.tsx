@@ -11,8 +11,8 @@ export default function Sobre() {
           </h1>
           <p className="flex items-center text-[25px] font-bold max-[750px]:block max-[750px]:p-2.5 max-[750px]:text-center max-[750px]:text-[22px] max-[499px]:flex-col max-[499px]:text-lg">
             <span className="portfolio-linha max-[499px]:ml-5" />
-            Desenvolvedor Web{' '}
-            <span className="mx-[5px] text-portfolio-accent"> e </span> QA Júnior
+            Dev Web{' '}
+            <span className="mx-[5px] text-portfolio-accent"> e </span> Analista de Dados
           </p>
         </div>
 
@@ -36,15 +36,15 @@ export default function Sobre() {
           <span className="text-portfolio-accent">—</span> Sobre Mim
         </h2>
         <p className="pt-[15px] text-lg">
-          Desenvolvedor Web com experiência em HTML, CSS, JavaScript, React, C#,
-          automação de testes E2E com Cypress e desenvolvimento de aplicações
-          web e experiências imersivas. Desenvolvo interfaces modernas,
-          organizadas e bem estruturadas, aplicando boas práticas e validações
-          para garantir maior confiabilidade nas aplicações. Atualmente, estou
-          focando no aprofundamento em Node.js e na evolução das minhas
-          habilidades em testes e qualidade. Apaixonado por tecnologia,
-          interfaces interativas e soluções eficientes. Graduado em Análise e
-          Desenvolvimento de Sistemas.
+          Dev Web e Analista de Dados com experiência no desenvolvimento de
+          aplicações web internas, dashboards e automações de processos. Trabalho
+          com React, TypeScript, Tailwind CSS e JavaScript, criando interfaces
+          organizadas e integrações via APIs REST. Atuo também com análise e
+          tratamento de dados em SQL, apoiando a geração de indicadores e
+          ferramentas para equipes comerciais e administrativas. Tenho background
+          em suporte técnico, testes e projetos com realidade virtual, o que
+          reforça minha atenção a qualidade e experiência do usuário. Graduado em
+          Análise e Desenvolvimento de Sistemas.
         </p>
       </div>
     </section>

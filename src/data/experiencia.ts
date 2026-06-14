@@ -2,7 +2,27 @@ import type { ExperienciaItem } from '../types';
 
 export const experienciaData: ExperienciaItem[] = [
   {
-    periodo: '08/2025- 02/2026',
+    periodo: '04/2026 – o momento',
+    empresa: 'PROVENDA NEGÓCIOS IMOBILIÁRIOS',
+    cargo: 'Analista de Dados',
+    responsabilidades: [
+      'Desenvolvimento de aplicações web internas com React, Tailwind CSS e JavaScript.',
+      'Integrações entre sistemas via APIs REST e automação com Google Apps Script.',
+      'Análise e tratamento de dados para dashboards e indicadores operacionais.',
+    ],
+    skills: [
+      'SQL',
+      'Análise de dados',
+      'JavaScript',
+      'React',
+      'Tailwind CSS',
+      'Google Apps Script',
+      'APIs REST',
+      'HTML',
+    ],
+  },
+  {
+    periodo: '08/2025 – 02/2026',
     empresa: 'Poli Digital',
     cargo: 'Analista de Suporte N1',
     responsabilidades: [
@@ -33,23 +53,6 @@ export const experienciaData: ExperienciaItem[] = [
       'Experiência do usuário (UX)',
       'Unity 3D',
       'Realidade Virtual (VR)',
-    ],
-  },
-  {
-    periodo: '08/2023 – 08/2025',
-    empresa: 'TIMAC Agro Brasil',
-    cargo: 'Assistente de Escritório Administrativo',
-    responsabilidades: [
-      'Elaboração e gerenciamento de relatórios no Excel, otimizando a organização de dados para diferentes setores.',
-      'Atendimento a colaboradores novos e antigos, auxiliando na resolução de dúvidas operacionais e suporte técnico a aplicativos internos.',
-    ],
-    skills: [
-      'Análise de dados',
-      'Excel',
-      'Suporte técnico',
-      'Salesforce.com',
-      'Gestão de Relatórios',
-      'Microsoft Outlook',
     ],
   },
 ];
