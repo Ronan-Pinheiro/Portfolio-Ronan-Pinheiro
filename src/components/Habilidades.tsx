@@ -10,18 +10,21 @@ export default function Habilidades() {
           <span className="portfolio-linha" /> Habilidades{' '}
         </p>
         <p className="max-w-[1150px] pt-[15px] pl-[35px] text-left text-lg max-[1000px]:pl-0">
-          Atualmente aprofundando meus conhecimentos em{' '}
-          <span className="portfolio-destaque">Node.js</span> e{' '}
-          <span className="portfolio-destaque">TypeScript</span>, com foco no
-          desenvolvimento de aplicações web modernas e bem estruturadas. Possuo
-          experiência com <span className="portfolio-destaque">JavaScript</span>
-          , <span className="portfolio-destaque">React</span>,{' '}
+          No dia a dia uso <span className="portfolio-destaque">SQL</span> e{' '}
+          <span className="portfolio-destaque">Python</span> para tratar e
+          analisar dados e gerar indicadores, e{' '}
+          <span className="portfolio-destaque">JavaScript</span> com{' '}
+          <span className="portfolio-destaque">Google Apps Script</span> para
+          automatizar processos e integrar sistemas via APIs REST. No front-end,
+          trabalho com <span className="portfolio-destaque">React</span>,{' '}
+          <span className="portfolio-destaque">TypeScript</span>,{' '}
+          <span className="portfolio-destaque">Tailwind CSS</span>,{' '}
           <span className="portfolio-destaque">HTML</span> e{' '}
-          <span className="portfolio-destaque">CSS</span>, aplicando boas
-          práticas de organização e componentização. Também desenvolvo e
-          automatizo testes utilizando{' '}
-          <span className="portfolio-destaque">Cypress</span>, buscando maior
-          confiabilidade e estabilidade nas aplicações.
+          <span className="portfolio-destaque">CSS</span>, com foco em
+          componentização e organização. Também automatizo testes com{' '}
+          <span className="portfolio-destaque">Cypress</span> e desenvolvi
+          simulações em <span className="portfolio-destaque">Unity</span> com{' '}
+          <span className="portfolio-destaque">C#</span>.
         </p>
       </div>
 

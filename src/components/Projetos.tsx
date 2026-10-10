@@ -18,12 +18,14 @@ export default function Projetos() {
           <span className="portfolio-linha" /> Projetos
         </p>
         <p className="max-w-[1250px] pt-[15px] pl-[100px] text-left text-lg max-[1000px]:pl-0">
-          Atualmente, estou desenvolvendo projetos web utilizando{' '}
-          <span className="portfolio-destaque">React</span> e outras tecnologias
-          para criar experiências dinâmicas e interativas. Além disso, exploro{' '}
+          Projetos de estudo e de trabalho: aplicações web com{' '}
+          <span className="portfolio-destaque">React</span> e{' '}
+          <span className="portfolio-destaque">JavaScript</span>, automação de
+          testes com <span className="portfolio-destaque">Cypress</span> e
+          experiências imersivas em{' '}
           <span className="portfolio-destaque">VR</span> e{' '}
-          <span className="portfolio-destaque">AR</span> para experiências
-          imersivas.
+          <span className="portfolio-destaque">AR</span> desenvolvidas na
+          Fábrica de Software do SENAI Fatesg.
         </p>
       </div>
 

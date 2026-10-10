@@ -7,7 +7,7 @@ export default function Feiras() {
 
       <div className="p-2.5">
         <p className="mx-auto max-w-[1150px] text-lg leading-relaxed wrap-break-word text-justify [text-align-last:center]">
-          Essas são imagens da feira em que participei na HUG Goiás, em um
+          Essas são imagens da feira em que participei na HUB Goiás, em um
           evento de exposição de tecnologia. Tive a oportunidade de apresentar
           projetos de{' '}
           <span className="portfolio-destaque-orange">treinamentos em VR</span>{' '}

@@ -16,12 +16,12 @@ export default function Sobre() {
           </h1>
           <p className="flex items-center text-[25px] font-bold max-[750px]:block max-[750px]:p-2.5 max-[750px]:text-center max-[750px]:text-[22px] max-[499px]:flex-col max-[499px]:text-lg">
             <span className="portfolio-linha max-[499px]:ml-5" />
-            Dev Web{' '}
+            Analista de Dados{' '}
             <span className="mx-[5px] text-portfolio-accent light:text-claro-accent">
               {' '}
               e{' '}
             </span>{' '}
-            Analista de Dados
+            Dev Web
           </p>
         </div>
 
@@ -48,15 +48,17 @@ export default function Sobre() {
           Sobre Mim
         </h2>
         <p className="pt-[15px] text-lg">
-          Dev Web e Analista de Dados com experiência no desenvolvimento de
-          aplicações web internas, dashboards e automações de processos.
-          Trabalho com React, TypeScript, Tailwind CSS e JavaScript, criando
-          interfaces organizadas e integrações via APIs REST. Atuo também com
-          análise e tratamento de dados em SQL, apoiando a geração de
-          indicadores e ferramentas para equipes comerciais e administrativas.
-          Tenho background em suporte técnico, testes e projetos com realidade
-          virtual, o que reforça minha atenção a qualidade e experiência do
-          usuário. Graduado em Análise e Desenvolvimento de Sistemas.
+          Trabalho com dados, automação e desenvolvimento web. Hoje atuo no
+          Ecossistema Provenda, onde comecei como Analista de Dados e sigo como
+          Analista de Desenvolvimento Jr: trato e analiso dados com SQL e Python
+          para gerar indicadores operacionais, construo dashboards, formulários
+          e aplicações web internas para as equipes comercial e administrativa,
+          integro sistemas via APIs REST e automatizo processos com JavaScript e
+          Google Apps Script. Também estudo e aplico IA generativa (Gemini) para
+          automatizar consultas e análises. Antes disso, passei por suporte
+          técnico N1, com triagem e documentação de bugs, e por projetos de
+          realidade virtual e aumentada no SENAI Fatesg. Sou graduado em Análise
+          e Desenvolvimento de Sistemas e curso Ciência da Computação.
         </p>
       </div>
     </section>

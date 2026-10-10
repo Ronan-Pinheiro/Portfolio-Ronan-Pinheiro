@@ -2,7 +2,13 @@ import type { FormacaoItem } from '../types';
 
 export const formacaoData: FormacaoItem[] = [
   {
-    curso: 'Analise de Desenvolvimento de Sistemas',
+    curso: 'Ciência da Computação (Bacharelado)',
+    instituicao: 'Universidade Cruzeiro do Sul',
+    periodo: '08/2025 – cursando (previsão 08/2029)',
+    conhecimentos: 'Graduação em andamento.',
+  },
+  {
+    curso: 'Análise e Desenvolvimento de Sistemas (Tecnólogo)',
     instituicao: 'Universidade Cruzeiro do Sul',
     periodo: '08/2023 – 06/2025',
     conhecimentos:

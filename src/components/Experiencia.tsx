@@ -10,34 +10,31 @@ export default function Experiencia() {
           <span className="portfolio-linha" /> Experiência{' '}
         </p>
         <p className="max-w-[1150px] pt-[15px] pl-[35px] text-left text-lg max-[1000px]:pl-0">
-          Atuei no desenvolvimento de{' '}
-          <span className="portfolio-destaque-orange">jogos em VR</span> para
-          treinamentos de <span className="portfolio-destaque-orange">NR</span>,
-          criando{' '}
+          Minha trajetória passa por{' '}
+          <span className="portfolio-destaque-orange">dados</span>,{' '}
+          <span className="portfolio-destaque-orange">desenvolvimento</span> e{' '}
+          <span className="portfolio-destaque-orange">suporte</span>. Hoje
+          trabalho com{' '}
           <span className="portfolio-destaque-orange">
-            simulações imersivas
-          </span>{' '}
-          com <span className="portfolio-destaque-orange">C#</span> e{' '}
-          <span className="portfolio-destaque-orange">Unity</span> para
-          capacitação profissional. Também trabalhei com{' '}
-          <span className="portfolio-destaque-orange">WebAR</span>,
-          desenvolvendo um{' '}
+            tratamento e análise de dados
+          </span>
+          , <span className="portfolio-destaque-orange">indicadores</span>,{' '}
           <span className="portfolio-destaque-orange">
-            mini game interativo
+            automação de processos
           </span>{' '}
+          e{' '}
+          <span className="portfolio-destaque-orange">
+            aplicações web internas
+          </span>
+          . No suporte N1, aprendi a investigar, documentar e priorizar
+          problemas. No SENAI Fatesg, desenvolvi{' '}
+          <span className="portfolio-destaque-orange">simulações em VR</span>{' '}
+          para treinamentos de NR com{' '}
+          <span className="portfolio-destaque-orange">C#</span> e{' '}
+          <span className="portfolio-destaque-orange">Unity</span>, além de um{' '}
+          <span className="portfolio-destaque-orange">mini game em WebAR</span>{' '}
           com <span className="portfolio-destaque-orange">8th Wall</span> e{' '}
           <span className="portfolio-destaque-orange">JavaScript</span>.
-          Participei de{' '}
-          <span className="portfolio-destaque-orange">projetos inovadores</span>{' '}
-          aplicando{' '}
-          <span className="portfolio-destaque-orange">
-            tecnologias imersivas
-          </span>
-          , criando{' '}
-          <span className="portfolio-destaque-orange">
-            experiências envolventes
-          </span>{' '}
-          e <span className="portfolio-destaque-orange">interativas</span>.
         </p>
       </div>
 
