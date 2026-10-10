@@ -2,7 +2,7 @@ import { formacaoData } from '../data/formacao';
 
 export default function FormacaoAcademica() {
   return (
-    <section className="mt-[50px] bg-portfolio-bg px-5 py-[50px] text-center text-portfolio-muted transition-colors duration-300 light:bg-portfolio-surface light:text-portfolio-bg">
+    <section className="mt-[50px] bg-portfolio-bg px-5 py-[50px] text-center text-portfolio-muted transition-colors duration-300 light:bg-claro-bg light:text-claro-text">
       <div className="ml-20 flex max-[1050px]:ml-5">
         <p className="flex items-center text-left text-[34px] font-bold">
           <span className="portfolio-linha" /> Formação Acadêmica{' '}
@@ -25,15 +25,15 @@ export default function FormacaoAcademica() {
                     : 'ml-20 max-[460px]:mt-[126px]'
                 }`}
               >
-                <div className="h-[100px] w-2.5 bg-portfolio-accent" />
-                <div className="mt-[7px] ml-[17px] h-2.5 w-[858px] bg-portfolio-accent max-[1050px]:w-[700px] max-[815px]:w-[500px] max-[600px]:w-[400px] max-[460px]:w-[300px]" />
+                <div className="h-[100px] w-2.5 bg-portfolio-accent light:bg-claro-accent" />
+                <div className="mt-[7px] ml-[17px] h-2.5 w-[858px] bg-portfolio-accent light:bg-claro-accent max-[1050px]:w-[700px] max-[815px]:w-[500px] max-[600px]:w-[400px] max-[460px]:w-[300px]" />
               </div>
 
               <div>
-                <h3 className="pt-[15px] text-left text-xl text-portfolio-muted light:text-portfolio-bg">
+                <h3 className="pt-[15px] text-left text-xl text-portfolio-muted light:text-claro-text">
                   {item.curso} - {item.instituicao}
                 </h3>
-                <p className="text-portfolio-yellow light:text-portfolio-accent">
+                <p className="text-portfolio-yellow light:text-claro-accent">
                   {item.periodo}
                 </p>
                 <p className="pt-[15px]">{item.conhecimentos}</p>

@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import { MotionConfig } from 'motion/react';
 import Contatos from './components/Contatos';
 import Experiencia from './components/Experiencia';
 import Feiras from './components/Feiras';
@@ -6,6 +7,7 @@ import FormacaoAcademica from './components/FormacaoAcademica';
 import Habilidades from './components/Habilidades';
 import Header from './components/Header';
 import Projetos from './components/Projetos';
+import Revelar from './components/Revelar';
 import Sobre from './components/Sobre';
 import { ThemeProvider } from './contexts/ThemeContext';
 import type { SectionRefs } from './types';
@@ -23,31 +25,45 @@ export default function App() {
 
   return (
     <ThemeProvider>
-      <Header sections={sectionRefs} />
+      <MotionConfig reducedMotion="user">
+        <Header sections={sectionRefs} />
 
-      <main>
-        <section ref={sectionRefs.sobre} id="sobre">
-          <Sobre />
-        </section>
-        <section ref={sectionRefs.habilidades} id="habilidades">
-          <Habilidades />
-        </section>
-        <section ref={sectionRefs.projetos} id="projetos">
-          <Projetos />
-        </section>
-        <section ref={sectionRefs.experiencia} id="experiencia">
-          <Experiencia />
-        </section>
-        <section ref={sectionRefs.formacao} id="formacao">
-          <FormacaoAcademica />
-        </section>
-        <section ref={sectionRefs.feiras} id="feiras">
-          <Feiras />
-        </section>
-        <section ref={sectionRefs.contato} id="contato">
-          <Contatos />
-        </section>
-      </main>
+        <main>
+          <section ref={sectionRefs.sobre} id="sobre">
+            <Sobre />
+          </section>
+          <section ref={sectionRefs.habilidades} id="habilidades">
+            <Revelar>
+              <Habilidades />
+            </Revelar>
+          </section>
+          <section ref={sectionRefs.projetos} id="projetos">
+            <Revelar>
+              <Projetos />
+            </Revelar>
+          </section>
+          <section ref={sectionRefs.experiencia} id="experiencia">
+            <Revelar>
+              <Experiencia />
+            </Revelar>
+          </section>
+          <section ref={sectionRefs.formacao} id="formacao">
+            <Revelar>
+              <FormacaoAcademica />
+            </Revelar>
+          </section>
+          <section ref={sectionRefs.feiras} id="feiras">
+            <Revelar>
+              <Feiras />
+            </Revelar>
+          </section>
+          <section ref={sectionRefs.contato} id="contato">
+            <Revelar>
+              <Contatos />
+            </Revelar>
+          </section>
+        </main>
+      </MotionConfig>
     </ThemeProvider>
   );
 }

@@ -14,6 +14,17 @@
   --color-portfolio-yellow: #f4c621;
   --color-portfolio-surface: #e0e0e0;
   --color-portfolio-surface-alt: #f2f2f2;
+
+  /* Modo claro: marrom pastel e creme */
+  --color-claro-bg: #f2ebe1;
+  --color-claro-surface: #e9dfd1;
+  --color-claro-surface-2: #ddd0bd;
+  --color-claro-text: #3a2a1f;
+  --color-claro-muted: #6f5a49;
+  --color-claro-accent: #8b5a33;
+  --color-claro-accent-hover: #73492a;
+
+  --ease-portfolio: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 @layer base {
@@ -26,7 +37,7 @@
   }
 
   body {
-    @apply mt-20 bg-portfolio-surface font-sans leading-normal antialiased transition-colors duration-300;
+    @apply mt-20 bg-claro-bg text-claro-text font-sans leading-normal antialiased transition-colors duration-300;
     text-rendering: optimizeSpeed;
   }
 
@@ -82,22 +93,45 @@
   ::-webkit-scrollbar-thumb:hover {
     background-color: #a85a14;
   }
+
+  body.light-mode ::-webkit-scrollbar-track {
+    @apply bg-claro-surface;
+  }
+
+  body.light-mode ::-webkit-scrollbar-thumb {
+    background-color: var(--color-claro-accent);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-portfolio-accent);
+    outline-offset: 2px;
+  }
+
+  body.light-mode :focus-visible {
+    outline-color: var(--color-claro-accent);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
 }
 
 @layer components {
   .portfolio-linha {
-    @apply mr-[5px] h-[9px] w-8 bg-portfolio-accent;
+    @apply mr-[5px] h-[9px] w-8 bg-portfolio-accent light:bg-claro-accent;
   }
 
   .portfolio-destaque {
-    @apply font-bold text-portfolio-blue-light light:text-portfolio-accent;
+    @apply font-bold text-portfolio-blue-light light:text-claro-accent;
   }
 
   .portfolio-destaque-orange {
-    @apply font-bold text-portfolio-accent;
+    @apply font-bold text-portfolio-accent light:text-claro-accent;
   }
 
   .portfolio-accent-line {
-    @apply absolute left-0 z-2 h-[200px] w-2.5 -translate-y-1/2 bg-portfolio-accent;
+    @apply absolute left-0 z-2 h-[200px] w-2.5 -translate-y-1/2 bg-portfolio-accent light:bg-claro-accent;
   }
 }

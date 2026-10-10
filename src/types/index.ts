@@ -1,4 +1,5 @@
-import type { RefObject } from 'react';
+import type { ComponentType, RefObject } from 'react';
+import type { LucideProps } from 'lucide-react';
 
 export interface SectionRefs {
   sobre: RefObject<HTMLElement | null>;
@@ -30,12 +31,12 @@ export interface Projeto {
 }
 
 export interface ProjetoModalProps {
-  projeto: Projeto;
+  projeto: Projeto | null;
   onClose: () => void;
 }
 
 export interface Contato {
-  icon: string;
+  icon: ComponentType<LucideProps>;
   title: string;
   value: string;
   link: string;

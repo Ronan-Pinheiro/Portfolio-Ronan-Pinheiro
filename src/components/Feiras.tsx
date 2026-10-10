@@ -2,7 +2,7 @@ import { feirasData } from '../data/feiras';
 
 export default function Feiras() {
   return (
-    <section className="mt-[50px] bg-portfolio-bg px-5 py-[50px] text-center text-portfolio-muted transition-colors duration-300 light:bg-portfolio-surface light:text-portfolio-bg">
+    <section className="mt-[50px] bg-portfolio-bg px-5 py-[50px] text-center text-portfolio-muted transition-colors duration-300 light:bg-claro-bg light:text-claro-text">
       <p className="mb-2 text-[2rem] font-bold">Participação em Feiras</p>
 
       <div className="p-2.5">
@@ -11,10 +11,13 @@ export default function Feiras() {
           evento de exposição de tecnologia. Tive a oportunidade de apresentar
           projetos de{' '}
           <span className="portfolio-destaque-orange">treinamentos em VR</span>{' '}
-          para <span className="portfolio-destaque-orange">NRs</span>, onde mostrei como as{' '}
-          <span className="portfolio-destaque-orange">simulações imersivas</span> em
-          realidade virtual podem ser aplicadas para capacitação profissional e
-          segurança no trabalho.{' '}
+          para <span className="portfolio-destaque-orange">NRs</span>, onde
+          mostrei como as{' '}
+          <span className="portfolio-destaque-orange">
+            simulações imersivas
+          </span>{' '}
+          em realidade virtual podem ser aplicadas para capacitação profissional
+          e segurança no trabalho.{' '}
           <span className="portfolio-destaque-orange">
             Não pude compartilhar imagens dos projetos VR
           </span>{' '}
@@ -28,7 +31,7 @@ export default function Feiras() {
           {feirasData.map((feira) => (
             <article
               key={feira.titulo}
-              className="overflow-hidden rounded-xl bg-[#1a1a1a] shadow-md transition-transform duration-300 hover:translate-y-[-5px] light:bg-white"
+              className="overflow-hidden rounded-xl bg-[#1a1a1a] shadow-md transition-transform duration-300 hover:translate-y-[-5px] light:bg-claro-surface"
             >
               <div className="relative aspect-video overflow-hidden">
                 {feira.tipo === 'video' ? (
@@ -51,10 +54,10 @@ export default function Feiras() {
                 )}
               </div>
               <div className="p-6">
-                <h3 className="mb-3 text-xl font-semibold text-portfolio-muted light:text-portfolio-bg">
+                <h3 className="mb-3 text-xl font-semibold text-portfolio-muted light:text-claro-text">
                   {feira.titulo}
                 </h3>
-                <p className="m-0 text-[0.95rem] leading-normal text-[#a0c4d4] light:text-[#4a5568]">
+                <p className="m-0 text-[0.95rem] leading-normal text-[#a0c4d4] light:text-claro-muted">
                   {feira.descricao}
                 </p>
               </div>
