@@ -1,10 +1,12 @@
 import {
+  ChevronDown,
   BriefcaseBusiness,
   GraduationCap,
   MapPin,
   Sparkle,
 } from 'lucide-react';
-import { motion, type Variants } from 'motion/react';
+import { useState } from 'react';
+import { AnimatePresence, motion, type Variants } from 'motion/react';
 import FotoRonan from '../Imagens/ImagensFotoRonan.png';
 import { useDigitacao } from '../hooks/useDigitacao';
 import FundoTopo from './FundoTopo';
@@ -60,6 +62,7 @@ export default function Sobre() {
   const digitados = useDigitacao(total);
   const naSaudacao = digitados < SAUDACAO.length;
   const terminou = digitados >= total;
+  const [aberto, setAberto] = useState(false);
 
   return (
     <section className="relative isolate overflow-hidden bg-portfolio-bg px-5 py-[50px] text-center text-portfolio-muted transition-colors duration-300 light:bg-claro-bg light:text-claro-text">
@@ -179,21 +182,52 @@ export default function Sobre() {
             Ecossistema Provenda, onde comecei como Analista de Dados e sigo
             como Analista de Desenvolvimento Jr.
           </p>
-          <p>
-            Trato e analiso dados com SQL e Python para gerar indicadores
-            operacionais, construo dashboards, formulários e aplicações web
-            internas para as equipes comercial e administrativa, integro
-            sistemas via APIs REST e automatizo processos com JavaScript e
-            Google Apps Script. Também estudo e aplico IA generativa (Gemini)
-            para automatizar consultas e análises.
-          </p>
-          <p>
-            Meu objetivo é atuar com inteligência de dados, transformando
-            informações de sistemas e planilhas em indicadores claros que apoiem
-            a tomada de decisão. Sou graduado em Análise e Desenvolvimento de
-            Sistemas e já desenvolvi projetos de realidade virtual e aumentada
-            no SENAI Fatesg.
-          </p>
+          <AnimatePresence initial={false}>
+            {aberto && (
+              <motion.div
+                id="sobre-mais"
+                key="mais"
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: 'auto', opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.4, ease: [0.2, 0.7, 0.2, 1] }}
+                className="flex flex-col gap-4 overflow-hidden"
+              >
+                <p>
+                  Trato e analiso dados com SQL e Python para gerar indicadores
+                  operacionais, construo dashboards, formulários e aplicações
+                  web internas para as equipes comercial e administrativa,
+                  integro sistemas via APIs REST e automatizo processos com
+                  JavaScript e Google Apps Script. Também estudo e aplico IA
+                  generativa (Gemini) para automatizar consultas e análises.
+                </p>
+                <p>
+                  Meu objetivo é atuar com inteligência de dados, transformando
+                  informações de sistemas e planilhas em indicadores claros que
+                  apoiem a tomada de decisão. Sou graduado em Análise e
+                  Desenvolvimento de Sistemas e já desenvolvi projetos de
+                  realidade virtual e aumentada no SENAI Fatesg.
+                </p>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          <button
+            type="button"
+            onClick={() => setAberto((v) => !v)}
+            aria-expanded={aberto}
+            aria-controls="sobre-mais"
+            className="mx-auto mt-1 inline-flex cursor-pointer items-center gap-2 rounded-md border-2 border-current px-4 py-1.5 text-sm font-bold tracking-wider uppercase transition-[transform,background-color] hover:bg-white/10 active:translate-y-[2px] max-[750px]:mx-0 max-[750px]:self-start"
+          >
+            {aberto ? 'Ler menos' : 'Ler mais'}
+            <motion.span
+              animate={{ rotate: aberto ? 180 : 0 }}
+              transition={{ duration: 0.3 }}
+              className="flex"
+            >
+              <ChevronDown size={16} aria-hidden="true" />
+            </motion.span>
+          </button>
         </div>
 
         <ul className="mt-6 flex flex-wrap justify-center gap-x-8 gap-y-3 border-t border-portfolio-muted/20 pt-6 text-sm font-semibold tracking-wider uppercase light:border-claro-cream/25">

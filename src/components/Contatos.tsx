@@ -2,7 +2,7 @@ import { contatosData } from '../data/contatos';
 import FundoSecao from './FundoSecao';
 
 const contatoItemClass =
-  'flex max-w-[300px] min-w-0 flex-col items-center text-center transition-transform duration-300 hover:scale-110 hover:text-portfolio-accent light:hover:text-claro-sand';
+  'flex max-w-[300px] min-w-0 flex-col items-center text-center transition-transform duration-300 hover:scale-110 hover:text-portfolio-accent active:scale-95 active:text-portfolio-accent light:hover:text-claro-sand light:active:text-claro-sand';
 
 export default function Contatos() {
   return (

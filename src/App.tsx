@@ -25,7 +25,7 @@ export default function App() {
 
   return (
     <ThemeProvider>
-      <MotionConfig reducedMotion="user">
+      <MotionConfig reducedMotion="never">
         <Header sections={sectionRefs} />
 
         <main>

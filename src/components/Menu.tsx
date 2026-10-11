@@ -65,7 +65,7 @@ export default function Menu({ menuOpen, toggleMenu, sections }: MenuProps) {
             <button
               type="button"
               onClick={() => scrollToSection(ref)}
-              className="group flex w-full cursor-pointer items-center gap-3 px-2 py-3 text-left text-portfolio-muted transition-colors hover:text-portfolio-accent light:text-claro-cream light:hover:text-claro-sand"
+              className="group flex w-full cursor-pointer items-center gap-3 px-2 py-3 text-left text-portfolio-muted transition-colors hover:text-portfolio-accent active:bg-portfolio-muted/10 active:text-portfolio-accent light:text-claro-cream light:hover:text-claro-sand light:active:bg-claro-cream/10 light:active:text-claro-sand"
             >
               <span
                 aria-hidden="true"

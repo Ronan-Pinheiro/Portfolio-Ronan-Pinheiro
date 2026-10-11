@@ -39,7 +39,7 @@ export default function Header({ sections }: HeaderProps) {
   ];
 
   const iconButtonClass =
-    'flex h-10 w-10 cursor-pointer items-center justify-center rounded-md text-white transition-colors duration-300 hover:text-portfolio-accent light:text-claro-cream light:hover:text-claro-sand';
+    'flex h-10 w-10 cursor-pointer items-center justify-center rounded-md text-white transition-[color,transform] duration-300 active:scale-90 hover:text-portfolio-accent light:text-claro-cream light:hover:text-claro-sand';
 
   return (
     <>
