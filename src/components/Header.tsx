@@ -100,7 +100,7 @@ export default function Header({ sections }: HeaderProps) {
               className="group relative cursor-pointer py-1 text-sm font-semibold text-portfolio-muted transition-colors hover:text-white light:text-claro-cream light:hover:text-white"
             >
               {label}
-              <RabiscoSublinhado className="absolute -bottom-1.5 left-0 w-full origin-left scale-x-0 text-portfolio-accent transition-transform duration-300 group-hover:scale-x-100 light:text-claro-sand" />
+              <RabiscoSublinhado className="absolute -bottom-1.5 left-0 w-full text-portfolio-accent light:text-claro-sand" />
             </button>
           ))}
         </nav>

@@ -19,7 +19,10 @@ export default function Projetos() {
       <div className="ml-20 flex max-[1000px]:ml-5 max-[1000px]:flex-wrap">
         <p className="titulo-secao relative flex items-center self-start text-[40px] font-bold max-[499px]:text-[30px]">
           <span className="portfolio-linha" /> Projetos
-          <RabiscoSublinhado className="absolute -bottom-3 left-9 w-[150px] text-portfolio-accent light:text-claro-accent" />
+          <RabiscoSublinhado
+            modo="entrar"
+            className="absolute -bottom-3 left-9 w-[150px] text-portfolio-accent light:text-claro-accent"
+          />
           <RabiscoEstrela className="absolute -top-3 -right-9 w-7 text-portfolio-accent light:text-claro-accent" />
         </p>
         <p className="max-w-[1250px] pt-[15px] pl-[100px] text-left text-lg max-[1000px]:pl-0">

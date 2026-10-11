@@ -236,7 +236,7 @@ export default function Sobre() {
             >
               <ChevronDown size={18} aria-hidden="true" />
             </motion.span>
-            <RabiscoSublinhado className="absolute -bottom-1 left-0 w-[calc(100%-22px)] origin-left scale-x-60 transition-transform duration-300 group-hover:scale-x-100" />
+            <RabiscoSublinhado className="absolute -bottom-1 left-0 w-[calc(100%-22px)]" />
           </button>
         </div>
 

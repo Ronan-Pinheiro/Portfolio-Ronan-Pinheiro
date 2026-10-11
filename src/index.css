@@ -147,6 +147,19 @@
 }
 
 @layer components {
+  /* Sublinhado à mão que se desenha (e se apaga) como uma caneta */
+  .rabisco-desenhar path {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    transition: stroke-dashoffset 0.45s ease-in-out;
+  }
+
+  .group:hover .rabisco-desenhar path,
+  .group:focus-visible .rabisco-desenhar path,
+  .group:active .rabisco-desenhar path {
+    stroke-dashoffset: 0;
+  }
+
   .cursor-digitacao {
     animation: piscar-cursor 1s steps(1) infinite;
   }
