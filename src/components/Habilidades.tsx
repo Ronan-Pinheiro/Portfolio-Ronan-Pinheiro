@@ -4,7 +4,7 @@ import FundoSecao from './FundoSecao';
 
 export default function Habilidades() {
   return (
-    <section className="isolate overflow-hidden relative bg-portfolio-primary px-5 py-[50px] text-center text-portfolio-muted transition-colors duration-300 light:bg-claro-bg light:text-claro-text">
+    <section className="isolate overflow-hidden relative bg-portfolio-bg px-5 py-[50px] text-center text-portfolio-muted transition-colors duration-300 light:bg-claro-bg light:text-claro-text">
       <FundoSecao lado="direita" />
       <div className="portfolio-accent-line top-[93%]" aria-hidden="true" />
 

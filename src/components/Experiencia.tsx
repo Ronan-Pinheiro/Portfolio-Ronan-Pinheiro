@@ -3,7 +3,7 @@ import FundoSecao from './FundoSecao';
 
 export default function Experiencia() {
   return (
-    <section className="isolate overflow-hidden secao-escura relative px-5 py-[50px] text-center text-portfolio-muted transition-colors duration-300 light:bg-claro-espresso light:text-claro-cream">
+    <section className="isolate overflow-hidden secao-escura relative bg-portfolio-primary px-5 py-[50px] text-center text-portfolio-muted transition-colors duration-300 light:bg-claro-espresso light:text-claro-cream">
       <FundoSecao lado="direita" fundoEscuro />
       <div className="portfolio-accent-line top-[102%]" aria-hidden="true" />
 

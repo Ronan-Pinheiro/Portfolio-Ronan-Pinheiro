@@ -12,7 +12,7 @@ export default function Projetos() {
   );
 
   return (
-    <section className="isolate relative overflow-hidden bg-portfolio-primary px-5 pt-[50px] pb-20 text-center text-portfolio-muted transition-colors duration-300 light:bg-claro-surface light:text-claro-text">
+    <section className="isolate relative overflow-hidden bg-portfolio-mid px-5 pt-[50px] pb-20 text-center text-portfolio-muted transition-colors duration-300 light:bg-claro-surface light:text-claro-text">
       <FundoSecao lado="esquerda" circuito />
       <div className="portfolio-accent-line top-[97%]" aria-hidden="true" />
 

@@ -3,7 +3,7 @@ import FundoSecao from './FundoSecao';
 
 export default function Feiras() {
   return (
-    <section className="relative isolate overflow-hidden mt-[50px] bg-portfolio-bg px-5 py-[50px] text-center text-portfolio-muted transition-colors duration-300 light:bg-claro-bg light:text-claro-text">
+    <section className="relative isolate overflow-hidden bg-portfolio-bg px-5 py-[50px] text-center text-portfolio-muted transition-colors duration-300 light:bg-claro-bg light:text-claro-text">
       <FundoSecao lado="direita" />
       <p className="titulo-secao mb-2 text-[2rem] font-bold max-[499px]:text-[26px]">
         Participação em Feiras

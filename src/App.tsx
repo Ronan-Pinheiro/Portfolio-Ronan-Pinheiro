@@ -29,35 +29,63 @@ export default function App() {
         <Header sections={sectionRefs} />
 
         <main>
-          <section ref={sectionRefs.sobre} id="sobre">
+          <section
+            ref={sectionRefs.sobre}
+            id="sobre"
+            className="bg-portfolio-bg light:bg-claro-bg"
+          >
             <Sobre />
           </section>
-          <section ref={sectionRefs.habilidades} id="habilidades">
+          <section
+            ref={sectionRefs.habilidades}
+            id="habilidades"
+            className="bg-portfolio-bg light:bg-claro-bg"
+          >
             <Revelar>
               <Habilidades />
             </Revelar>
           </section>
-          <section ref={sectionRefs.projetos} id="projetos">
+          <section
+            ref={sectionRefs.projetos}
+            id="projetos"
+            className="bg-portfolio-mid light:bg-claro-surface"
+          >
             <Revelar>
               <Projetos />
             </Revelar>
           </section>
-          <section ref={sectionRefs.experiencia} id="experiencia">
+          <section
+            ref={sectionRefs.experiencia}
+            id="experiencia"
+            className="bg-portfolio-primary light:bg-claro-espresso"
+          >
             <Revelar>
               <Experiencia />
             </Revelar>
           </section>
-          <section ref={sectionRefs.formacao} id="formacao">
+          <section
+            ref={sectionRefs.formacao}
+            id="formacao"
+            className="bg-portfolio-bg light:bg-claro-bg"
+          >
             <Revelar>
               <FormacaoAcademica />
             </Revelar>
           </section>
-          <section ref={sectionRefs.feiras} id="feiras">
+          <section
+            ref={sectionRefs.feiras}
+            id="feiras"
+            className="bg-portfolio-bg light:bg-claro-bg"
+          >
             <Revelar>
               <Feiras />
             </Revelar>
           </section>
-          <section ref={sectionRefs.contato} id="contato">
+          <section
+            ref={sectionRefs.contato}
+            id="contato"
+            className="bg-portfolio-primary light:bg-claro-espresso"
+          >
             <Revelar>
               <Contatos />
             </Revelar>
