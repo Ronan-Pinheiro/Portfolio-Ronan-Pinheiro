@@ -1,12 +1,14 @@
 import { experienciaData } from '../data/experiencia';
+import FundoSecao from './FundoSecao';
 
 export default function Experiencia() {
   return (
-    <section className="relative px-5 py-[50px] text-center text-portfolio-muted transition-colors duration-300 light:text-claro-text">
+    <section className="isolate overflow-hidden secao-escura relative px-5 py-[50px] text-center text-portfolio-muted transition-colors duration-300 light:bg-claro-espresso light:text-claro-cream">
+      <FundoSecao lado="direita" fundoEscuro />
       <div className="portfolio-accent-line top-[102%]" aria-hidden="true" />
 
       <div className="mb-10 ml-20 flex max-[1000px]:ml-5 max-[1000px]:flex-wrap">
-        <p className="flex items-center text-[40px] font-bold">
+        <p className="titulo-secao flex items-center text-[40px] font-bold max-[499px]:text-[30px]">
           <span className="portfolio-linha" /> Experiência{' '}
         </p>
         <p className="max-w-[1150px] pt-[15px] pl-[35px] text-left text-lg max-[1000px]:pl-0">
@@ -38,44 +40,53 @@ export default function Experiencia() {
         </p>
       </div>
 
-      <ul className="flex flex-col gap-10 text-portfolio-muted max-[1000px]:items-center">
+      {/* Linha do tempo: data, cargo e empresa à esquerda; atividades e tecnologias à direita */}
+      <ol className="mx-auto max-w-[1100px] border-l border-portfolio-muted/25 text-left light:border-claro-sand/40 max-[1000px]:ml-2">
         {experienciaData.map((item) => (
           <li
             key={`${item.empresa}-${item.periodo}`}
-            className="flex w-full max-w-[1550px] justify-start text-left max-[1000px]:block max-[1000px]:max-w-full"
+            className="relative grid grid-cols-[260px_1fr] gap-x-10 gap-y-4 pb-10 pl-8 max-[1000px]:grid-cols-1 max-[1000px]:pl-6"
           >
-            <div className="mt-[46px] ml-[200px] text-[15px] text-portfolio-muted light:text-claro-text max-[1000px]:mt-0 max-[1000px]:ml-0 max-[1000px]:text-center max-[1000px]:text-lg">
-              {item.periodo}
+            <span
+              aria-hidden="true"
+              className="absolute top-1.5 -left-[7px] h-3 w-3 rounded-full bg-portfolio-accent ring-4 ring-portfolio-bg light:bg-claro-sand light:ring-claro-espresso"
+            />
+
+            <div>
+              <p className="text-sm font-semibold tracking-wider text-portfolio-accent uppercase light:text-claro-sand">
+                {item.periodo}
+              </p>
+              <h3 className="mt-1 text-lg leading-snug font-bold text-portfolio-blue-light uppercase light:text-claro-sand">
+                {item.cargo}
+              </h3>
+              <p className="mt-1 text-base text-portfolio-muted light:text-claro-cream">
+                {item.empresa}
+              </p>
             </div>
 
-            <div className="ml-[13px] flex-1 rounded-l-[20px] bg-portfolio-primary text-[15px] light:bg-claro-surface max-[1000px]:mx-0 max-[1000px]:w-full max-[1000px]:rounded-t-[20px] max-[1000px]:rounded-br-none max-[1000px]:rounded-bl-none">
-              <h1 className="ml-[60px] pt-5 pb-5 text-left text-xl text-portfolio-muted light:text-claro-text max-[1000px]:mx-0 max-[1000px]:text-center max-[540px]:ml-0">
-                {item.empresa}
-              </h1>
-              <ul>
+            <div className="border-b border-portfolio-muted/15 pb-10 light:border-claro-cream/15">
+              <ul className="flex flex-col gap-1.5">
                 {item.responsabilidades.map((resp) => (
                   <li
                     key={resp}
-                    className="ml-[46px] flex text-[15px] text-portfolio-muted light:text-claro-text max-[1000px]:flex max-[1000px]:text-center max-[1000px]:text-sm max-[540px]:ml-[15px]"
+                    className="flex gap-2 text-[15px] leading-relaxed text-portfolio-muted light:text-claro-cream"
                   >
-                    <span className="text-[15px] font-bold text-portfolio-accent light:text-claro-accent">
-                      ●
-                    </span>{' '}
+                    <span
+                      aria-hidden="true"
+                      className="mt-[9px] h-1.5 w-1.5 shrink-0 rounded-full bg-portfolio-accent light:bg-claro-sand"
+                    />
                     {resp}
                   </li>
                 ))}
               </ul>
-            </div>
-
-            <div className="flex-1 rounded-r-[20px] bg-portfolio-primary text-[10px] light:bg-claro-surface max-[1000px]:w-full max-[1000px]:rounded-t-none max-[1000px]:rounded-b-[20px]">
-              <h1 className="pt-5 pb-5 text-left text-xl text-portfolio-muted light:text-claro-text max-[1000px]:pt-[15px] max-[1000px]:pb-[15px] max-[1000px]:text-center max-[1000px]:text-lg">
-                {item.cargo}
-              </h1>
-              <ul className="flex flex-wrap justify-center max-[1000px]:items-center">
+              <ul
+                className="mt-4 flex flex-wrap gap-2"
+                aria-label="Tecnologias"
+              >
                 {item.skills.map((skill) => (
                   <li
                     key={skill}
-                    className="m-2.5 bg-portfolio-yellow px-2 py-1 text-[15px] font-bold text-portfolio-bg light:bg-claro-surface-2 light:text-claro-text"
+                    className="rounded-md bg-portfolio-yellow px-2.5 py-1 text-sm font-bold text-portfolio-bg light:bg-transparent light:text-claro-sand light:ring-1 light:ring-claro-sand/60 light:ring-inset"
                   >
                     {skill}
                   </li>
@@ -84,7 +95,7 @@ export default function Experiencia() {
             </div>
           </li>
         ))}
-      </ul>
+      </ol>
     </section>
   );
 }

@@ -23,11 +23,15 @@ export interface HeaderProps {
 
 export interface Projeto {
   titulo: string;
+  /** Frase curta mostrada no card; a descrição completa fica no modal. */
+  resumo: string;
   descricao: string;
   tecnologias: string[];
   imagens: string[];
   link: string;
   video?: string;
+  /** Quando true, o projeto fica guardado mas não aparece no site. */
+  oculto?: boolean;
 }
 
 export interface ProjetoModalProps {
@@ -44,8 +48,6 @@ export interface Contato {
 
 export interface Habilidade {
   nome: string;
-  icon: string;
-  alt: string;
 }
 
 export interface ExperienciaItem {

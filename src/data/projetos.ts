@@ -11,6 +11,8 @@ import type { Projeto } from '../types';
 export const projetosData: Projeto[] = [
   {
     titulo: 'Dogs Social',
+    resumo:
+      'Rede social para amantes de cachorros, com conta, login, fotos e comentários.',
     descricao: `Aplicação desenvolvida durante o curso de React da Origamid. 
 O projeto simula uma rede social para amantes de cachorros, onde é possível:
 
@@ -26,6 +28,8 @@ Construído com React, utilizando rotas, autenticação, consumo de API e boas p
   },
   {
     titulo: 'Automação E2E - E-commerce (Cypress)',
+    resumo: 'Testes End-to-End do fluxo de compra de um e-commerce.',
+    oculto: true,
     descricao: `Projeto de automação de testes End-to-End simulando o fluxo real de compra em um e-commerce.
 
   O teste executa:
@@ -43,6 +47,7 @@ Construído com React, utilizando rotas, autenticação, consumo de API e boas p
   },
   {
     titulo: 'Forest Retreat',
+    resumo: 'Site responsivo de hospedagem ecológica feito com Tailwind CSS.',
     descricao: `Projeto desenvolvido durante o curso de Tailwind CSS da Origamid.
 
 A proposta é apresentar uma experiência imersiva de hospedagem ecológica, com um layout moderno, responsivo e acessível.
@@ -57,6 +62,7 @@ Construído com:
   },
   {
     titulo: 'Animais Fantásticos',
+    resumo: 'Site interativo com JavaScript puro e manipulação do DOM.',
     descricao: `Projeto criado como parte dos estudos com JavaScript, HTML e CSS, durante o curso da Origamid.
 
 O site apresenta informações curiosas sobre animais fantásticos, aplicando:
@@ -74,6 +80,7 @@ Tecnologias:
   },
   {
     titulo: 'Mini Game - Pinguim Run',
+    resumo: 'Mini game em React: um pinguim fugindo de um Yeti na neve.',
     descricao: `O Pinguim Run nasceu como um projeto pessoal para trazer diversão ao meu portfólio.
 A ideia de um pinguim fugindo de um Yeti em um cenário congelante tornou esse mini game único e envolvente. 
 Construído com:
@@ -87,6 +94,8 @@ Construído com:
   },
   {
     titulo: 'Bebida Fiu Fiu - Tiradentes',
+    resumo:
+      'Mini game em WebAR com Tiradentes para a campanha da bebida Fiufiu.',
     descricao: `Projeto em AR criado no estágio na Fábrica de Software do SENAI Fatesg.
   Ao escanear o QR Code na garrafa, o usuário acessa um mini game com Tiradentes, respondendo perguntas sobre literatura.
   Ao acertar, recebia um código que, durante a festa de lançamento, era trocado por um drink inspirado no autor.
@@ -97,6 +106,8 @@ Construído com:
   },
   {
     titulo: 'Carga Indivisível-VR',
+    resumo:
+      'Simulação em VR para treinamento de NR no transporte de carga indivisível.',
     descricao: `Projeto desenvolvido em Realidade Virtual (VR), focado em treinamentos de Normas Regulamentadoras (NR). 
     O jogador atua como caminhoneiro, seguindo um checklist de segurança antes de transportar uma carga indivisível. 
     As decisões influenciam o desfecho:

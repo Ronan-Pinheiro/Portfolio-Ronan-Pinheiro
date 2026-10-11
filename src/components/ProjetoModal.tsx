@@ -31,7 +31,7 @@ export default function ProjetoModal({ projeto, onClose }: ProjetoModalProps) {
               aria-describedby="modal-descricao"
             >
               <motion.div
-                className="fixed inset-0 z-1001 m-auto flex h-fit max-h-[90vh] w-[90%] max-w-[1000px] flex-row overflow-y-auto rounded-xl bg-portfolio-primary p-[15px] focus:outline-none max-[900px]:flex-col max-[900px]:items-center max-[900px]:pt-12 light:bg-claro-bg"
+                className="fixed inset-0 z-1001 m-auto flex h-fit max-h-[90vh] w-[90%] max-w-[1000px] flex-row overflow-y-auto rounded-lg bg-portfolio-primary p-[15px] focus:outline-none max-[900px]:flex-col max-[900px]:items-center max-[900px]:pt-12 light:ring-1 light:ring-claro-line light:ring-inset light:bg-claro-card"
                 initial={{ opacity: 0, y: 16, scale: 0.98 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: 8, scale: 0.98 }}
@@ -82,7 +82,7 @@ export default function ProjetoModal({ projeto, onClose }: ProjetoModalProps) {
                     {exibido.tecnologias.map((tec) => (
                       <li
                         key={tec}
-                        className="rounded bg-portfolio-bg px-2 py-1 text-xs text-portfolio-muted light:bg-claro-surface light:text-claro-text"
+                        className="rounded-md bg-portfolio-bg px-2 py-1 text-xs text-portfolio-muted light:ring-1 light:ring-claro-line light:ring-inset light:bg-claro-bg light:text-claro-text"
                       >
                         {tec}
                       </li>
@@ -93,9 +93,12 @@ export default function ProjetoModal({ projeto, onClose }: ProjetoModalProps) {
                     href={exibido.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-4 flex items-center justify-center gap-2 rounded-md bg-portfolio-accent px-3 py-3 font-bold text-portfolio-muted transition-colors duration-300 hover:bg-portfolio-muted hover:text-portfolio-primary active:scale-[0.97] light:bg-claro-accent light:text-claro-bg light:hover:bg-claro-accent-hover"
+                    className="mt-4 flex items-center justify-center gap-3 rounded-md border-2 border-portfolio-accent shadow-[4px_4px_0_0_rgba(230,230,238,0.3)] light:border-claro-espresso light:shadow-[4px_4px_0_0_var(--color-claro-espresso)] bg-portfolio-accent px-3 py-3 font-bold text-portfolio-bg transition-colors duration-300 hover:bg-portfolio-accent-hover active:scale-[0.97] light:bg-claro-accent light:text-claro-cream light:hover:bg-claro-accent-hover"
                   >
-                    Ver Projeto <ExternalLink size={18} aria-hidden="true" />
+                    Ver Projeto
+                    <span className="flex h-7 w-7 items-center justify-center rounded-sm bg-black/15">
+                      <ExternalLink size={15} aria-hidden="true" />
+                    </span>
                   </a>
                 </div>
               </motion.div>

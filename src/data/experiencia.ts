@@ -15,6 +15,9 @@ export const experienciaData: ExperienciaItem[] = [
       'JavaScript',
       'Tailwind CSS',
       'APIs REST',
+      'ERP UAU (Globaltec)',
+      'Supabase',
+      'Git / GitHub',
       'Google Apps Script',
       'SQL',
     ],
@@ -32,6 +35,9 @@ export const experienciaData: ExperienciaItem[] = [
     skills: [
       'SQL',
       'Python',
+      'ERP UAU (Globaltec)',
+      'Excel / Google Sheets',
+      'Supabase',
       'Análise de dados',
       'Indicadores (KPIs)',
       'Dashboards',
@@ -84,6 +90,6 @@ export const experienciaData: ExperienciaItem[] = [
       'Abertura, acompanhamento e resolução de chamados técnicos.',
       'Configuração e distribuição de tablets e dispositivos corporativos.',
     ],
-    skills: ['Suporte N1', 'Chamados', 'Dispositivos corporativos'],
+    skills: ['Qualitor', 'Suporte N1', 'Chamados', 'Dispositivos corporativos'],
   },
 ];

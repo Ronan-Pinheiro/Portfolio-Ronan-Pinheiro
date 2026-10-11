@@ -12,8 +12,11 @@ import type { Theme, ThemeContextValue } from '../types';
 const ThemeContext = createContext<ThemeContextValue | null>(null);
 
 function getInitialTheme(): Theme {
-  const stored = localStorage.getItem('theme');
-  return stored === 'light' ? 'light' : 'dark';
+  try {
+    return localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';
+  } catch {
+    return 'light';
+  }
 }
 
 interface ThemeProviderProps {
@@ -34,7 +37,11 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
       body.classList.remove('light-mode');
     }
 
-    localStorage.setItem('theme', theme);
+    try {
+      localStorage.setItem('theme', theme);
+    } catch {
+      /* armazenamento bloqueado */
+    }
   }, [theme]);
 
   const toggleTheme = useCallback(() => {

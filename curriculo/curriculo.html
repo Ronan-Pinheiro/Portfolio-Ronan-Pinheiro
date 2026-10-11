@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Ronan Pinheiro Otávio – Currículo</title>
+<style>
+  @page { size: A4; margin: 10mm 14mm 9mm 14mm; }
+  :root {
+    --text: #1d1611;
+    --muted: #4f4034;
+    --accent: #9c4019;
+    --line: #d9c2a3;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: Carlito, Calibri, "Liberation Sans", Arial, sans-serif;
+    color: var(--text);
+    font-size: 10pt;
+    line-height: 1.32;
+  }
+  header { border-bottom: 2px solid var(--accent); padding-bottom: 8pt; margin-bottom: 10pt; }
+  h1 { font-size: 21pt; letter-spacing: 0.02em; text-transform: uppercase; line-height: 1.1; }
+  .cargo { font-size: 11pt; font-weight: 600; color: var(--accent); margin-top: 2pt; }
+  .contato { margin-top: 5pt; color: var(--muted); font-size: 8.8pt; }
+  .contato span + span::before { content: "·"; margin: 0 5pt; color: var(--line); }
+  h2 {
+    font-size: 10pt; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--accent); border-bottom: 1px solid var(--line);
+    padding-bottom: 2pt; margin: 9pt 0 5pt;
+  }
+  p { margin-bottom: 4pt; }
+  ul { padding-left: 13pt; }
+  li { margin-bottom: 1pt; }
+  .competencias { display: grid; grid-template-columns: 1fr; gap: 2pt; }
+  .competencias b { color: var(--text); }
+  .item { margin-bottom: 6pt; break-inside: avoid; }
+  .item-topo { display: flex; justify-content: space-between; gap: 10pt; align-items: baseline; }
+  .item-topo .titulo { font-weight: 700; }
+  .item-topo .periodo { color: var(--muted); font-size: 8.8pt; white-space: nowrap; }
+  .empresa { color: var(--muted); font-weight: 600; margin-bottom: 3pt; }
+  .tec { color: var(--muted); font-size: 8.6pt; margin-top: 2pt; }
+  .empresa-grupo > .empresa-nome { font-weight: 700; font-size: 10pt; margin-bottom: 3pt; }
+  .empresa-grupo .item { margin-left: 0; }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Ronan Pinheiro Otávio</h1>
+    <div class="cargo">Analista de Dados · Inteligência de Dados e Automação</div>
+    <div class="contato">
+      <span>Goiânia – GO</span>
+      <span>(62) 99341-1237</span>
+      <span>ronanpinheiro001@gmail.com</span>
+    </div>
+    <div class="contato">
+      <span>linkedin.com/in/ronan-pinheiro-otávio-37173425b</span>
+      <span>github.com/Ronan-Pinheiro</span>
+      <span>portfolio-ronan-pinheiro.vercel.app</span>
+    </div>
+  </header>
+
+  <h2>Resumo</h2>
+  <p>
+    Profissional de dados e automação com experiência em tratamento e análise de dados com
+    SQL e Python, construção de dashboards e indicadores operacionais, integração de sistemas
+    via APIs REST e automação de processos com JavaScript e Google Apps Script. Estudo e aplico
+    IA generativa (Gemini) para automatizar consultas e análises. Busco atuar como Analista de
+    Inteligência de Dados, transformando informações de sistemas e planilhas em indicadores
+    claros que apoiem a tomada de decisão.
+  </p>
+
+  <h2>Competências</h2>
+  <div class="competencias">
+    <div><b>Dados:</b> SQL, Python, SQLite, ERP UAU (Globaltec), tratamento e análise de dados, indicadores (KPIs), dashboards, Excel e Google Sheets.</div>
+    <div><b>Automação e IA:</b> Google Apps Script, JavaScript, APIs REST, integração entre sistemas, Gemini API (IA generativa).</div>
+    <div><b>Desenvolvimento:</b> React, TypeScript, HTML5, CSS3, Tailwind CSS.</div>
+    <div><b>Ferramentas:</b> Git, GitHub, Jira, Cypress (testes automatizados), Unity e C#.</div>
+  </div>
+
+  <h2>Experiência</h2>
+
+  <div class="empresa-grupo">
+    <div class="empresa-nome">Ecossistema Provenda · Goiânia – GO</div>
+
+    <div class="item">
+      <div class="item-topo">
+        <span class="titulo">Analista de Desenvolvimento Jr</span>
+        <span class="periodo">09/2026 – atual</span>
+      </div>
+      <ul>
+        <li>Desenvolvimento e manutenção de aplicações web internas para automação de processos.</li>
+        <li>Integrações entre sistemas via APIs REST e regras de negócio no back-end.</li>
+        <li>Front-end com React, Tailwind CSS e JavaScript para equipes comerciais e administrativas.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="item-topo">
+        <span class="titulo">Analista de Dados</span>
+        <span class="periodo">04/2026 – 09/2026</span>
+      </div>
+      <ul>
+        <li>Manipulação, tratamento e análise de dados com SQL e Python para geração de indicadores operacionais.</li>
+        <li>Criação de dashboards, formulários e ferramentas para equipes comerciais e administrativas.</li>
+        <li>Automação de processos com JavaScript, Google Apps Script e integrações web.</li>
+        <li>Estudo e aplicação de IA generativa (Gemini) para automação de consultas e análise de dados.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-topo">
+      <span class="titulo">Analista de Suporte N1</span>
+      <span class="periodo">08/2025 – 02/2026</span>
+    </div>
+    <div class="empresa">Poli Digital</div>
+    <ul>
+      <li>Suporte de primeiro nível a clientes e colaboradores internos da plataforma.</li>
+      <li>Triagem de chamados, identificação, análise e documentação de bugs e inconsistências.</li>
+      <li>Escalonamento detalhado para o time de Nível 2 via Jira, com registro organizado e rastreável das ocorrências.</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="item-topo">
+      <span class="titulo">Desenvolvedor de Jogos VR/AR · Estagiário Voluntário</span>
+      <span class="periodo">05/2024 – 01/2025</span>
+    </div>
+    <div class="empresa">Faculdade SENAI Fatesg · Fábrica de Software</div>
+    <ul>
+      <li>Simulações em Realidade Virtual com C# e Unity para treinamentos de Normas Regulamentadoras (NR), como o Carga Indivisível-VR.</li>
+      <li>Lógica do mini game em WebAR da campanha da bebida Fiufiu (8th Wall, A-Frame e JavaScript): perguntas e respostas, personagens 3D e códigos de resgate.</li>
+      <li>Correção de bugs e ajustes solicitados por clientes, inclusive em projetos de outros times.</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="item-topo">
+      <span class="titulo">Assistente de Escritório Administrativo</span>
+      <span class="periodo">08/2023 – 08/2025</span>
+    </div>
+    <div class="empresa">TIMAC Agro Brasil</div>
+    <ul>
+      <li>Suporte técnico nível 1 para aplicativos internos, resolvendo dúvidas operacionais da equipe.</li>
+      <li>Abertura, acompanhamento e resolução de chamados técnicos.</li>
+      <li>Configuração e distribuição de tablets e dispositivos corporativos.</li>
+    </ul>
+  </div>
+
+  <h2>Formação</h2>
+  <div class="item-topo"><span><b>Análise e Desenvolvimento de Sistemas (Tecnólogo)</b> · Universidade Cruzeiro do Sul</span><span class="periodo">08/2023 – 06/2025</span></div>
+  <div class="item-topo"><span><b>Técnico em Eletrotécnica</b> · Instituto Federal Goiano (IF Goiano)</span><span class="periodo">01/2020 – 12/2022</span></div>
+
+  <p class="tec" style="margin-top:3pt"><b>Cursos:</b> React Completo · Front End &amp; UX/UI Design · UI Design para Iniciantes · HTML e CSS para Iniciantes</p>
+</body>
+</html>
