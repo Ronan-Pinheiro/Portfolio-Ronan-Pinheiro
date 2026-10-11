@@ -154,10 +154,33 @@
     transition: stroke-dashoffset 0.45s ease-in-out;
   }
 
-  .group:hover .rabisco-desenhar path,
-  .group:focus-visible .rabisco-desenhar path,
-  .group:active .rabisco-desenhar path {
+  /* Com mouse: desenha ao passar por cima e apaga ao sair */
+  @media (hover: hover) {
+    .group:hover .rabisco-desenhar path {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  .group:focus-visible .rabisco-desenhar path {
     stroke-dashoffset: 0;
+  }
+
+  /* No toque: cada toque desenha e depois apaga (classe colocada por script) */
+  .group[data-tocado] .rabisco-desenhar path {
+    animation: rabisco-toque 1.3s ease-in-out;
+  }
+
+  @keyframes rabisco-toque {
+    0% {
+      stroke-dashoffset: 1;
+    }
+    35%,
+    70% {
+      stroke-dashoffset: 0;
+    }
+    100% {
+      stroke-dashoffset: -1;
+    }
   }
 
   .cursor-digitacao {

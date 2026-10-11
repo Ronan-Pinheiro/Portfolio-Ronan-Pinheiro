@@ -1,5 +1,23 @@
 import { motion } from 'motion/react';
 
+// No celular não existe "passar o mouse": a cada toque num elemento com
+// sublinhado, reinicia a animação de desenhar e apagar.
+if (typeof window !== 'undefined') {
+  window.addEventListener(
+    'pointerdown',
+    (e) => {
+      if (e.pointerType === 'mouse') return;
+      const alvo = (e.target as Element | null)?.closest?.('.group');
+      if (!alvo || !alvo.querySelector('.rabisco-desenhar')) return;
+      alvo.removeAttribute('data-tocado');
+      void (alvo as HTMLElement).offsetWidth; // força reiniciar a animação
+      alvo.setAttribute('data-tocado', '');
+      window.setTimeout(() => alvo.removeAttribute('data-tocado'), 1400);
+    },
+    { passive: true },
+  );
+}
+
 // Traços desenhados à mão para dar um ar de caderno/papel às seções.
 // Usam currentColor, então seguem a cor do tema.
 
@@ -33,7 +51,7 @@ export function RabiscoSublinhado({
           strokeLinecap="round"
           initial={{ pathLength: 0 }}
           whileInView={{ pathLength: 1 }}
-          viewport={{ once: true, margin: '0px 0px -15% 0px' }}
+          viewport={{ once: false, margin: '0px 0px -15% 0px' }}
           transition={{ duration: 0.9, delay: 0.3, ease: 'easeInOut' }}
         />
       </svg>
