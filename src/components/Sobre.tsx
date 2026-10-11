@@ -6,10 +6,11 @@ import {
   Sparkle,
 } from 'lucide-react';
 import { useState } from 'react';
-import { AnimatePresence, motion, type Variants } from 'motion/react';
+import { motion, type Variants } from 'motion/react';
 import FotoRonan from '../Imagens/ImagensFotoRonan.png';
 import { useDigitacao } from '../hooks/useDigitacao';
 import FundoTopo from './FundoTopo';
+import { RabiscoSublinhado } from './Rabiscos';
 
 const destaques = [
   { icon: MapPin, texto: 'Goiânia, GO' },
@@ -182,51 +183,60 @@ export default function Sobre() {
             Ecossistema Provenda, onde comecei como Analista de Dados e sigo
             como Analista de Desenvolvimento Jr.
           </p>
-          <AnimatePresence initial={false}>
-            {aberto && (
-              <motion.div
-                id="sobre-mais"
-                key="mais"
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: 'auto', opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.4, ease: [0.2, 0.7, 0.2, 1] }}
-                className="flex flex-col gap-4 overflow-hidden"
-              >
-                <p>
-                  Trato e analiso dados com SQL e Python para gerar indicadores
-                  operacionais, construo dashboards, formulários e aplicações
-                  web internas para as equipes comercial e administrativa,
-                  integro sistemas via APIs REST e automatizo processos com
-                  JavaScript e Google Apps Script. Também estudo e aplico IA
-                  generativa (Gemini) para automatizar consultas e análises.
-                </p>
-                <p>
-                  Meu objetivo é atuar com inteligência de dados, transformando
-                  informações de sistemas e planilhas em indicadores claros que
-                  apoiem a tomada de decisão. Sou graduado em Análise e
-                  Desenvolvimento de Sistemas e já desenvolvi projetos de
-                  realidade virtual e aumentada no SENAI Fatesg.
-                </p>
-              </motion.div>
-            )}
-          </AnimatePresence>
+          {/* Recolhido: o resto do texto aparece cortado, sumindo num degradê */}
+          <motion.div
+            id="sobre-mais"
+            initial={false}
+            animate={{ height: aberto ? 'auto' : 76 }}
+            transition={{ duration: 0.45, ease: [0.2, 0.7, 0.2, 1] }}
+            className="relative overflow-hidden"
+            style={{
+              maskImage: aberto
+                ? 'none'
+                : 'linear-gradient(to bottom, black 10%, transparent 95%)',
+              WebkitMaskImage: aberto
+                ? 'none'
+                : 'linear-gradient(to bottom, black 10%, transparent 95%)',
+            }}
+          >
+            <div className="flex flex-col gap-4">
+              <p>
+                Trato e analiso dados com SQL e Python para gerar indicadores
+                operacionais, construo dashboards, formulários e aplicações web
+                internas para as equipes comercial e administrativa, integro
+                sistemas via APIs REST e automatizo processos com JavaScript e
+                Google Apps Script. Também estudo e aplico IA generativa
+                (Gemini) para automatizar consultas e análises.
+              </p>
+              <p>
+                Meu objetivo é atuar com inteligência de dados, transformando
+                informações de sistemas e planilhas em indicadores claros que
+                apoiem a tomada de decisão. Sou graduado em Análise e
+                Desenvolvimento de Sistemas e já desenvolvi projetos de
+                realidade virtual e aumentada no SENAI Fatesg.
+              </p>
+            </div>
+          </motion.div>
 
           <button
             type="button"
             onClick={() => setAberto((v) => !v)}
             aria-expanded={aberto}
             aria-controls="sobre-mais"
-            className="mx-auto mt-1 inline-flex cursor-pointer items-center gap-2 rounded-md border-2 border-current px-4 py-1.5 text-sm font-bold tracking-wider uppercase transition-[transform,background-color] hover:bg-white/10 active:translate-y-[2px] max-[750px]:mx-0 max-[750px]:self-start"
+            className="group relative mx-auto -mt-1 inline-flex cursor-pointer items-center gap-1.5 py-1 text-base font-bold text-portfolio-accent transition-transform active:scale-95 light:text-claro-sand max-[750px]:mx-0 max-[750px]:self-start"
           >
-            {aberto ? 'Ler menos' : 'Ler mais'}
+            {aberto ? 'Mostrar menos' : 'Continuar lendo'}
             <motion.span
-              animate={{ rotate: aberto ? 180 : 0 }}
-              transition={{ duration: 0.3 }}
+              animate={{ rotate: aberto ? 180 : 0, y: aberto ? 0 : [0, 3, 0] }}
+              transition={{
+                rotate: { duration: 0.3 },
+                y: { duration: 1.4, repeat: aberto ? 0 : Infinity },
+              }}
               className="flex"
             >
-              <ChevronDown size={16} aria-hidden="true" />
+              <ChevronDown size={18} aria-hidden="true" />
             </motion.span>
+            <RabiscoSublinhado className="absolute -bottom-1 left-0 w-[calc(100%-22px)] origin-left scale-x-60 transition-transform duration-300 group-hover:scale-x-100" />
           </button>
         </div>
 

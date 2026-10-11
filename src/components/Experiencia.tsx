@@ -1,7 +1,27 @@
+import { useState } from 'react';
+import { Plus } from 'lucide-react';
+import { AnimatePresence, motion } from 'motion/react';
 import { experienciaData } from '../data/experiencia';
 import FundoSecao from './FundoSecao';
 
 export default function Experiencia() {
+  // O cargo atual começa aberto; os outros abrem ao clicar na bolinha.
+  const [abertos, setAbertos] = useState(
+    () =>
+      new Set(
+        experienciaData
+          .slice(0, 1)
+          .map((item) => `${item.empresa}-${item.periodo}`),
+      ),
+  );
+  const alternar = (chave: string) =>
+    setAbertos((atual) => {
+      const novo = new Set(atual);
+      if (novo.has(chave)) novo.delete(chave);
+      else novo.add(chave);
+      return novo;
+    });
+
   return (
     <section className="isolate overflow-hidden secao-escura relative bg-portfolio-primary px-5 py-[50px] text-center text-portfolio-muted transition-colors duration-300 light:bg-claro-espresso light:text-claro-cream">
       <FundoSecao lado="direita" fundoEscuro />
@@ -40,61 +60,116 @@ export default function Experiencia() {
         </p>
       </div>
 
-      {/* Linha do tempo: data, cargo e empresa à esquerda; atividades e tecnologias à direita */}
+      {/* Linha do tempo: clicar na bolinha (ou no cargo) mostra ou esconde os detalhes */}
       <ol className="mx-auto max-w-[1100px] border-l border-portfolio-muted/25 text-left light:border-claro-sand/40 max-[1000px]:ml-2">
-        {experienciaData.map((item) => (
-          <li
-            key={`${item.empresa}-${item.periodo}`}
-            className="relative grid grid-cols-[260px_1fr] gap-x-10 gap-y-4 pb-10 pl-8 max-[1000px]:grid-cols-1 max-[1000px]:pl-6"
-          >
-            <span
-              aria-hidden="true"
-              className="absolute top-1.5 -left-[7px] h-3 w-3 rounded-full bg-portfolio-accent ring-4 ring-portfolio-bg light:bg-claro-sand light:ring-claro-espresso"
-            />
-
-            <div>
-              <p className="text-sm font-semibold tracking-wider text-portfolio-accent uppercase light:text-claro-sand">
-                {item.periodo}
-              </p>
-              <h3 className="mt-1 text-lg leading-snug font-bold text-portfolio-blue-light uppercase light:text-claro-sand">
-                {item.cargo}
-              </h3>
-              <p className="mt-1 text-base text-portfolio-muted light:text-claro-cream">
-                {item.empresa}
-              </p>
-            </div>
-
-            <div className="border-b border-portfolio-muted/15 pb-10 light:border-claro-cream/15">
-              <ul className="flex flex-col gap-1.5">
-                {item.responsabilidades.map((resp) => (
-                  <li
-                    key={resp}
-                    className="flex gap-2 text-[15px] leading-relaxed text-portfolio-muted light:text-claro-cream"
-                  >
-                    <span
-                      aria-hidden="true"
-                      className="mt-[9px] h-1.5 w-1.5 shrink-0 rounded-full bg-portfolio-accent light:bg-claro-sand"
-                    />
-                    {resp}
-                  </li>
-                ))}
-              </ul>
-              <ul
-                className="mt-4 flex flex-wrap gap-2"
-                aria-label="Tecnologias"
+        {experienciaData.map((item, i) => {
+          const chave = `${item.empresa}-${item.periodo}`;
+          const aberto = abertos.has(chave);
+          const idDetalhes = `exp-detalhes-${i}`;
+          return (
+            <li
+              key={chave}
+              className="relative grid grid-cols-[260px_1fr] gap-x-10 gap-y-3 pb-10 pl-8 max-[1000px]:grid-cols-1 max-[1000px]:pl-6"
+            >
+              <button
+                type="button"
+                onClick={() => alternar(chave)}
+                aria-expanded={aberto}
+                aria-controls={idDetalhes}
+                className="group cursor-pointer text-left"
               >
-                {item.skills.map((skill) => (
-                  <li
-                    key={skill}
-                    className="rounded-md bg-portfolio-yellow px-2.5 py-1 text-sm font-bold text-portfolio-bg light:bg-transparent light:text-claro-sand light:ring-1 light:ring-claro-sand/60 light:ring-inset"
+                <span
+                  aria-hidden="true"
+                  className={`absolute top-0.5 -left-[11px] flex h-5 w-5 items-center justify-center rounded-full border-2 border-portfolio-accent ring-4 ring-portfolio-primary transition-[background-color,transform] duration-300 group-hover:scale-110 group-active:scale-90 light:border-claro-sand light:ring-claro-espresso ${
+                    aberto
+                      ? 'bg-portfolio-accent light:bg-claro-sand'
+                      : 'bg-portfolio-primary light:bg-claro-espresso'
+                  }`}
+                >
+                  <motion.span
+                    animate={{ rotate: aberto ? 45 : 0 }}
+                    transition={{ duration: 0.3 }}
+                    className={`flex ${aberto ? 'text-portfolio-primary light:text-claro-espresso' : 'text-portfolio-accent light:text-claro-sand'}`}
                   >
-                    {skill}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </li>
-        ))}
+                    <Plus size={12} strokeWidth={3} />
+                  </motion.span>
+                </span>
+                <span className="block text-sm font-semibold tracking-wider text-portfolio-accent uppercase light:text-claro-sand">
+                  {item.periodo}
+                </span>
+                <span className="mt-1 block text-lg leading-snug font-bold text-portfolio-blue-light uppercase transition-colors group-hover:text-portfolio-accent light:text-claro-sand">
+                  {item.cargo}
+                </span>
+                <span className="mt-1 block text-base text-portfolio-muted light:text-claro-cream">
+                  {item.empresa}
+                </span>
+              </button>
+
+              <div
+                id={idDetalhes}
+                className="border-b border-portfolio-muted/15 pb-10 light:border-claro-cream/15"
+              >
+                <AnimatePresence initial={false} mode="wait">
+                  {aberto ? (
+                    <motion.div
+                      key="aberto"
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.35, ease: [0.2, 0.7, 0.2, 1] }}
+                      className="overflow-hidden"
+                    >
+                      <ul className="flex flex-col gap-1.5">
+                        {item.responsabilidades.map((resp) => (
+                          <li
+                            key={resp}
+                            className="flex gap-2 text-[15px] leading-relaxed text-portfolio-muted light:text-claro-cream"
+                          >
+                            <span
+                              aria-hidden="true"
+                              className="mt-[9px] h-1.5 w-1.5 shrink-0 rounded-full bg-portfolio-accent light:bg-claro-sand"
+                            />
+                            {resp}
+                          </li>
+                        ))}
+                      </ul>
+                      <ul
+                        className="mt-4 flex flex-wrap gap-2"
+                        aria-label="Tecnologias"
+                      >
+                        {item.skills.map((skill) => (
+                          <li
+                            key={skill}
+                            className="rounded-md bg-portfolio-yellow px-2.5 py-1 text-sm font-bold text-portfolio-bg light:bg-transparent light:text-claro-sand light:ring-1 light:ring-claro-sand/60 light:ring-inset"
+                          >
+                            {skill}
+                          </li>
+                        ))}
+                      </ul>
+                    </motion.div>
+                  ) : (
+                    <motion.button
+                      key="fechado"
+                      type="button"
+                      onClick={() => alternar(chave)}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="cursor-pointer text-[15px] text-portfolio-muted/80 transition-colors hover:text-portfolio-accent light:text-claro-cream/80 light:hover:text-claro-sand"
+                    >
+                      {item.responsabilidades.length} atividades ·{' '}
+                      {item.skills.length} tecnologias —{' '}
+                      <span className="font-semibold underline decoration-2 underline-offset-4">
+                        ver detalhes
+                      </span>
+                    </motion.button>
+                  )}
+                </AnimatePresence>
+              </div>
+            </li>
+          );
+        })}
       </ol>
     </section>
   );
