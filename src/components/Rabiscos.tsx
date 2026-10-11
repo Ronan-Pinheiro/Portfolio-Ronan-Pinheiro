@@ -34,7 +34,9 @@ interface SublinhadoProps extends RabiscoProps {
   modo?: 'hover' | 'entrar';
 }
 
-const CAMINHO_SUBLINHADO = 'M3 9 C 25 3, 45 12, 70 7 S 115 3, 157 8';
+// Rabisco de ida e volta, como um sublinhado feito à mão com caneta.
+const CAMINHO_SUBLINHADO =
+  'M4 8 C 22 3, 40 11, 62 6 S 104 2, 128 7 S 152 9, 156 6 C 140 10, 100 13, 64 12 S 24 11, 14 12';
 
 export function RabiscoSublinhado({
   className,
@@ -42,12 +44,12 @@ export function RabiscoSublinhado({
 }: SublinhadoProps) {
   if (modo === 'entrar') {
     return (
-      <svg viewBox="0 0 160 14" className={className} aria-hidden="true">
+      <svg viewBox="0 0 160 16" className={className} aria-hidden="true">
         <motion.path
           d={CAMINHO_SUBLINHADO}
           fill="none"
           stroke="currentColor"
-          strokeWidth="3"
+          strokeWidth="2.6"
           strokeLinecap="round"
           initial={{ pathLength: 0 }}
           whileInView={{ pathLength: 1 }}
@@ -59,7 +61,7 @@ export function RabiscoSublinhado({
   }
   return (
     <svg
-      viewBox="0 0 160 14"
+      viewBox="0 0 160 16"
       className={`rabisco-desenhar ${className ?? ''}`}
       aria-hidden="true"
     >
@@ -68,7 +70,7 @@ export function RabiscoSublinhado({
         pathLength={1}
         fill="none"
         stroke="currentColor"
-        strokeWidth="3"
+        strokeWidth="2.6"
         strokeLinecap="round"
       />
     </svg>

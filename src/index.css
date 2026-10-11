@@ -151,7 +151,7 @@
   .rabisco-desenhar path {
     stroke-dasharray: 1;
     stroke-dashoffset: 1;
-    transition: stroke-dashoffset 0.45s ease-in-out;
+    transition: stroke-dashoffset 0.7s cubic-bezier(0.55, 0.1, 0.35, 1);
   }
 
   /* Com mouse: desenha ao passar por cima e apaga ao sair */
@@ -167,7 +167,7 @@
 
   /* No toque: cada toque desenha e depois apaga (classe colocada por script) */
   .group[data-tocado] .rabisco-desenhar path {
-    animation: rabisco-toque 1.3s ease-in-out;
+    animation: rabisco-toque 1.6s ease-in-out;
   }
 
   @keyframes rabisco-toque {
