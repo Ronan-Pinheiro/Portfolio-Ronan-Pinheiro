@@ -209,7 +209,7 @@ export default function Sobre() {
               </p>
               <p>
                 Meu objetivo é atuar com inteligência de dados, transformando
-                informações de sistemas e planilhas em indicadores claros que
+                dados de ERPs, APIs e bancos de dados em indicadores claros que
                 apoiem a tomada de decisão. Sou graduado em Análise e
                 Desenvolvimento de Sistemas e já desenvolvi projetos de
                 realidade virtual e aumentada no SENAI Fatesg.
