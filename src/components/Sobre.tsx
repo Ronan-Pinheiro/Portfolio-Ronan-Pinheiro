@@ -4,18 +4,18 @@ import {
   GraduationCap,
   MapPin,
   Sparkle,
-} from 'lucide-react';
-import { useState } from 'react';
-import { motion, type Variants } from 'motion/react';
-import FotoRonan from '../Imagens/ImagensFotoRonan.png';
-import { useDigitacao } from '../hooks/useDigitacao';
-import FundoTopo from './FundoTopo';
-import { RabiscoSublinhado } from './Rabiscos';
+} from "lucide-react";
+import { useState } from "react";
+import { motion, type Variants } from "motion/react";
+import FotoRonan from "../Imagens/ImagensFotoRonan.png";
+import { useDigitacao } from "../hooks/useDigitacao";
+import FundoTopo from "./FundoTopo";
+import { RabiscoSublinhado } from "./Rabiscos";
 
 const destaques = [
-  { icon: MapPin, texto: 'Goiânia, GO' },
-  { icon: BriefcaseBusiness, texto: 'Ecossistema Provenda' },
-  { icon: GraduationCap, texto: 'Graduado em ADS' },
+  { icon: MapPin, texto: "Goiânia, GO" },
+  { icon: BriefcaseBusiness, texto: "Ecossistema Provenda" },
+  { icon: GraduationCap, texto: "Graduado em ADS" },
 ];
 
 // Começam escondidas atrás da foto e deslizam para fora ao abrir a página.
@@ -31,8 +31,8 @@ const folhaDoMeio: Variants = {
   destacada: { x: 16, y: -6, rotate: 5 },
 };
 
-const SAUDACAO = 'Olá, eu sou o';
-const NOME = 'Ronan Pinheiro';
+const SAUDACAO = "Olá, eu sou o";
+const NOME = "Ronan Pinheiro";
 
 // Mostra o trecho já digitado e reserva o espaço do restante,
 // para o título não mudar de tamanho durante a animação.
@@ -82,7 +82,7 @@ export default function Sobre() {
                     ? { opacity: [0, 0.9, 0], scale: [0.4, 1.3, 1.5] }
                     : {}
                 }
-                transition={{ duration: 0.9, ease: 'easeOut' }}
+                transition={{ duration: 0.9, ease: "easeOut" }}
               />
               <motion.span
                 className="relative flex"
@@ -116,7 +116,7 @@ export default function Sobre() {
                 quantos={Math.min(digitados, SAUDACAO.length)}
                 comCursor={naSaudacao}
               />
-            </span>{' '}
+            </span>{" "}
             <br />
             <span
               aria-hidden="true"
@@ -170,10 +170,9 @@ export default function Sobre() {
         </motion.a>
       </div>
 
-
       <div className="mx-auto mt-[70px] max-w-[1000px] pt-10 text-center rounded-lg px-10 pb-10 light:bg-claro-olive light:text-claro-cream max-[499px]:px-5 wrap-break-word max-[1050px]:mt-[30px] max-[1050px]:max-w-[85%] max-[1050px]:pt-8 max-[750px]:max-w-none max-[499px]:mt-[50px] max-[499px]:pt-8">
         <h2 className="text-[30px] font-bold text-portfolio-muted light:text-claro-sand">
-          <span className="text-portfolio-accent light:text-claro-sand">—</span>{' '}
+          <span className="text-portfolio-accent light:text-claro-sand">—</span>{" "}
           Sobre Mim
         </h2>
         <div className="flex flex-col gap-4 pt-[15px] text-lg max-[750px]:text-left max-[750px]:text-base max-[750px]:leading-relaxed">
@@ -186,16 +185,16 @@ export default function Sobre() {
           <motion.div
             id="sobre-mais"
             initial={false}
-            animate={{ height: aberto ? 'auto' : 76 }}
+            animate={{ height: aberto ? "auto" : 76 }}
             transition={{ duration: 0.45, ease: [0.2, 0.7, 0.2, 1] }}
             className="relative overflow-hidden"
             style={{
               maskImage: aberto
-                ? 'none'
-                : 'linear-gradient(to bottom, black 10%, transparent 95%)',
+                ? "none"
+                : "linear-gradient(to bottom, black 10%, transparent 95%)",
               WebkitMaskImage: aberto
-                ? 'none'
-                : 'linear-gradient(to bottom, black 10%, transparent 95%)',
+                ? "none"
+                : "linear-gradient(to bottom, black 10%, transparent 95%)",
             }}
           >
             <div className="flex flex-col gap-4">
@@ -205,9 +204,9 @@ export default function Sobre() {
                 sistemas via APIs REST, incluindo o ERP UAU. Trato e analiso
                 dados com SQL e Python para gerar indicadores operacionais e
                 construir dashboards e ferramentas para as equipes. Automatizo
-                processos com Python, JavaScript e Google Apps Script, eliminando tarefas manuais e
-                repetitivas, e aplico IA generativa (Gemini) para automatizar
-                consultas e análises.
+                processos com Python, JavaScript e Google Apps Script,
+                eliminando tarefas manuais e repetitivas, e aplico IA generativa
+                para automatizar consultas e análises.
               </p>
               <p>
                 Meu objetivo é atuar com inteligência de dados, transformando
@@ -226,7 +225,7 @@ export default function Sobre() {
             aria-controls="sobre-mais"
             className="group relative mx-auto -mt-1 inline-flex cursor-pointer items-center gap-1.5 py-1 text-base font-bold text-portfolio-accent transition-transform active:scale-95 light:text-claro-sand max-[750px]:mx-0 max-[750px]:self-start"
           >
-            {aberto ? 'Mostrar menos' : 'Continuar lendo'}
+            {aberto ? "Mostrar menos" : "Continuar lendo"}
             <motion.span
               animate={{ rotate: aberto ? 180 : 0, y: aberto ? 0 : [0, 3, 0] }}
               transition={{
