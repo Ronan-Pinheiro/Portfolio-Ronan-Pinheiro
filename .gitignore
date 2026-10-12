@@ -25,3 +25,7 @@ dist-ssr
 
 # Ferramentas locais
 bfg.jar
+
+# Gerados no build / na geração do currículo
+tsconfig.tsbuildinfo
+curriculo/*.pdf
