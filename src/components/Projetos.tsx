@@ -14,7 +14,6 @@ export default function Projetos() {
   return (
     <section className="isolate relative overflow-hidden bg-portfolio-mid px-5 pt-[50px] pb-20 text-center text-portfolio-muted transition-colors duration-300 light:bg-claro-surface light:text-claro-text">
       <FundoSecao lado="esquerda" circuito />
-      <div className="portfolio-accent-line top-[97%]" aria-hidden="true" />
 
       <div className="ml-20 flex max-[1000px]:ml-5 max-[1000px]:flex-wrap">
         <p className="titulo-secao relative flex items-center self-start text-[40px] font-bold max-[499px]:text-[30px]">

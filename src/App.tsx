@@ -39,8 +39,9 @@ export default function App() {
           <section
             ref={sectionRefs.habilidades}
             id="habilidades"
-            className="bg-portfolio-bg light:bg-claro-bg"
+            className="relative bg-portfolio-bg light:bg-claro-bg"
           >
+            <div className="portfolio-accent-line" aria-hidden="true" />
             <Revelar>
               <Habilidades />
             </Revelar>
@@ -48,8 +49,9 @@ export default function App() {
           <section
             ref={sectionRefs.projetos}
             id="projetos"
-            className="bg-portfolio-mid light:bg-claro-surface"
+            className="relative bg-portfolio-mid light:bg-claro-surface"
           >
+            <div className="portfolio-accent-line" aria-hidden="true" />
             <Revelar>
               <Projetos />
             </Revelar>
@@ -57,8 +59,9 @@ export default function App() {
           <section
             ref={sectionRefs.experiencia}
             id="experiencia"
-            className="bg-portfolio-primary light:bg-claro-espresso"
+            className="relative bg-portfolio-primary light:bg-claro-espresso"
           >
+            <div className="portfolio-accent-line" aria-hidden="true" />
             <Revelar>
               <Experiencia />
             </Revelar>
@@ -66,8 +69,9 @@ export default function App() {
           <section
             ref={sectionRefs.formacao}
             id="formacao"
-            className="bg-portfolio-bg light:bg-claro-bg"
+            className="relative bg-portfolio-bg light:bg-claro-bg"
           >
+            <div className="portfolio-accent-line" aria-hidden="true" />
             <Revelar>
               <FormacaoAcademica />
             </Revelar>

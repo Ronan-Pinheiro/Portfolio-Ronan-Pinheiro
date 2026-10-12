@@ -170,7 +170,6 @@ export default function Sobre() {
         </motion.a>
       </div>
 
-      <div className="portfolio-accent-line top-[97%]" aria-hidden="true" />
 
       <div className="mx-auto mt-[70px] max-w-[1000px] pt-10 text-center rounded-lg px-10 pb-10 light:bg-claro-olive light:text-claro-cream max-[499px]:px-5 wrap-break-word max-[1050px]:mt-[30px] max-[1050px]:max-w-[85%] max-[1050px]:pt-8 max-[750px]:max-w-none max-[499px]:mt-[50px] max-[499px]:pt-8">
         <h2 className="text-[30px] font-bold text-portfolio-muted light:text-claro-sand">

@@ -208,6 +208,6 @@
   }
 
   .portfolio-accent-line {
-    @apply absolute left-0 z-2 h-[200px] w-2.5 -translate-y-1/2 rounded-r-[4px] max-[750px]:hidden bg-portfolio-accent light:bg-claro-accent;
+    @apply absolute top-0 left-0 z-20 h-[200px] w-2.5 -translate-y-1/2 rounded-r-[4px] max-[750px]:hidden bg-portfolio-accent light:bg-claro-accent;
   }
 }

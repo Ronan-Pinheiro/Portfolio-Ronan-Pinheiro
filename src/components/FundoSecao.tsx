@@ -75,6 +75,13 @@ export default function FundoSecao({
       ref={canvasRef}
       aria-hidden="true"
       className="pointer-events-none absolute inset-0 -z-10 h-full w-full"
+      // Some aos poucos nas bordas da seção, para nada ficar cortado no meio.
+      // Com circuito, a borda de baixo fica inteira: as trilhas nascem dela.
+      style={{
+        maskImage: circuito
+          ? 'linear-gradient(to bottom, transparent, #000 90px)'
+          : 'linear-gradient(to bottom, transparent, #000 90px, #000 calc(100% - 90px), transparent)',
+      }}
     />
   );
 }
