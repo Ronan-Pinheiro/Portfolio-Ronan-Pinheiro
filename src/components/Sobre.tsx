@@ -204,9 +204,8 @@ export default function Sobre() {
                 para os clientes com React, TypeScript e Tailwind CSS, e integro
                 sistemas via APIs REST, incluindo o ERP UAU. Trato e analiso
                 dados com SQL e Python para gerar indicadores operacionais e
-                construir dashboards e ferramentas para as equipes comercial e
-                administrativa. Automatizo processos com scripts em Python,
-                JavaScript e Google Apps Script, eliminando tarefas manuais e
+                construir dashboards e ferramentas para as equipes. Automatizo
+                processos com Python, JavaScript e Google Apps Script, eliminando tarefas manuais e
                 repetitivas, e aplico IA generativa (Gemini) para automatizar
                 consultas e análises.
               </p>
