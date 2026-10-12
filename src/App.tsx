@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import { MotionConfig } from 'motion/react';
+import BarraSecao from './components/BarraSecao';
 import Contatos from './components/Contatos';
 import Experiencia from './components/Experiencia';
 import Feiras from './components/Feiras';
@@ -41,7 +42,7 @@ export default function App() {
             id="habilidades"
             className="relative bg-portfolio-bg light:bg-claro-bg"
           >
-            <div className="portfolio-accent-line" aria-hidden="true" />
+            <BarraSecao />
             <Revelar>
               <Habilidades />
             </Revelar>
@@ -51,7 +52,7 @@ export default function App() {
             id="projetos"
             className="relative bg-portfolio-mid light:bg-claro-surface"
           >
-            <div className="portfolio-accent-line" aria-hidden="true" />
+            <BarraSecao />
             <Revelar>
               <Projetos />
             </Revelar>
@@ -61,7 +62,7 @@ export default function App() {
             id="experiencia"
             className="relative bg-portfolio-primary light:bg-claro-espresso"
           >
-            <div className="portfolio-accent-line" aria-hidden="true" />
+            <BarraSecao />
             <Revelar>
               <Experiencia />
             </Revelar>
@@ -71,7 +72,7 @@ export default function App() {
             id="formacao"
             className="relative bg-portfolio-bg light:bg-claro-bg"
           >
-            <div className="portfolio-accent-line" aria-hidden="true" />
+            <BarraSecao />
             <Revelar>
               <FormacaoAcademica />
             </Revelar>
