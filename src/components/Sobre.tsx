@@ -200,12 +200,15 @@ export default function Sobre() {
           >
             <div className="flex flex-col gap-4">
               <p>
-                Trato e analiso dados com SQL e Python para gerar indicadores
-                operacionais, construo dashboards, formulários e aplicações web
-                internas para as equipes comercial e administrativa, integro
-                sistemas via APIs REST e automatizo processos com JavaScript e
-                Google Apps Script. Também estudo e aplico IA generativa
-                (Gemini) para automatizar consultas e análises.
+                No dia a dia, desenvolvo aplicações web internas e interfaces
+                para os clientes com React, TypeScript e Tailwind CSS, e integro
+                sistemas via APIs REST, incluindo o ERP UAU. Trato e analiso
+                dados com SQL e Python para gerar indicadores operacionais e
+                construir dashboards e ferramentas para as equipes comercial e
+                administrativa. Automatizo processos com scripts em Python,
+                JavaScript e Google Apps Script, eliminando tarefas manuais e
+                repetitivas, e aplico IA generativa (Gemini) para automatizar
+                consultas e análises.
               </p>
               <p>
                 Meu objetivo é atuar com inteligência de dados, transformando
