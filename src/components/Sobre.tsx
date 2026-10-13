@@ -175,7 +175,7 @@ export default function Sobre() {
           <span className="text-portfolio-accent light:text-claro-sand">—</span>{" "}
           Sobre Mim
         </h2>
-        <div className="flex flex-col gap-4 pt-[15px] text-lg max-[750px]:text-left max-[750px]:text-base max-[750px]:leading-relaxed">
+        <div className="flex flex-col gap-4 pt-[15px] text-lg max-[750px]:text-base max-[750px]:leading-relaxed">
           <p>
             Trabalho com dados, automação e desenvolvimento web. Hoje atuo no
             Ecossistema Provenda, onde comecei como Analista de Dados e sigo
@@ -223,7 +223,7 @@ export default function Sobre() {
             onClick={() => setAberto((v) => !v)}
             aria-expanded={aberto}
             aria-controls="sobre-mais"
-            className="group relative mx-auto -mt-1 inline-flex cursor-pointer items-center gap-1.5 py-1 text-base font-bold text-portfolio-accent transition-transform active:scale-95 light:text-claro-sand max-[750px]:mx-0 max-[750px]:self-start"
+            className="group relative mx-auto -mt-1 inline-flex cursor-pointer items-center gap-1.5 py-1 text-base font-bold text-portfolio-accent transition-transform active:scale-95 light:text-claro-sand"
           >
             {aberto ? "Mostrar menos" : "Continuar lendo"}
             <motion.span

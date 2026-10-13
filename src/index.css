@@ -149,8 +149,9 @@
 @layer components {
   /* Sublinhado à mão que se desenha (e se apaga) como uma caneta */
   .rabisco-desenhar path {
-    stroke-dasharray: 1;
-    stroke-dashoffset: 1;
+    /* Vão um pouco maior que o traço: apagado, nem a ponta arredondada aparece */
+    stroke-dasharray: 1 1.1;
+    stroke-dashoffset: 1.05;
     transition: stroke-dashoffset 0.5s cubic-bezier(0.55, 0.1, 0.35, 1);
   }
 
@@ -172,14 +173,14 @@
 
   @keyframes rabisco-toque {
     0% {
-      stroke-dashoffset: 1;
+      stroke-dashoffset: 1.05;
     }
     35%,
     70% {
       stroke-dashoffset: 0;
     }
     100% {
-      stroke-dashoffset: -1;
+      stroke-dashoffset: -1.05;
     }
   }
 
