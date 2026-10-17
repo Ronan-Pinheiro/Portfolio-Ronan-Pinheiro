@@ -14,10 +14,11 @@ export default function Habilidades() {
         <p className="max-w-[1150px] pt-[15px] pl-[35px] text-left text-lg max-[1000px]:pl-0">
           No dia a dia uso <span className="portfolio-destaque">SQL</span> e{' '}
           <span className="portfolio-destaque">Python</span> para tratar e
-          analisar dados e gerar indicadores, e{' '}
-          <span className="portfolio-destaque">JavaScript</span> com{' '}
-          <span className="portfolio-destaque">Google Apps Script</span> para
-          automatizar processos e integrar sistemas via APIs REST. No front-end,
+          analisar dados e gerar indicadores. Para as automações, uso{' '}
+          <span className="portfolio-destaque">Python</span>,{' '}
+          <span className="portfolio-destaque">JavaScript</span> e{' '}
+          <span className="portfolio-destaque">Google Apps Script</span>, e
+          integro sistemas via APIs REST. No front-end,
           trabalho com <span className="portfolio-destaque">React</span>,{' '}
           <span className="portfolio-destaque">TypeScript</span>,{' '}
           <span className="portfolio-destaque">Tailwind CSS</span>,{' '}

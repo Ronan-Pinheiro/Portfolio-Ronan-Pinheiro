@@ -5,7 +5,7 @@ import {
   MapPin,
   Sparkle,
 } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, type Variants } from "motion/react";
 import FotoRonan from "../Imagens/ImagensFotoRonan.png";
 import { useDigitacao } from "../hooks/useDigitacao";
@@ -30,6 +30,10 @@ const folhaDoMeio: Variants = {
   aberta: { x: 8, y: -4, rotate: 3 },
   destacada: { x: 16, y: -6, rotate: 5 },
 };
+
+// Entrada da página (com delay) e hover (sem delay, curva suave).
+const ENTRADA = { duration: 0.8, ease: [0.2, 0.7, 0.2, 1] } as const;
+const HOVER = { duration: 0.5, ease: [0.45, 0, 0.25, 1] } as const;
 
 const SAUDACAO = "Olá, eu sou o";
 const NOME = "Ronan Pinheiro";
@@ -64,6 +68,12 @@ export default function Sobre() {
   const naSaudacao = digitados < SAUDACAO.length;
   const terminou = digitados >= total;
   const [aberto, setAberto] = useState(false);
+  const [introFeita, setIntroFeita] = useState(false);
+
+  useEffect(() => {
+    const t = setTimeout(() => setIntroFeita(true), 1400);
+    return () => clearTimeout(t);
+  }, []);
 
   return (
     <section className="relative isolate overflow-hidden bg-portfolio-bg px-5 py-[50px] text-center text-portfolio-muted transition-colors duration-300 light:bg-claro-bg light:text-claro-text">
@@ -144,17 +154,13 @@ export default function Sobre() {
           <motion.span
             aria-hidden="true"
             variants={folhaDeTras}
-            transition={{ duration: 0.8, delay: 0.5, ease: [0.2, 0.7, 0.2, 1] }}
+            transition={introFeita ? HOVER : { ...ENTRADA, delay: 0.5 }}
             className="absolute inset-0 -z-20 rounded-lg bg-portfolio-accent light:bg-claro-olive"
           />
           <motion.span
             aria-hidden="true"
             variants={folhaDoMeio}
-            transition={{
-              duration: 0.8,
-              delay: 0.35,
-              ease: [0.2, 0.7, 0.2, 1],
-            }}
+            transition={introFeita ? HOVER : { ...ENTRADA, delay: 0.35 }}
             className="absolute inset-0 -z-10 rounded-lg bg-portfolio-primary ring-1 ring-portfolio-blue-light/40 ring-inset light:bg-claro-sand light:ring-0"
           />
           <motion.img
@@ -165,6 +171,7 @@ export default function Sobre() {
               aberta: { scale: 1 },
               destacada: { scale: 1.02 },
             }}
+            transition={HOVER}
             className="block h-[350px] w-[350px] cursor-pointer rounded-lg object-cover max-[1050px]:h-[300px] max-[1050px]:w-[300px] max-[499px]:h-[250px] max-[499px]:w-[250px]"
           />
         </motion.a>
@@ -186,7 +193,7 @@ export default function Sobre() {
             id="sobre-mais"
             initial={false}
             animate={{ height: aberto ? "auto" : 76 }}
-            transition={{ duration: 0.45, ease: [0.2, 0.7, 0.2, 1] }}
+            transition={{ duration: 0.45, ease: [0.45, 0, 0.25, 1] }}
             className="relative overflow-hidden"
             style={{
               maskImage: aberto

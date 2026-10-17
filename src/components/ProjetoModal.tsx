@@ -35,7 +35,7 @@ export default function ProjetoModal({ projeto, onClose }: ProjetoModalProps) {
                 initial={{ opacity: 0, y: 16, scale: 0.98 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: 8, scale: 0.98 }}
-                transition={{ duration: 0.25, ease: [0.2, 0.7, 0.2, 1] }}
+                transition={{ duration: 0.25, ease: [0.45, 0, 0.25, 1] }}
               >
                 <Dialog.Close
                   className="absolute top-3 right-3 flex h-10 w-10 cursor-pointer items-center justify-center rounded-md text-portfolio-accent transition-colors hover:bg-portfolio-bg light:text-claro-accent light:hover:bg-claro-surface"
@@ -93,7 +93,7 @@ export default function ProjetoModal({ projeto, onClose }: ProjetoModalProps) {
                     href={exibido.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-4 flex items-center justify-center gap-3 rounded-md border-2 border-portfolio-accent shadow-[4px_4px_0_0_rgba(230,230,238,0.3)] light:border-claro-espresso light:shadow-[4px_4px_0_0_var(--color-claro-espresso)] bg-portfolio-accent px-3 py-3 font-bold text-portfolio-bg transition-colors duration-300 hover:bg-portfolio-accent-hover active:scale-[0.97] light:bg-claro-accent light:text-claro-cream light:hover:bg-claro-accent-hover"
+                    className="mt-4 flex items-center justify-center gap-3 rounded-md border-2 border-portfolio-accent shadow-[4px_4px_0_0_rgba(230,230,238,0.3)] light:border-claro-espresso light:shadow-[4px_4px_0_0_var(--color-claro-espresso)] bg-portfolio-accent px-3 py-3 font-bold text-portfolio-bg transition-[background-color,scale] duration-300 hover:bg-portfolio-accent-hover active:scale-[0.97] light:bg-claro-accent light:text-claro-cream light:hover:bg-claro-accent-hover"
                   >
                     Ver Projeto
                     <span className="flex h-7 w-7 items-center justify-center rounded-sm bg-black/15">

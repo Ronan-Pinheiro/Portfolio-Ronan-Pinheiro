@@ -79,7 +79,7 @@ export default function Experiencia() {
               >
                 <span
                   aria-hidden="true"
-                  className={`absolute top-0.5 -left-[11px] flex h-5 w-5 items-center justify-center rounded-full border-2 border-portfolio-accent ring-4 ring-portfolio-primary transition-[background-color,transform] duration-300 group-hover:scale-110 group-active:scale-90 light:border-claro-sand light:ring-claro-espresso ${
+                  className={`absolute top-0.5 -left-[11px] flex h-5 w-5 items-center justify-center rounded-full border-2 border-portfolio-accent ring-4 ring-portfolio-primary transition-[background-color,scale] duration-300 group-hover:scale-110 group-active:scale-90 light:border-claro-sand light:ring-claro-espresso ${
                     aberto
                       ? 'bg-portfolio-accent light:bg-claro-sand'
                       : 'bg-portfolio-primary light:bg-claro-espresso'
@@ -87,7 +87,7 @@ export default function Experiencia() {
                 >
                   <motion.span
                     animate={{ rotate: aberto ? 45 : 0 }}
-                    transition={{ duration: 0.3 }}
+                    transition={{ duration: 0.3, ease: [0.45, 0, 0.25, 1] }}
                     className={`flex ${aberto ? 'text-portfolio-primary light:text-claro-espresso' : 'text-portfolio-accent light:text-claro-sand'}`}
                   >
                     <Plus size={12} strokeWidth={3} />
@@ -115,7 +115,7 @@ export default function Experiencia() {
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.35, ease: [0.2, 0.7, 0.2, 1] }}
+                      transition={{ duration: 0.35, ease: [0.45, 0, 0.25, 1] }}
                       className="overflow-hidden"
                     >
                       <ul className="flex flex-col gap-1.5">

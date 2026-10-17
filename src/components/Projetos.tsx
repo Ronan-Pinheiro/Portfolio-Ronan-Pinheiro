@@ -47,7 +47,7 @@ export default function Projetos() {
                 type="button"
                 onClick={() => setProjetoSelecionado(proj)}
                 aria-label={`Ver detalhes do projeto ${proj.titulo}`}
-                className={`group flex h-full w-full cursor-pointer flex-col rounded-lg border-2 border-portfolio-accent bg-portfolio-bg p-3 text-left shadow-[6px_6px_0_0_rgba(230,230,238,0.3)] transition-[transform,box-shadow] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] active:duration-150 hover:-translate-y-1 hover:rotate-0 active:translate-x-[4px] active:translate-y-[4px] active:rotate-0 active:shadow-none light:active:shadow-none hover:shadow-[9px_9px_0_0_rgba(230,230,238,0.3)] light:border-claro-espresso light:bg-claro-card light:shadow-[6px_6px_0_0_var(--color-claro-espresso)] light:hover:shadow-[9px_9px_0_0_var(--color-claro-espresso)] ${
+                className={`group flex h-full w-full cursor-pointer flex-col rounded-lg border-2 border-portfolio-accent bg-portfolio-bg p-3 text-left shadow-[6px_6px_0_0_rgba(230,230,238,0.3)] transition-[translate,rotate,box-shadow] duration-500 ease-suave active:duration-150 hover:-translate-y-1 hover:rotate-0 active:translate-x-[4px] active:translate-y-[4px] active:rotate-0 active:shadow-none light:active:shadow-none hover:shadow-[9px_9px_0_0_rgba(230,230,238,0.3)] light:border-claro-espresso light:bg-claro-card light:shadow-[6px_6px_0_0_var(--color-claro-espresso)] light:hover:shadow-[9px_9px_0_0_var(--color-claro-espresso)] ${
                   i % 2 === 0 ? '-rotate-1' : 'rotate-1'
                 }`}
               >

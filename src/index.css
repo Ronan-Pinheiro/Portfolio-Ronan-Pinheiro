@@ -36,6 +36,9 @@
   --font-display: 'Archivo', ui-sans-serif, system-ui, sans-serif;
 
   --ease-portfolio: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-suave: cubic-bezier(0.45, 0, 0.25, 1);
+  --default-transition-timing-function: var(--ease-suave);
+  --default-transition-duration: 300ms;
 }
 
 @layer base {

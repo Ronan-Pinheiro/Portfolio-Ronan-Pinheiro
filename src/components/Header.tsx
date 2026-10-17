@@ -39,7 +39,7 @@ export default function Header({ sections }: HeaderProps) {
   ];
 
   const iconButtonClass =
-    'flex h-10 w-10 cursor-pointer items-center justify-center rounded-md text-white transition-[color,transform] duration-300 active:scale-90 hover:text-portfolio-accent light:text-claro-cream light:hover:text-claro-sand';
+    'flex h-10 w-10 cursor-pointer items-center justify-center rounded-md text-white transition-[color,scale] duration-300 active:scale-90 hover:text-portfolio-accent light:text-claro-cream light:hover:text-claro-sand';
 
   return (
     <>
@@ -57,7 +57,7 @@ export default function Header({ sections }: HeaderProps) {
             <motion.span
               className="absolute top-0 left-0 h-[2.5px] w-full rounded-sm bg-current"
               animate={menuOpen ? { y: 8, rotate: 45 } : { y: 0, rotate: 0 }}
-              transition={{ duration: 0.25, ease: [0.2, 0.7, 0.2, 1] }}
+              transition={{ duration: 0.25, ease: [0.45, 0, 0.25, 1] }}
             />
             <motion.span
               className="absolute top-[8px] left-0 h-[2.5px] w-full rounded-sm bg-current"
@@ -71,7 +71,7 @@ export default function Header({ sections }: HeaderProps) {
             <motion.span
               className="absolute top-[16px] left-0 h-[2.5px] w-full rounded-sm bg-current"
               animate={menuOpen ? { y: -8, rotate: -45 } : { y: 0, rotate: 0 }}
-              transition={{ duration: 0.25, ease: [0.2, 0.7, 0.2, 1] }}
+              transition={{ duration: 0.25, ease: [0.45, 0, 0.25, 1] }}
             />
           </span>
         </button>
@@ -109,7 +109,7 @@ export default function Header({ sections }: HeaderProps) {
           <a
             href="/RonanCurriculo.pdf"
             download="RonanCurriculo.pdf"
-            className="hidden items-center gap-2 rounded-md bg-portfolio-accent px-4 py-2 text-sm font-bold text-portfolio-bg shadow-[3px_3px_0_0_rgba(230,230,238,0.3)] transition-[transform,background-color] hover:bg-portfolio-accent-hover active:translate-x-[2px] active:translate-y-[2px] min-[1050px]:flex light:bg-claro-accent light:text-claro-cream light:shadow-[3px_3px_0_0_var(--color-claro-sand)] light:hover:bg-claro-accent-hover"
+            className="hidden items-center gap-2 rounded-md bg-portfolio-accent px-4 py-2 text-sm font-bold text-portfolio-bg shadow-[3px_3px_0_0_rgba(230,230,238,0.3)] transition-[translate,background-color,box-shadow] hover:bg-portfolio-accent-hover active:translate-x-[2px] active:translate-y-[2px] min-[1050px]:flex light:bg-claro-accent light:text-claro-cream light:shadow-[3px_3px_0_0_var(--color-claro-sand)] light:hover:bg-claro-accent-hover"
           >
             Currículo
             <Download size={16} aria-hidden="true" />

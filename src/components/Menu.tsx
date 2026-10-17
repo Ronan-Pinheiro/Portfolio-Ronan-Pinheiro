@@ -34,7 +34,7 @@ export default function Menu({ menuOpen, toggleMenu, sections }: MenuProps) {
       inert={!menuOpen}
       initial={false}
       animate={{ x: menuOpen ? 0 : -320 }}
-      transition={{ duration: 0.3, ease: [0.2, 0.7, 0.2, 1] }}
+      transition={{ duration: 0.3, ease: [0.45, 0, 0.25, 1] }}
     >
       <div className="mt-[76px] mb-6 flex flex-col items-center text-center">
         <img
@@ -78,7 +78,7 @@ export default function Menu({ menuOpen, toggleMenu, sections }: MenuProps) {
       </ul>
 
       <a
-        className="mt-auto mb-1 flex items-center justify-center gap-3 rounded-md bg-portfolio-accent p-2.5 text-lg font-semibold text-portfolio-bg shadow-[4px_4px_0_0_rgba(230,230,238,0.3)] transition-[transform,background-color] hover:bg-portfolio-muted active:translate-x-[2px] active:translate-y-[2px] active:shadow-[2px_2px_0_0_rgba(230,230,238,0.3)] light:bg-claro-accent light:text-claro-cream light:shadow-[4px_4px_0_0_var(--color-claro-sand)] light:hover:bg-claro-accent-hover light:active:shadow-[2px_2px_0_0_var(--color-claro-sand)]"
+        className="mt-auto mb-1 flex items-center justify-center gap-3 rounded-md bg-portfolio-accent p-2.5 text-lg font-semibold text-portfolio-bg shadow-[4px_4px_0_0_rgba(230,230,238,0.3)] transition-[translate,background-color,box-shadow] hover:bg-portfolio-muted active:translate-x-[2px] active:translate-y-[2px] active:shadow-[2px_2px_0_0_rgba(230,230,238,0.3)] light:bg-claro-accent light:text-claro-cream light:shadow-[4px_4px_0_0_var(--color-claro-sand)] light:hover:bg-claro-accent-hover light:active:shadow-[2px_2px_0_0_var(--color-claro-sand)]"
         href="/RonanCurriculo.pdf"
         download="RonanCurriculo.pdf"
       >
