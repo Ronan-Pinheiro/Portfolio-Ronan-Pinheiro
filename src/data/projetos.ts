@@ -6,6 +6,7 @@ import Projeto_Dogs from '../Imagens/Projeto_Dogs.png';
 import Projeto_cargaIndivisivel from '../Imagens/Projeto_CargaIndivisível.png';
 import Projeto_AutomacaoE2E from '../Imagens/Projeto_AutomacaoE2E.mp4';
 import Projeto_cypress_Kabum from '../Imagens/Projeto_cypress_Kabum.png';
+import FrajolaHub_Stream from '../Imagens/Projeto_FrajolaHub_Stream.jpg';
 import FrajolaHub_Chat from '../Imagens/Projeto_FrajolaHub_Chat.jpg';
 import FrajolaHub_Voz from '../Imagens/Projeto_FrajolaHub_Voz.jpg';
 import FrajolaHub_Tela from '../Imagens/Projeto_FrajolaHub_Tela.jpg';
@@ -51,6 +52,7 @@ Back-end em Python com FastAPI, SQLAlchemy e Alembic, PostgreSQL e Redis. Front-
     ],
     imagens: [
       FrajolaHub_Login,
+      FrajolaHub_Stream,
       FrajolaHub_Chat,
       FrajolaHub_Voz,
       FrajolaHub_Tela,
