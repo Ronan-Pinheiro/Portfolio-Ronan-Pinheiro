@@ -20,7 +20,7 @@ export const projetosData: Projeto[] = [
     titulo: 'Frajola Hub',
     resumo:
       'Plataforma web de voz, chat em tempo real e transmissão de tela, com servidor de demonstração aberto.',
-    descricao: `Projeto pessoal no ar e em evolução: uma plataforma de comunicação no estilo Discord, feita para o meu grupo de amigos. Qualquer pessoa pode testar pelo botão "Entrar como visitante", que abre um servidor de demonstração separado do grupo real.
+    descricao: `Projeto pessoal no ar e em evolução: uma plataforma de voz, chat e compartilhamento de tela em FPS alto, feita como ponto de encontro do meu grupo de amigos. Qualquer pessoa pode testar pelo botão "Entrar como visitante", que abre um servidor de demonstração separado do grupo real.
 
 O que já funciona:
 • Chat em tempo real por WebSocket, com mensagens salvas no PostgreSQL e anti-spam
@@ -30,6 +30,7 @@ O que já funciona:
 • Login com Google e aprovação de novos membros pelo dono do servidor
 • Gatos bots, sorteio de times e um gato DJ que toca músicas do YouTube sincronizadas para a sala
 • Painel de estatísticas de uso (no demo, com dados fictícios)
+• Tudo no ar com custo zero (planos grátis, sem cartão de crédito), incluindo música sincronizada sem servidor de áudio
 
 Back-end em Python com FastAPI, SQLAlchemy e Alembic, PostgreSQL e Redis. Front-end em React e TypeScript. Testes com Pytest e Vitest rodando no GitHub Actions e deploy no Cloudflare Pages e no Render.`,
     tecnologias: [
