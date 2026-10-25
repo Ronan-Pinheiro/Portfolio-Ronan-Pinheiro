@@ -1,5 +1,11 @@
 import * as Dialog from '@radix-ui/react-dialog';
-import { ChevronLeft, ChevronRight, ExternalLink, X } from 'lucide-react';
+import {
+  ChevronLeft,
+  ChevronRight,
+  ExternalLink,
+  Maximize2,
+  X,
+} from 'lucide-react';
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import type { ProjetoModalProps } from '../types';
@@ -8,11 +14,51 @@ export default function ProjetoModal({ projeto, onClose }: ProjetoModalProps) {
   const exibido = projeto;
   const [atual, setAtual] = useState(0);
   const [aberto, setAberto] = useState(projeto);
+  const [ampliada, setAmpliada] = useState(false);
   // Outro projeto aberto: volta para a primeira imagem.
   if (aberto !== projeto) {
     setAberto(projeto);
     setAtual(0);
+    setAmpliada(false);
   }
+
+  const total = exibido?.imagens.length ?? 0;
+  const passar = (passo: number) =>
+    setAtual((i) => (i + passo + total) % total);
+
+  // Setas e contador, usados na imagem do modal e na imagem ampliada.
+  const setas = (grande: boolean) =>
+    total > 1 && (
+      <>
+        {[
+          {
+            lado: grande ? 'left-4' : 'left-2',
+            passo: -1,
+            Icone: ChevronLeft,
+            rotulo: 'Imagem anterior',
+          },
+          {
+            lado: grande ? 'right-4' : 'right-2',
+            passo: 1,
+            Icone: ChevronRight,
+            rotulo: 'Próxima imagem',
+          },
+        ].map(({ lado, passo, Icone, rotulo }) => (
+          <button
+            key={rotulo}
+            type="button"
+            aria-label={rotulo}
+            onClick={() => passar(passo)}
+            className={`absolute top-1/2 ${lado} flex ${grande ? 'h-12 w-12' : 'h-9 w-9'} -translate-y-1/2 cursor-pointer items-center justify-center rounded-md bg-black/60 text-white transition-[background-color,scale] hover:bg-black/80 active:scale-95`}
+          >
+            <Icone size={grande ? 26 : 20} aria-hidden="true" />
+          </button>
+        ))}
+        <span className="absolute right-2 bottom-2 rounded bg-black/60 px-2 py-0.5 font-mono text-xs text-white">
+          {atual + 1}/{total}
+        </span>
+      </>
+    );
 
   return (
     <Dialog.Root
@@ -65,48 +111,54 @@ export default function ProjetoModal({ projeto, onClose }: ProjetoModalProps) {
                     </video>
                   ) : (
                     <div className="relative mx-auto w-full max-w-[450px] max-[900px]:max-w-[90%]">
-                      <img
-                        src={exibido.imagens[atual]}
-                        alt={`${exibido.titulo} – imagem ${atual + 1} de ${exibido.imagens.length}`}
-                        className="mx-auto block max-h-[375px] w-full rounded-lg object-cover max-[900px]:max-h-[250px]"
-                      />
-                      {exibido.imagens.length > 1 && (
-                        <>
-                          {[
-                            {
-                              lado: 'left-2',
-                              passo: -1,
-                              Icone: ChevronLeft,
-                              rotulo: 'Imagem anterior',
-                            },
-                            {
-                              lado: 'right-2',
-                              passo: 1,
-                              Icone: ChevronRight,
-                              rotulo: 'Próxima imagem',
-                            },
-                          ].map(({ lado, passo, Icone, rotulo }) => (
-                            <button
-                              key={rotulo}
-                              type="button"
-                              aria-label={rotulo}
-                              onClick={() =>
-                                setAtual(
-                                  (i) =>
-                                    (i + passo + exibido.imagens.length) %
-                                    exibido.imagens.length,
-                                )
-                              }
-                              className={`absolute top-1/2 ${lado} flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-md bg-black/60 text-white transition-[background-color,scale] hover:bg-black/80 active:scale-95`}
+                      <button
+                        type="button"
+                        onClick={() => setAmpliada(true)}
+                        aria-label="Ampliar imagem"
+                        className="group/zoom relative block w-full cursor-zoom-in"
+                      >
+                        <img
+                          src={exibido.imagens[atual]}
+                          alt={`${exibido.titulo} – imagem ${atual + 1} de ${total}`}
+                          className="mx-auto block max-h-[375px] w-full rounded-lg object-cover max-[900px]:max-h-[250px]"
+                        />
+                        <span className="absolute top-2 right-2 flex h-8 w-8 items-center justify-center rounded-md bg-black/60 text-white opacity-0 transition-opacity group-hover/zoom:opacity-100 max-[900px]:opacity-100">
+                          <Maximize2 size={16} aria-hidden="true" />
+                        </span>
+                      </button>
+                      {setas(false)}
+
+                      <Dialog.Root open={ampliada} onOpenChange={setAmpliada}>
+                        <Dialog.Portal>
+                          <Dialog.Overlay className="fixed inset-0 z-1100 bg-black/90" />
+                          <Dialog.Content
+                            aria-describedby={undefined}
+                            className="fixed inset-0 z-1100 flex items-center justify-center p-4"
+                            onClick={(e) => {
+                              if (e.target === e.currentTarget)
+                                setAmpliada(false);
+                            }}
+                          >
+                            <Dialog.Title className="sr-only">
+                              {exibido.titulo} – imagem ampliada
+                            </Dialog.Title>
+                            <div className="relative">
+                              <img
+                                src={exibido.imagens[atual]}
+                                alt={`${exibido.titulo} – imagem ${atual + 1} de ${total}`}
+                                className="block max-h-[90vh] max-w-[95vw] rounded-lg object-contain"
+                              />
+                              {setas(true)}
+                            </div>
+                            <Dialog.Close
+                              aria-label="Fechar imagem"
+                              className="absolute top-4 right-4 flex h-11 w-11 cursor-pointer items-center justify-center rounded-md bg-black/60 text-white transition-colors hover:bg-black/80"
                             >
-                              <Icone size={20} aria-hidden="true" />
-                            </button>
-                          ))}
-                          <span className="absolute right-2 bottom-2 rounded bg-black/60 px-2 py-0.5 font-mono text-xs text-white">
-                            {atual + 1}/{exibido.imagens.length}
-                          </span>
-                        </>
-                      )}
+                              <X size={24} />
+                            </Dialog.Close>
+                          </Dialog.Content>
+                        </Dialog.Portal>
+                      </Dialog.Root>
                     </div>
                   )}
                 </div>
