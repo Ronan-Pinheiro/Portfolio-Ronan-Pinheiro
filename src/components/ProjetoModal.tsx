@@ -23,6 +23,8 @@ export default function ProjetoModal({ projeto, onClose }: ProjetoModalProps) {
   }
 
   const total = exibido?.imagens.length ?? 0;
+  // Texto longo: imagem em cima, larga, e o texto embaixo.
+  const empilhado = (exibido?.descricao.length ?? 0) > 700;
   const passar = (passo: number) =>
     setAtual((i) => (i + passo + total) % total);
 
@@ -85,7 +87,7 @@ export default function ProjetoModal({ projeto, onClose }: ProjetoModalProps) {
               aria-describedby="modal-descricao"
             >
               <motion.div
-                className="fixed inset-0 z-1001 m-auto flex h-fit max-h-[90vh] w-[90%] max-w-[1000px] flex-row overflow-y-auto rounded-lg bg-portfolio-primary p-[15px] focus:outline-none max-[900px]:flex-col max-[900px]:items-center max-[900px]:pt-12 light:ring-1 light:ring-claro-line light:ring-inset light:bg-claro-card"
+                className={`fixed inset-0 z-1001 m-auto flex h-fit max-h-[90vh] w-[90%] ${empilhado ? 'max-w-[900px] flex-col pt-12' : 'max-w-[1000px] flex-row'} overflow-y-auto rounded-lg bg-portfolio-primary p-[15px] focus:outline-none max-[900px]:flex-col max-[900px]:items-center max-[900px]:pt-12 light:ring-1 light:ring-claro-line light:ring-inset light:bg-claro-card`}
                 initial={{ opacity: 0, y: 16, scale: 0.98 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: 8, scale: 0.98 }}
@@ -98,7 +100,9 @@ export default function ProjetoModal({ projeto, onClose }: ProjetoModalProps) {
                   <X size={24} />
                 </Dialog.Close>
 
-                <div className="flex flex-1 items-center justify-center p-4 max-[900px]:w-full max-[900px]:p-0">
+                <div
+                  className={`flex items-center justify-center ${empilhado ? 'w-full px-6 max-[900px]:px-0' : 'flex-1 p-4 max-[900px]:w-full max-[900px]:p-0'}`}
+                >
                   {exibido.video ? (
                     <video
                       controls
@@ -110,7 +114,9 @@ export default function ProjetoModal({ projeto, onClose }: ProjetoModalProps) {
                       Seu navegador não suporta vídeo.
                     </video>
                   ) : (
-                    <div className="relative mx-auto w-full max-w-[450px] max-[900px]:max-w-[90%]">
+                    <div
+                      className={`relative mx-auto w-full ${empilhado ? '' : 'max-w-[450px]'} max-[900px]:max-w-[90%]`}
+                    >
                       <button
                         type="button"
                         onClick={() => setAmpliada(true)}
@@ -120,7 +126,7 @@ export default function ProjetoModal({ projeto, onClose }: ProjetoModalProps) {
                         <img
                           src={exibido.imagens[atual]}
                           alt={`${exibido.titulo} – imagem ${atual + 1} de ${total}`}
-                          className="mx-auto block max-h-[375px] w-full rounded-lg object-cover max-[900px]:max-h-[250px]"
+                          className={`mx-auto block w-full rounded-lg object-cover ${empilhado ? '' : 'max-h-[375px] max-[900px]:max-h-[250px]'}`}
                         />
                         <span className="absolute top-2 right-2 flex h-8 w-8 items-center justify-center rounded-md bg-black/60 text-white opacity-0 transition-opacity group-hover/zoom:opacity-100 max-[900px]:opacity-100">
                           <Maximize2 size={16} aria-hidden="true" />
