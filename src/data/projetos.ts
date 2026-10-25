@@ -6,24 +6,32 @@ import Projeto_Dogs from '../Imagens/Projeto_Dogs.png';
 import Projeto_cargaIndivisivel from '../Imagens/Projeto_CargaIndivisível.png';
 import Projeto_AutomacaoE2E from '../Imagens/Projeto_AutomacaoE2E.mp4';
 import Projeto_cypress_Kabum from '../Imagens/Projeto_cypress_Kabum.png';
-import Projeto_FrajolaHub from '../Imagens/Projeto_FrajolaHub.jpg';
+import FrajolaHub_Chat from '../Imagens/Projeto_FrajolaHub_Chat.jpg';
+import FrajolaHub_Voz from '../Imagens/Projeto_FrajolaHub_Voz.jpg';
+import FrajolaHub_Tela from '../Imagens/Projeto_FrajolaHub_Tela.jpg';
+import FrajolaHub_GatoDJ from '../Imagens/Projeto_FrajolaHub_GatoDJ.jpg';
+import FrajolaHub_Stats from '../Imagens/Projeto_FrajolaHub_Stats.jpg';
+import FrajolaHub_CaixaDeAreia from '../Imagens/Projeto_FrajolaHub_CaixaDeAreia.jpg';
+import FrajolaHub_Login from '../Imagens/Projeto_FrajolaHub_Login.jpg';
 import type { Projeto } from '../types';
 
 export const projetosData: Projeto[] = [
   {
     titulo: 'Frajola Hub',
     resumo:
-      'Plataforma web de voz, chat e transmissão de tela em alta taxa de quadros. Em desenvolvimento.',
-    descricao: `Projeto pessoal em desenvolvimento: uma plataforma de comunicação no estilo Discord, feita para o meu grupo de amigos e aberta para testes com um modo de demonstração.
+      'Plataforma web de voz, chat em tempo real e transmissão de tela, com servidor de demonstração aberto.',
+    descricao: `Projeto pessoal no ar e em evolução: uma plataforma de comunicação no estilo Discord, feita para o meu grupo de amigos. Qualquer pessoa pode testar pelo botão "Entrar como visitante", que abre um servidor de demonstração separado do grupo real.
 
-Funcionalidades:
-• Salas de voz
-• Chat de texto em tempo real
-• Compartilhamento de tela com meta de 60 FPS em 1080p
-• Servidor privado com acesso por convite
-• Painel de estatísticas de uso (horas em call, horários de pico e FPS médio)
+O que já funciona:
+• Chat em tempo real por WebSocket, com mensagens salvas no PostgreSQL e anti-spam
+• Salas de voz com conexão direta entre navegadores (WebRTC P2P), filtro de ruído com IA e volume por pessoa
+• Compartilhamento de tela com escolha de resolução e FPS (até 1440p e 120 FPS em teste)
+• Repetidor de vídeo pelo LiveKit quando 3 ou mais pessoas assistem
+• Login com Google e aprovação de novos membros pelo dono do servidor
+• Gatos bots, sorteio de times e um gato DJ que toca músicas do YouTube sincronizadas para a sala
+• Painel de estatísticas de uso (no demo, com dados fictícios)
 
-Construído com front-end em React e TypeScript, back-end em Python com FastAPI e WebSocket, PostgreSQL, Redis, WebRTC com LiveKit, Docker e integração contínua no GitHub Actions.`,
+Back-end em Python com FastAPI, SQLAlchemy e Alembic, PostgreSQL e Redis. Front-end em React e TypeScript. Testes com Pytest e Vitest rodando no GitHub Actions e deploy no Cloudflare Pages e no Render.`,
     tecnologias: [
       'TypeScript',
       'Python',
@@ -34,11 +42,22 @@ Construído com front-end em React e TypeScript, back-end em Python com FastAPI 
       'WebSocket',
       'PostgreSQL',
       'Redis',
+      'SQLAlchemy',
       'LiveKit',
       'Docker',
+      'Pytest',
       'GitHub Actions',
     ],
-    imagens: [Projeto_FrajolaHub],
+    imagens: [
+      FrajolaHub_Chat,
+      FrajolaHub_Voz,
+      FrajolaHub_Tela,
+      FrajolaHub_GatoDJ,
+      FrajolaHub_Stats,
+      FrajolaHub_CaixaDeAreia,
+      FrajolaHub_Login,
+    ],
+    link: 'https://frajola-hub.pages.dev',
   },
   {
     titulo: 'Dogs Social',
@@ -93,6 +112,7 @@ Construído com:
   },
   {
     titulo: 'Animais Fantásticos',
+    oculto: true,
     resumo: 'Site interativo com JavaScript puro e manipulação do DOM.',
     descricao: `Projeto criado como parte dos estudos com JavaScript, HTML e CSS, durante o curso da Origamid.
 
