@@ -108,7 +108,7 @@ export default function Header({ sections }: HeaderProps) {
         <div className="ml-auto flex items-center gap-3 min-[1050px]:ml-4">
           <a
             href="/RonanCurriculo.pdf"
-            download="RonanCurriculo.pdf"
+            download="Currículo Ronan Pinheiro Otávio.pdf"
             className="hidden items-center gap-2 rounded-md bg-portfolio-accent px-4 py-2 text-sm font-bold text-portfolio-bg shadow-[3px_3px_0_0_rgba(230,230,238,0.3)] transition-[translate,background-color,box-shadow] hover:bg-portfolio-accent-hover active:translate-x-[2px] active:translate-y-[2px] min-[1050px]:flex light:bg-claro-accent light:text-claro-cream light:shadow-[3px_3px_0_0_var(--color-claro-sand)] light:hover:bg-claro-accent-hover"
           >
             Currículo

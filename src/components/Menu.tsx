@@ -80,7 +80,7 @@ export default function Menu({ menuOpen, toggleMenu, sections }: MenuProps) {
       <a
         className="mt-auto mb-1 flex items-center justify-center gap-3 rounded-md bg-portfolio-accent p-2.5 text-lg font-semibold text-portfolio-bg shadow-[4px_4px_0_0_rgba(230,230,238,0.3)] transition-[translate,background-color,box-shadow] hover:bg-portfolio-muted active:translate-x-[2px] active:translate-y-[2px] active:shadow-[2px_2px_0_0_rgba(230,230,238,0.3)] light:bg-claro-accent light:text-claro-cream light:shadow-[4px_4px_0_0_var(--color-claro-sand)] light:hover:bg-claro-accent-hover light:active:shadow-[2px_2px_0_0_var(--color-claro-sand)]"
         href="/RonanCurriculo.pdf"
-        download="RonanCurriculo.pdf"
+        download="Currículo Ronan Pinheiro Otávio.pdf"
       >
         Baixar currículo
         <Download size={18} aria-hidden="true" />

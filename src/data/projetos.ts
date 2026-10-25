@@ -6,9 +6,40 @@ import Projeto_Dogs from '../Imagens/Projeto_Dogs.png';
 import Projeto_cargaIndivisivel from '../Imagens/Projeto_CargaIndivisível.png';
 import Projeto_AutomacaoE2E from '../Imagens/Projeto_AutomacaoE2E.mp4';
 import Projeto_cypress_Kabum from '../Imagens/Projeto_cypress_Kabum.png';
+import Projeto_FrajolaHub from '../Imagens/Projeto_FrajolaHub.jpg';
 import type { Projeto } from '../types';
 
 export const projetosData: Projeto[] = [
+  {
+    titulo: 'Frajola Hub',
+    resumo:
+      'Plataforma web de voz, chat e transmissão de tela em alta taxa de quadros. Em desenvolvimento.',
+    descricao: `Projeto pessoal em desenvolvimento: uma plataforma de comunicação no estilo Discord, feita para o meu grupo de amigos e aberta para testes com um modo de demonstração.
+
+Funcionalidades:
+• Salas de voz
+• Chat de texto em tempo real
+• Compartilhamento de tela com meta de 60 FPS em 1080p
+• Servidor privado com acesso por convite
+• Painel de estatísticas de uso (horas em call, horários de pico e FPS médio)
+
+Construído com front-end em React e TypeScript, back-end em Python com FastAPI e WebSocket, PostgreSQL, Redis, WebRTC com LiveKit, Docker e integração contínua no GitHub Actions.`,
+    tecnologias: [
+      'TypeScript',
+      'Python',
+      'WebRTC',
+      'React',
+      'Tailwind CSS',
+      'FastAPI',
+      'WebSocket',
+      'PostgreSQL',
+      'Redis',
+      'LiveKit',
+      'Docker',
+      'GitHub Actions',
+    ],
+    imagens: [Projeto_FrajolaHub],
+  },
   {
     titulo: 'Dogs Social',
     resumo:

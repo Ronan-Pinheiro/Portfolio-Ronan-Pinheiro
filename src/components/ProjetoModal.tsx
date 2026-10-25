@@ -89,17 +89,23 @@ export default function ProjetoModal({ projeto, onClose }: ProjetoModalProps) {
                     ))}
                   </ul>
 
-                  <a
-                    href={exibido.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-4 flex items-center justify-center gap-3 rounded-md border-2 border-portfolio-accent shadow-[4px_4px_0_0_rgba(230,230,238,0.3)] light:border-claro-espresso light:shadow-[4px_4px_0_0_var(--color-claro-espresso)] bg-portfolio-accent px-3 py-3 font-bold text-portfolio-bg transition-[background-color,scale] duration-300 hover:bg-portfolio-accent-hover active:scale-[0.97] light:bg-claro-accent light:text-claro-cream light:hover:bg-claro-accent-hover"
-                  >
-                    Ver Projeto
-                    <span className="flex h-7 w-7 items-center justify-center rounded-sm bg-black/15">
-                      <ExternalLink size={15} aria-hidden="true" />
-                    </span>
-                  </a>
+                  {exibido.link ? (
+                    <a
+                      href={exibido.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4 flex items-center justify-center gap-3 rounded-md border-2 border-portfolio-accent shadow-[4px_4px_0_0_rgba(230,230,238,0.3)] light:border-claro-espresso light:shadow-[4px_4px_0_0_var(--color-claro-espresso)] bg-portfolio-accent px-3 py-3 font-bold text-portfolio-bg transition-[background-color,scale] duration-300 hover:bg-portfolio-accent-hover active:scale-[0.97] light:bg-claro-accent light:text-claro-cream light:hover:bg-claro-accent-hover"
+                    >
+                      Ver Projeto
+                      <span className="flex h-7 w-7 items-center justify-center rounded-sm bg-black/15">
+                        <ExternalLink size={15} aria-hidden="true" />
+                      </span>
+                    </a>
+                  ) : (
+                    <p className="mt-4 rounded-md border-2 border-dashed border-portfolio-accent px-3 py-3 text-center font-bold text-portfolio-accent light:border-claro-accent light:text-claro-accent">
+                      Em desenvolvimento · demonstração em breve
+                    </p>
+                  )}
                 </div>
               </motion.div>
             </Dialog.Content>

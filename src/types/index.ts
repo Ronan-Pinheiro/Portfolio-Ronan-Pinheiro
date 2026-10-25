@@ -28,7 +28,8 @@ export interface Projeto {
   descricao: string;
   tecnologias: string[];
   imagens: string[];
-  link: string;
+  /** Sem link, o modal mostra o projeto como em desenvolvimento. */
+  link?: string;
   video?: string;
   /** Quando true, o projeto fica guardado mas não aparece no site. */
   oculto?: boolean;
