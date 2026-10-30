@@ -66,6 +66,10 @@ const EXTRAS_CELULAR: Extra[] = [
   { fx: 0.06, fy: 0.62, tam: 0.08, parede: 0, z: 1.5 },
   { fx: 0.06, fy: 0.27, tam: 0.07, parede: 0, z: 1.3 },
   { fx: 0.94, fy: 0.31, tam: 0.07, parede: 1, z: 1.0 },
+  { fx: 0.13, fy: 0.13, tam: 0.18, parede: 2, z: 1.2 },
+  { fx: 0.87, fy: 0.12, tam: 0.16, parede: 2, z: 0.9 },
+  { fx: 0.1, fy: 0.78, tam: 0.07, parede: 0, z: 1.2 },
+  { fx: 0.92, fy: 0.72, tam: 0.08, parede: 1, z: 1.4 },
 ];
 
 // Névoa: forte perto, some no fundo; as que passam rente à câmera também somem.
@@ -107,13 +111,18 @@ function desenhar(j: Janela) {
 
   const [cx, cy] = centro(w, h);
   const escala = Math.min(w, h) * 0.55;
+  // O poço acompanha o formato da tela: mais largo em tela larga, mais alto no
+  // celular. Assim as paredes chegam perto das bordas e os cantos não ficam vazios.
+  const escalaX = escala * Math.max(1, (w / h) * 0.85);
+  const escalaY = escala * Math.max(1, (h / w) * 0.85);
   // No celular o texto ocupa a largura toda: a cena fica mais apagada.
-  const forca = j.forca * (w < 700 ? 0.55 : 1);
+  // No celular o texto ocupa a largura toda: nas seções a cena fica mais apagada.
+  const forca = j.forca * (w < 700 && j.forca < 1 ? 0.55 : 1);
   const cor = (c: Rgb, a: number) =>
     `rgba(${c[0]},${c[1]},${c[2]},${a * forca})`;
   const projetar = ([x, y, d]: Vec3): [number, number] => [
-    cx + (x * escala) / d,
-    cy + (y * escala) / d,
+    cx + (x * escalaX) / d,
+    cy + (y * escalaY) / d,
   ];
   const naParede = (parede: number, v: number, u: number, d: number): Vec3 => {
     const [x, y] = [
@@ -144,11 +153,15 @@ function desenhar(j: Janela) {
   const extras = (w < 700 ? EXTRAS_CELULAR : EXTRAS_LARGA)
     .map((e) => {
       const d0 = e.z + PERTO;
-      const k = d0 / escala; // pixels na primeira tela -> unidades do poço
+      // pixels na primeira tela -> unidades do poço, em cada eixo
+      const kx = d0 / escalaX;
+      const ky = d0 / escalaY;
       const lado = e.parede < 2; // paredes da esquerda e da direita
-      const v = Math.abs(lado ? e.fx * w - cx + mx : e.fy * h - cy) * k;
-      const u = (lado ? e.fy * h - cy : e.fx * w - cx + mx) * k;
-      const meia = ((e.tam * (lado ? h : w)) / 2) * k;
+      const v = lado
+        ? Math.abs(e.fx * w - cx + mx) * kx
+        : Math.abs(e.fy * h - cy) * ky;
+      const u = lado ? (e.fy * h - cy) * ky : (e.fx * w - cx + mx) * kx;
+      const meia = lado ? ((e.tam * h) / 2) * ky : ((e.tam * w) / 2) * kx;
       return {
         parede: e.parede,
         recuo: v,
