@@ -88,24 +88,3 @@ export function RabiscoEstrela({ className }: RabiscoProps) {
     </svg>
   );
 }
-
-export function GradePontos({ className }: RabiscoProps) {
-  const pontos = [];
-  for (let linha = 0; linha < 4; linha += 1) {
-    for (let coluna = 0; coluna < 6; coluna += 1) {
-      pontos.push(
-        <circle
-          key={`${linha}-${coluna}`}
-          cx={4 + coluna * 12}
-          cy={4 + linha * 12}
-          r="2"
-        />,
-      );
-    }
-  }
-  return (
-    <svg viewBox="0 0 68 44" className={className} aria-hidden="true">
-      <g fill="currentColor">{pontos}</g>
-    </svg>
-  );
-}

@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import { projetosData } from '../data/projetos';
 import type { Projeto } from '../types';
 import ProjetoModal from './ProjetoModal';
-import { GradePontos, RabiscoEstrela, RabiscoSublinhado } from './Rabiscos';
+import { RabiscoEstrela, RabiscoSublinhado } from './Rabiscos';
 import FundoSecao from './FundoSecao';
 
 export default function Projetos() {
@@ -35,8 +35,6 @@ export default function Projetos() {
           Fábrica de Software do SENAI Fatesg.
         </p>
       </div>
-
-      <GradePontos className="absolute bottom-16 left-6 w-24 text-portfolio-muted/30 light:text-claro-muted/30 max-[1000px]:hidden" />
 
       <ul className="mx-auto grid max-w-[1150px] grid-cols-3 gap-x-8 gap-y-10 pt-12 text-left max-[1000px]:grid-cols-2 max-[640px]:grid-cols-1">
         {projetosData
