@@ -1,11 +1,24 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useLayoutEffect, useRef } from 'react';
 import { useTheme } from '../contexts/ThemeContext';
 import {
+  desenharAgora,
   redesenhar,
   registrarJanela,
   type Janela,
   type Rgb,
 } from '../lib/poco';
+
+// Cores das placas: claras sobre fundo escuro, escuras sobre fundo claro.
+function cores(isDark: boolean, fundoEscuro: boolean) {
+  const escuro = isDark || fundoEscuro;
+  const tinta: Rgb = escuro ? [230, 230, 238] : [29, 22, 17];
+  const destaque: Rgb = isDark
+    ? [245, 185, 66]
+    : fundoEscuro
+      ? [230, 194, 122]
+      : [156, 64, 25];
+  return { tinta, destaque };
+}
 
 interface JanelaPocoProps {
   /** Opacidade geral da cena (1 = topo; menor = mais discreto). */
@@ -33,22 +46,19 @@ export default function JanelaPoco({
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const { isDark } = useTheme();
 
+  const janelaRef = useRef<Janela | null>(null);
+
   useEffect(() => {
     const moldura = molduraRef.current;
     const canvas = canvasRef.current;
     if (!moldura || !canvas) return;
-    const escuro = isDark || fundoEscuro;
     const janela: Janela = {
       canvas,
-      tinta: escuro ? [230, 230, 238] : [29, 22, 17],
-      destaque: (isDark
-        ? [245, 185, 66]
-        : fundoEscuro
-          ? [230, 194, 122]
-          : [156, 64, 25]) as Rgb,
+      ...cores(false, fundoEscuro),
       forca,
       visivel: false,
     };
+    janelaRef.current = janela;
     const remover = registrarJanela(janela);
     // Só desenha enquanto a seção aparece na tela.
     const tela = new IntersectionObserver(([entrada]) => {
@@ -60,8 +70,18 @@ export default function JanelaPoco({
     return () => {
       tela.disconnect();
       remover();
+      janelaRef.current = null;
     };
-  }, [isDark, fundoEscuro, forca]);
+  }, [fundoEscuro, forca]);
+
+  // Troca de tema: muda só as cores e redesenha na hora, no mesmo instante em que
+  // o resto do site troca (assim a transição suave pega a cena já com a cor nova).
+  useLayoutEffect(() => {
+    const janela = janelaRef.current;
+    if (!janela) return;
+    Object.assign(janela, cores(isDark, fundoEscuro));
+    desenharAgora();
+  }, [isDark, fundoEscuro]);
 
   // Esmaece a cena a partir do elemento indicado (recalcula se o tamanho mudar).
   useEffect(() => {

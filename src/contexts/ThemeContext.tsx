@@ -2,11 +2,12 @@ import {
   createContext,
   useCallback,
   useContext,
-  useEffect,
+  useLayoutEffect,
   useMemo,
   useState,
   type ReactNode,
 } from 'react';
+import { flushSync } from 'react-dom';
 import type { Theme, ThemeContextValue } from '../types';
 
 const ThemeContext = createContext<ThemeContextValue | null>(null);
@@ -26,7 +27,7 @@ interface ThemeProviderProps {
 export function ThemeProvider({ children }: ThemeProviderProps) {
   const [theme, setTheme] = useState<Theme>(getInitialTheme);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const { body } = document;
 
     if (theme === 'light') {
@@ -45,7 +46,18 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
   }, [theme]);
 
   const toggleTheme = useCallback(() => {
-    setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
+    const trocar = () =>
+      flushSync(() => setTheme((prev) => (prev === 'dark' ? 'light' : 'dark')));
+    // Onde o navegador permite, o site inteiro (fundo incluído) dissolve de um tema
+    // para o outro em vez de trocar de uma vez. Quem pediu menos movimento não vê.
+    const reduzir = window.matchMedia(
+      '(prefers-reduced-motion: reduce)',
+    ).matches;
+    if (!document.startViewTransition || reduzir) {
+      trocar();
+      return;
+    }
+    document.startViewTransition(trocar);
   }, []);
 
   const value = useMemo<ThemeContextValue>(

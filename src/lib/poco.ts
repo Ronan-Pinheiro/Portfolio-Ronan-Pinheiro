@@ -325,5 +325,10 @@ export function registrarJanela(j: Janela) {
   };
 }
 
-/** Pede um novo desenho (ex.: a janela entrou na tela ou o tema mudou). */
+/** Pede um novo desenho (ex.: a janela entrou na tela). */
 export const redesenhar = pedir;
+
+/** Desenha agora mesmo, sem esperar o próximo quadro (ex.: na troca de tema). */
+export function desenharAgora() {
+  janelas.forEach((j) => j.visivel && desenhar(j));
+}
