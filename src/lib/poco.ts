@@ -50,6 +50,7 @@ const COMPRIMENTO = PASSO * 0.3;
 // da altura), só nas faixas laterais onde não há texto, e ao rolar passam e não voltam.
 // fx, fy: centro na primeira tela · tam: tamanho (fração da altura nas paredes dos lados,
 // da largura nas de cima e de baixo) · parede: 0 esquerda, 1 direita, 2 cima, 3 baixo
+// (só na tela larga; o celular usa a cena de queda)
 type Extra = { fx: number; fy: number; tam: number; parede: number; z: number };
 const EXTRAS_LARGA: Extra[] = [
   { fx: 0.06, fy: 0.22, tam: 0.2, parede: 0, z: 0.9 },
@@ -59,13 +60,6 @@ const EXTRAS_LARGA: Extra[] = [
   { fx: 0.44, fy: 0.12, tam: 0.07, parede: 2, z: 1.3 },
   { fx: 0.88, fy: 0.8, tam: 0.12, parede: 1, z: 1.1 },
   { fx: 0.97, fy: 0.6, tam: 0.12, parede: 1, z: 1.5 },
-];
-// Celular: só dois pares, espelhados (mesma altura dos dois lados).
-const EXTRAS_CELULAR: Extra[] = [
-  { fx: 0.05, fy: 0.3, tam: 0.08, parede: 0, z: 1.2 },
-  { fx: 0.95, fy: 0.3, tam: 0.08, parede: 1, z: 1.2 },
-  { fx: 0.05, fy: 0.62, tam: 0.1, parede: 0, z: 0.9 },
-  { fx: 0.95, fy: 0.62, tam: 0.1, parede: 1, z: 0.9 },
 ];
 
 // Névoa: forte perto, some no fundo; as que passam rente à câmera também somem.
@@ -88,6 +82,94 @@ function centro(w: number, h: number): [number, number] {
   return [w * (w < 700 ? 0.5 : 0.62) + mx, h * 0.5];
 }
 
+/*
+ * Celular: em vez de olhar para dentro do poço, a gente cai por ele, visto de lado.
+ * As placas soltas em perspectiva (como no fundo antigo) ficam nas laterais, em três
+ * profundidades; ao rolar, sobem: as de perto passam rápido e as do fundo devagar.
+ */
+function girar([x, y, z]: Vec3, [rx, ry, rz]: Vec3): Vec3 {
+  let y1 = y * Math.cos(rx) - z * Math.sin(rx);
+  let z1 = y * Math.sin(rx) + z * Math.cos(rx);
+  const x2 = x * Math.cos(ry) + z1 * Math.sin(ry);
+  z1 = -x * Math.sin(ry) + z1 * Math.cos(ry);
+  const x3 = x2 * Math.cos(rz) - y1 * Math.sin(rz);
+  y1 = x2 * Math.sin(rz) + y1 * Math.cos(rz);
+  return [x3, y1, z1];
+}
+
+// Gerador com semente fixa: a cena é sempre a mesma.
+function aleatorio(semente: number) {
+  let s = semente;
+  return () => {
+    s = (s * 16807) % 2147483647;
+    return (s - 1) / 2147483646;
+  };
+}
+
+const QUEDA = (() => {
+  const r = aleatorio(7);
+  return Array.from({ length: 15 }, (_, i) => {
+    const lado = i % 2 ? 1 : -1;
+    const profundidade = 1 + (i % 3) * 0.8; // 1 = perto, 2.6 = longe
+    return {
+      x: lado * (0.62 + r() * 0.3),
+      y: i / 15 + (r() - 0.5) * 0.04, // posição no ciclo, em ordem
+      z: profundidade + r() * 0.2,
+      w: 0.3 + r() * 0.2,
+      h: 0.24 + r() * 0.18,
+      rot: [
+        0.3 + (r() - 0.5) * 1.1,
+        -0.5 * lado + (r() - 0.5) * 0.8,
+        (r() - 0.5) * 0.7,
+      ] as Vec3,
+    };
+  });
+})();
+
+function desenharQueda(
+  ctx: CanvasRenderingContext2D,
+  w: number,
+  h: number,
+  tinta: Rgb,
+  cor: (c: Rgb, a: number) => string,
+) {
+  const escala = w * 0.5;
+  const cx = w / 2;
+  const cy = h / 2;
+  // Quanto já caímos (em unidades da cena); 1 tela de rolagem = 0,6 tela perto.
+  const queda = (camZ * h * 0.25) / escala;
+  const lista = QUEDA.map((p) => {
+    const ciclo = (h / escala) * p.z * 1.5; // altura do ciclo nessa profundidade
+    const y = ((((p.y * ciclo - queda) % ciclo) + ciclo) % ciclo) - ciclo / 2;
+    return { ...p, yAtual: y };
+  }).sort((a, b) => b.z - a.z);
+  for (const p of lista) {
+    const perto = 1 - (p.z - 1) / 2; // 1 perto, 0.1 longe
+    const cantos: Vec3[] = [
+      [-p.w / 2, -p.h / 2, 0],
+      [p.w / 2, -p.h / 2, 0],
+      [p.w / 2, p.h / 2, 0],
+      [-p.w / 2, p.h / 2, 0],
+    ];
+    const pts = cantos.map((c) => {
+      const [x, y, z] = girar(c, p.rot);
+      const d = p.z + z * 0.5;
+      return [
+        cx + ((p.x + x) * escala) / d,
+        cy + ((p.yAtual + y) * escala) / d,
+      ];
+    });
+    ctx.beginPath();
+    pts.forEach(([x, y], k) => (k ? ctx.lineTo(x, y) : ctx.moveTo(x, y)));
+    ctx.closePath();
+    ctx.fillStyle = cor(tinta, 0.04 + perto * 0.08);
+    ctx.fill();
+    ctx.lineWidth = 0.5 + perto * 1.5;
+    ctx.strokeStyle = cor(tinta, 0.16 + perto * 0.4);
+    ctx.stroke();
+  }
+}
+
 function desenhar(j: Janela) {
   const { canvas } = j;
   const ctx = canvas.getContext('2d');
@@ -107,17 +189,19 @@ function desenhar(j: Janela) {
 
   const [cx, cy] = centro(w, h);
   const celular = w < 700;
-  // No celular a escala vem da largura: as paredes caem nas margens ao lado da foto.
-  const escala = celular ? w * 0.5 : Math.min(w, h) * 0.55;
+  const escala = Math.min(w, h) * 0.55;
   // Em tela larga o poço fica mais largo, para as paredes chegarem perto das bordas
   // e os cantos não ficarem vazios. No celular ele continua quadrado.
   const escalaX = escala * Math.max(1, (w / h) * 0.85);
   const escalaY = escala;
-  // No celular o texto ocupa a largura toda: a cena fica mais apagada.
   // No celular o texto ocupa a largura toda: nas seções a cena fica mais apagada.
   const forca = j.forca * (w < 700 && j.forca < 1 ? 0.55 : 1);
   const cor = (c: Rgb, a: number) =>
     `rgba(${c[0]},${c[1]},${c[2]},${a * forca})`;
+  if (celular) {
+    desenharQueda(ctx, w, h, j.tinta, cor);
+    return;
+  }
   const projetar = ([x, y, d]: Vec3): [number, number] => [
     cx + (x * escalaX) / d,
     cy + (y * escalaY) / d,
@@ -134,53 +218,36 @@ function desenhar(j: Janela) {
 
   // Placas do fundo para a frente, para as de perto ficarem por cima.
   // Extras: a posição na tela vira posição na parede, calculada para a primeira tela.
-  const extras = (w < 700 ? EXTRAS_CELULAR : EXTRAS_LARGA)
-    .map((e) => {
-      const d0 = e.z + PERTO;
-      // pixels na primeira tela -> unidades do poço, em cada eixo
-      const kx = d0 / escalaX;
-      const ky = d0 / escalaY;
-      const lado = e.parede < 2; // paredes da esquerda e da direita
-      const v = lado
-        ? Math.abs(e.fx * w - cx + mx) * kx
-        : Math.abs(e.fy * h - cy) * ky;
-      const u = lado ? (e.fy * h - cy) * ky : (e.fx * w - cx + mx) * kx;
-      const meia = lado ? ((e.tam * h) / 2) * ky : ((e.tam * w) / 2) * kx;
-      return {
-        parede: e.parede,
-        recuo: v,
-        u1: u - meia,
-        u2: u + meia,
-        // mais curtas que as do poço: ficam estreitas e não avançam para o meio da tela
-        comp: COMPRIMENTO * 0.35,
-        d: e.z - camZ + PERTO,
-      };
-    })
-    .filter((p) => p.d > PERTO);
-  // No celular o texto ocupa o meio da tela de cima a baixo: as placas ficam só nas
-  // duas laterais, em ordem, formando faixas que emolduram a foto.
+  const extras = EXTRAS_LARGA.map((e) => {
+    const d0 = e.z + PERTO;
+    // pixels na primeira tela -> unidades do poço, em cada eixo
+    const kx = d0 / escalaX;
+    const ky = d0 / escalaY;
+    const lado = e.parede < 2; // paredes da esquerda e da direita
+    const v = lado
+      ? Math.abs(e.fx * w - cx + mx) * kx
+      : Math.abs(e.fy * h - cy) * ky;
+    const u = lado ? (e.fy * h - cy) * ky : (e.fx * w - cx + mx) * kx;
+    const meia = lado ? ((e.tam * h) / 2) * ky : ((e.tam * w) / 2) * kx;
+    return {
+      parede: e.parede,
+      recuo: v,
+      u1: u - meia,
+      u2: u + meia,
+      // mais curtas que as do poço: ficam estreitas e não avançam para o meio da tela
+      comp: COMPRIMENTO * 0.35,
+      d: e.z - camZ + PERTO,
+    };
+  }).filter((p) => p.d > PERTO);
   const lista = placas
-    .map(({ parede, recuo, u1, u2, z }, i) =>
-      celular
-        ? // Celular: as placas alternam esquerda/direita e ficam em duas alturas fixas,
-          // todas do mesmo tamanho e no mesmo recuo, como andares de um corredor.
-          {
-            parede: i % 2,
-            recuo: 0.95,
-            u1: (i % 4 < 2 ? -0.5 : 0.25) - 0.13,
-            u2: (i % 4 < 2 ? -0.5 : 0.25) + 0.13,
-            comp: COMPRIMENTO,
-            d: ((((z - camZ) % FUNDO) + FUNDO) % FUNDO) + PERTO,
-          }
-        : {
-            parede,
-            recuo,
-            u1,
-            u2,
-            comp: COMPRIMENTO,
-            d: ((((z - camZ) % FUNDO) + FUNDO) % FUNDO) + PERTO,
-          },
-    )
+    .map(({ parede, recuo, u1, u2, z }) => ({
+      parede,
+      recuo,
+      u1,
+      u2,
+      comp: COMPRIMENTO,
+      d: ((((z - camZ) % FUNDO) + FUNDO) % FUNDO) + PERTO,
+    }))
     .concat(extras)
     .sort((a, b) => b.d - a.d);
   for (const p of lista) {
