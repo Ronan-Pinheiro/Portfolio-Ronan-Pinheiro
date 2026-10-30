@@ -60,16 +60,12 @@ const EXTRAS_LARGA: Extra[] = [
   { fx: 0.88, fy: 0.8, tam: 0.12, parede: 1, z: 1.1 },
   { fx: 0.97, fy: 0.6, tam: 0.12, parede: 1, z: 1.5 },
 ];
+// Celular: só dois pares, espelhados (mesma altura dos dois lados).
 const EXTRAS_CELULAR: Extra[] = [
-  { fx: 0.05, fy: 0.42, tam: 0.12, parede: 0, z: 0.8 },
-  { fx: 0.95, fy: 0.5, tam: 0.12, parede: 1, z: 1.1 },
-  { fx: 0.06, fy: 0.62, tam: 0.08, parede: 0, z: 1.5 },
-  { fx: 0.06, fy: 0.27, tam: 0.07, parede: 0, z: 1.3 },
-  { fx: 0.94, fy: 0.31, tam: 0.07, parede: 1, z: 1.0 },
-  { fx: 0.13, fy: 0.13, tam: 0.18, parede: 2, z: 1.2 },
-  { fx: 0.87, fy: 0.12, tam: 0.16, parede: 2, z: 0.9 },
-  { fx: 0.1, fy: 0.78, tam: 0.07, parede: 0, z: 1.2 },
-  { fx: 0.92, fy: 0.72, tam: 0.08, parede: 1, z: 1.4 },
+  { fx: 0.05, fy: 0.3, tam: 0.08, parede: 0, z: 1.2 },
+  { fx: 0.95, fy: 0.3, tam: 0.08, parede: 1, z: 1.2 },
+  { fx: 0.05, fy: 0.62, tam: 0.1, parede: 0, z: 0.9 },
+  { fx: 0.95, fy: 0.62, tam: 0.1, parede: 1, z: 0.9 },
 ];
 
 // Névoa: forte perto, some no fundo; as que passam rente à câmera também somem.
@@ -161,17 +157,30 @@ function desenhar(j: Janela) {
       };
     })
     .filter((p) => p.d > PERTO);
-  // No celular o texto ocupa o meio da tela de cima a baixo: as placas das paredes de
-  // cima e de baixo passam para as laterais, formando duas faixas que emolduram a foto.
+  // No celular o texto ocupa o meio da tela de cima a baixo: as placas ficam só nas
+  // duas laterais, em ordem, formando faixas que emolduram a foto.
   const lista = placas
-    .map(({ parede, recuo, u1, u2, z }) => ({
-      parede: celular && parede >= 2 ? parede - 2 : parede,
-      recuo,
-      u1,
-      u2,
-      comp: COMPRIMENTO,
-      d: ((((z - camZ) % FUNDO) + FUNDO) % FUNDO) + PERTO,
-    }))
+    .map(({ parede, recuo, u1, u2, z }, i) =>
+      celular
+        ? // Celular: as placas alternam esquerda/direita e ficam em duas alturas fixas,
+          // todas do mesmo tamanho e no mesmo recuo, como andares de um corredor.
+          {
+            parede: i % 2,
+            recuo: 0.95,
+            u1: (i % 4 < 2 ? -0.5 : 0.25) - 0.13,
+            u2: (i % 4 < 2 ? -0.5 : 0.25) + 0.13,
+            comp: COMPRIMENTO,
+            d: ((((z - camZ) % FUNDO) + FUNDO) % FUNDO) + PERTO,
+          }
+        : {
+            parede,
+            recuo,
+            u1,
+            u2,
+            comp: COMPRIMENTO,
+            d: ((((z - camZ) % FUNDO) + FUNDO) % FUNDO) + PERTO,
+          },
+    )
     .concat(extras)
     .sort((a, b) => b.d - a.d);
   for (const p of lista) {
