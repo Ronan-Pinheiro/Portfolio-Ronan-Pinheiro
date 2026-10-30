@@ -111,10 +111,10 @@ function desenhar(j: Janela) {
 
   const [cx, cy] = centro(w, h);
   const escala = Math.min(w, h) * 0.55;
-  // O poço acompanha o formato da tela: mais largo em tela larga, mais alto no
-  // celular. Assim as paredes chegam perto das bordas e os cantos não ficam vazios.
+  // Em tela larga o poço fica mais largo, para as paredes chegarem perto das bordas
+  // e os cantos não ficarem vazios. No celular ele continua quadrado.
   const escalaX = escala * Math.max(1, (w / h) * 0.85);
-  const escalaY = escala * Math.max(1, (h / w) * 0.85);
+  const escalaY = escala;
   // No celular o texto ocupa a largura toda: a cena fica mais apagada.
   // No celular o texto ocupa a largura toda: nas seções a cena fica mais apagada.
   const forca = j.forca * (w < 700 && j.forca < 1 ? 0.55 : 1);
