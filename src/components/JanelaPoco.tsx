@@ -12,6 +12,11 @@ interface JanelaPocoProps {
   forca: number;
   /** Fundo da seção é escuro também no tema claro (ex.: Experiência). */
   fundoEscuro?: boolean;
+  /**
+   * Elemento da seção (seletor CSS) a partir do qual a cena fica apagada,
+   * para não atrapalhar a leitura do texto que vem dali para baixo.
+   */
+  apagarDesde?: string;
 }
 
 /*
@@ -22,6 +27,7 @@ interface JanelaPocoProps {
 export default function JanelaPoco({
   forca,
   fundoEscuro = false,
+  apagarDesde,
 }: JanelaPocoProps) {
   const molduraRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -56,6 +62,26 @@ export default function JanelaPoco({
       remover();
     };
   }, [isDark, fundoEscuro, forca]);
+
+  // Esmaece a cena a partir do elemento indicado (recalcula se o tamanho mudar).
+  useEffect(() => {
+    const moldura = molduraRef.current;
+    const alvo = apagarDesde
+      ? moldura?.parentElement?.querySelector<HTMLElement>(apagarDesde)
+      : null;
+    if (!moldura || !alvo) return;
+    const ajustar = () => {
+      const topo =
+        alvo.getBoundingClientRect().top - moldura.getBoundingClientRect().top;
+      const mascara = `linear-gradient(to bottom, #000 ${topo - 160}px, rgba(0,0,0,.3) ${topo}px)`;
+      moldura.style.maskImage = mascara;
+      moldura.style.webkitMaskImage = mascara;
+    };
+    const tamanho = new ResizeObserver(ajustar);
+    tamanho.observe(moldura);
+    ajustar();
+    return () => tamanho.disconnect();
+  }, [apagarDesde]);
 
   return (
     <div

@@ -134,20 +134,6 @@ function desenhar(j: Janela) {
     return [x, y, d];
   };
 
-  // Brilho suave no fundo do poço.
-  const brilho = ctx.createRadialGradient(
-    cx,
-    cy,
-    0,
-    cx,
-    cy,
-    Math.min(w, h) * 0.32,
-  );
-  brilho.addColorStop(0, cor(j.destaque, 0.1));
-  brilho.addColorStop(1, cor(j.destaque, 0));
-  ctx.fillStyle = brilho;
-  ctx.fillRect(0, 0, w, h);
-
   // Placas do fundo para a frente, para as de perto ficarem por cima.
   // Extras: a posição na tela vira posição na parede, calculada para a primeira tela.
   const extras = (w < 700 ? EXTRAS_CELULAR : EXTRAS_LARGA)
