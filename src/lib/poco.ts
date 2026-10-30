@@ -110,7 +110,9 @@ function desenhar(j: Janela) {
   ctx.clearRect(0, 0, w, h);
 
   const [cx, cy] = centro(w, h);
-  const escala = Math.min(w, h) * 0.55;
+  const celular = w < 700;
+  // No celular a escala vem da largura: as paredes caem nas margens ao lado da foto.
+  const escala = celular ? w * 0.5 : Math.min(w, h) * 0.55;
   // Em tela larga o poço fica mais largo, para as paredes chegarem perto das bordas
   // e os cantos não ficarem vazios. No celular ele continua quadrado.
   const escalaX = escala * Math.max(1, (w / h) * 0.85);
@@ -159,9 +161,11 @@ function desenhar(j: Janela) {
       };
     })
     .filter((p) => p.d > PERTO);
+  // No celular o texto ocupa o meio da tela de cima a baixo: as placas das paredes de
+  // cima e de baixo passam para as laterais, formando duas faixas que emolduram a foto.
   const lista = placas
     .map(({ parede, recuo, u1, u2, z }) => ({
-      parede,
+      parede: celular && parede >= 2 ? parede - 2 : parede,
       recuo,
       u1,
       u2,
