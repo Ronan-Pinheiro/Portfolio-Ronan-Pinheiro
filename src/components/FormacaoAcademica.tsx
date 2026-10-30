@@ -4,7 +4,7 @@ import FundoSecao from './FundoSecao';
 export default function FormacaoAcademica() {
   return (
     <section className="relative isolate overflow-hidden bg-portfolio-bg px-5 py-[50px] text-center text-portfolio-muted transition-colors duration-300 light:bg-claro-bg light:text-claro-text">
-      <FundoSecao lado="esquerda" circuito />
+      <FundoSecao />
       <div className="ml-20 flex max-[1050px]:ml-5">
         <p className="titulo-secao flex items-center text-left text-[34px] font-bold max-[499px]:text-[28px]">
           <span className="portfolio-linha" /> Formação Acadêmica{' '}

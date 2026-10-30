@@ -77,7 +77,7 @@ export default function Sobre() {
 
   return (
     <section className="relative isolate overflow-hidden bg-portfolio-bg px-5 py-[50px] text-center text-portfolio-muted transition-colors duration-300 light:bg-claro-bg light:text-claro-text">
-      <FundoTopo className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[640px] w-full [mask-image:linear-gradient(to_bottom,black_75%,transparent)] max-[1050px]:h-[860px]" />
+      <FundoTopo />
 
       <div className="mx-auto flex max-w-[75%] items-center justify-between gap-[50px] max-[1050px]:max-w-none max-[1050px]:flex-col max-[1050px]:items-center max-[1050px]:gap-[25px] max-[499px]:flex-col max-[499px]:gap-5 max-[499px]:items-center">
         <div className="grow text-left max-[1050px]:text-center max-[499px]:pr-[15px]">

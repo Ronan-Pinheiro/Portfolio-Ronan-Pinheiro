@@ -7,7 +7,7 @@ const contatoItemClass =
 export default function Contatos() {
   return (
     <section className="relative isolate overflow-hidden bg-portfolio-primary px-5 py-10 text-center text-portfolio-muted transition-colors duration-300 light:bg-claro-espresso light:text-claro-cream">
-      <FundoSecao lado="esquerda" fundoEscuro />
+      <FundoSecao fundoEscuro />
       <div>
         <h1 className="titulo-secao mb-5 light:text-claro-sand text-[40px] max-[500px]:text-center max-[499px]:text-[30px]">
           CONTATOS
