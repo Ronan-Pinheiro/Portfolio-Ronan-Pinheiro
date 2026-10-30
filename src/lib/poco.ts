@@ -48,17 +48,24 @@ const COMPRIMENTO = PASSO * 0.3;
 // Algumas placas a mais só no começo da página, para preencher as margens que o
 // poço não alcança na primeira tela. São posicionadas pela tela (fração da largura e
 // da altura), só nas faixas laterais onde não há texto, e ao rolar passam e não voltam.
-// fx, fy: centro na primeira tela · fh: altura (fração da tela) · lado: -1 esquerda, 1 direita
-type Extra = { fx: number; fy: number; fh: number; lado: number; z: number };
+// fx, fy: centro na primeira tela · tam: tamanho (fração da altura nas paredes dos lados,
+// da largura nas de cima e de baixo) · parede: 0 esquerda, 1 direita, 2 cima, 3 baixo
+type Extra = { fx: number; fy: number; tam: number; parede: number; z: number };
 const EXTRAS_LARGA: Extra[] = [
-  { fx: 0.06, fy: 0.22, fh: 0.2, lado: -1, z: 0.9 },
-  { fx: 0.09, fy: 0.62, fh: 0.16, lado: -1, z: 1.4 },
-  { fx: 0.04, fy: 0.88, fh: 0.18, lado: -1, z: 0.8 },
+  { fx: 0.06, fy: 0.22, tam: 0.2, parede: 0, z: 0.9 },
+  { fx: 0.09, fy: 0.62, tam: 0.16, parede: 0, z: 1.4 },
+  { fx: 0.04, fy: 0.88, tam: 0.18, parede: 0, z: 0.8 },
+  { fx: 0.3, fy: 0.6, tam: 0.08, parede: 0, z: 1.7 },
+  { fx: 0.44, fy: 0.12, tam: 0.07, parede: 2, z: 1.3 },
+  { fx: 0.88, fy: 0.8, tam: 0.12, parede: 1, z: 1.1 },
+  { fx: 0.97, fy: 0.6, tam: 0.12, parede: 1, z: 1.5 },
 ];
 const EXTRAS_CELULAR: Extra[] = [
-  { fx: 0.05, fy: 0.42, fh: 0.12, lado: -1, z: 0.8 },
-  { fx: 0.95, fy: 0.5, fh: 0.12, lado: 1, z: 1.1 },
-  { fx: 0.06, fy: 0.62, fh: 0.08, lado: -1, z: 1.5 },
+  { fx: 0.05, fy: 0.42, tam: 0.12, parede: 0, z: 0.8 },
+  { fx: 0.95, fy: 0.5, tam: 0.12, parede: 1, z: 1.1 },
+  { fx: 0.06, fy: 0.62, tam: 0.08, parede: 0, z: 1.5 },
+  { fx: 0.06, fy: 0.27, tam: 0.07, parede: 0, z: 1.3 },
+  { fx: 0.94, fy: 0.31, tam: 0.07, parede: 1, z: 1.0 },
 ];
 
 // Névoa: forte perto, some no fundo; as que passam rente à câmera também somem.
@@ -137,11 +144,13 @@ function desenhar(j: Janela) {
   const extras = (w < 700 ? EXTRAS_CELULAR : EXTRAS_LARGA)
     .map((e) => {
       const d0 = e.z + PERTO;
-      const v = (Math.abs(e.fx * w - cx + mx) * d0) / escala;
-      const u = ((e.fy * h - cy) * d0) / escala;
-      const meia = ((e.fh * h) / 2) * (d0 / escala);
+      const k = d0 / escala; // pixels na primeira tela -> unidades do poço
+      const lado = e.parede < 2; // paredes da esquerda e da direita
+      const v = Math.abs(lado ? e.fx * w - cx + mx : e.fy * h - cy) * k;
+      const u = (lado ? e.fy * h - cy : e.fx * w - cx + mx) * k;
+      const meia = ((e.tam * (lado ? h : w)) / 2) * k;
       return {
-        parede: e.lado < 0 ? 0 : 1,
+        parede: e.parede,
         recuo: v,
         u1: u - meia,
         u2: u + meia,
